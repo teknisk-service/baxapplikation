@@ -1,0 +1,95 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+h1 {
+    font-family: 'Bungee', cursive;
+    font-size: 5vw;
+    text-align: center;
+    color: #DF3D82;
+    letter-spacing: 0.05em;
+    clear: both;
+}
+
+a {
+	font-family: 'Roboto Slab', serif;
+	text-decoration: none;
+	color: #9a1951;
+}
+
+form {
+	color: #DF3D82;
+	font-family: 'Roboto Slab', serif;
+	display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+body {
+    background-color: #191919;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.buttons {
+	text-align: center;
+	padding-top: 1.5%;
+}
+
+a.newuser {
+	font-family: 'Bungee', cursive;
+    font-size: 30px;
+    text-align: center;
+    color: #DF3D82;
+    letter-spacing: 0.05em;
+    text-decoration: none !important; 
+}
+
+a.newuser:hover {
+	color:#9a1951 ;
+}
+
+.tequilacroquet {
+    width: 60%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin: 0 auto; 
+}
