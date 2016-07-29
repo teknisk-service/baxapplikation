@@ -3,12 +3,47 @@
 
 /* mixins, variables, etc. */
 
+$accent-color: #DF3D82;
+$accent-hover: #9a1951;
 $gray-medium-light: #eaeaea;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
+}
+
+header nav {
+    display: inline-block;
+    float: right !important; 
+    font-size: 16px; 
+}
+
+a {
+  font-family: 'Roboto', sans-serif;
+    color: $accent-color !important; 
+}
+
+a:hover {
+   color: $accent-hover;
+}
+
+
+header {
+    text-align: justify;
+    letter-spacing: 1px;
+    height: 8em;
+    padding: 2em 10%;
+}
+
+.navbar {
+  background-color: black;
+}
+
+#logo {
+  vertical-align: top !important; 
+  height: 50px; 
+  width: auto; 
 }
 
 /* miscellaneous */
@@ -38,7 +73,7 @@ h1 {
     font-family: 'Bungee', cursive;
     font-size: 5vw;
     text-align: center;
-    color: #DF3D82;
+    color: $accent-color;
     letter-spacing: 0.05em;
     clear: both;
 }
@@ -46,11 +81,11 @@ h1 {
 a {
 	font-family: 'Roboto Slab', serif;
 	text-decoration: none;
-	color: #9a1951;
+	color: $accent-color;
 }
 
 form {
-	color: #DF3D82;
+	color: $accent-color;
 	font-family: 'Roboto Slab', serif;
 	display: inline-block;
     margin-left: auto;
@@ -61,11 +96,11 @@ form {
 body {
     background-color: #191919;
     margin: 0;
-    padding: 0;
     border: 0;
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    padding: 45px 0 0 0;
 }
 
 .buttons {
@@ -77,13 +112,13 @@ a.newuser {
 	font-family: 'Bungee', cursive;
     font-size: 30px;
     text-align: center;
-    color: #DF3D82;
+    color: $accent-color;
     letter-spacing: 0.05em;
     text-decoration: none !important; 
 }
 
 a.newuser:hover {
-	color:#9a1951 ;
+	color:$accent-hover;
 }
 
 .tequilacroquet {
