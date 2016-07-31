@@ -1,0 +1,10 @@
+<li>
+ <%= link_to product.name, product %> 
+ <br>
+ <%= product.price %> kr
+ <br>
+  <% if current_user.admin? %>
+    <%= link_to "delete", product, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+</li>
