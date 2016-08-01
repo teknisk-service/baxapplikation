@@ -3,6 +3,9 @@
  <br>
  <%= product.price %> kr
  <br>
+ <div class="buy-button">
+ 	<%= button_to "Köp", @product, :method => :buy %>
+ </div>
   <% if current_user.admin? %>
     <%= link_to "delete", product, method: :delete,
                                   data: { confirm: "You sure?" } %>

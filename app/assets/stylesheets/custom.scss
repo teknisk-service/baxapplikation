@@ -20,6 +20,9 @@ header nav {
     float: right !important; 
     font-size: 16px; 
     position: relative;
+    position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 a {
@@ -43,10 +46,8 @@ header {
   background-color: $menu-color;
 }
 
-.dropdown-toggle {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+.dropdown-menu {
+  background-color: $menu-color;
 }
 
 #logo {
