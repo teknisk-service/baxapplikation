@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'debts/new'
+
   get 'products/new'
 
   get 'sessions/new'

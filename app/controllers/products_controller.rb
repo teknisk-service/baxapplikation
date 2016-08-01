@@ -11,6 +11,10 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
   end
+
+  def buy
+    @debts = Debt.new
+  end
   
   def create
     @product = Product.new(product_params)
