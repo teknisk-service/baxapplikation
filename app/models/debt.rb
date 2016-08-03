@@ -1,3 +1,0 @@
-class Debt < ApplicationRecord
-	
-end
