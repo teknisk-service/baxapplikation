@@ -4,28 +4,28 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
   
-  def show
+   def show
     @product = Product.find(params[:id])
   end
+
 
   def new
     @product = Product.new
   end
-
-  def buy
-    @debts = Debt.new
-  end
   
-  def create
+def create
     @product = Product.new(product_params)
-
+ 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @product }
+        format.html { redirect_to(@product,
+          :notice => 'Product was successfully created.') }
+        format.xml  { render :xml => @product, :status => :created,
+          :location => @product }
       else
-        format.html { render action: 'new' }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @product.errors,
+          :status => :unprocessable_entity }
       end
     end
   end
@@ -48,8 +48,14 @@ class ProductsController < ApplicationController
   end
 end
 
-  private
+private
 
     def product_params
       params.require(:product).permit(:name, :price)
     end
+
+
+
+  
+
+

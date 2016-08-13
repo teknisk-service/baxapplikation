@@ -9,7 +9,9 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
-  has_many :debts
+  has_one :wallet, :dependent => :destroy
+   
+
 
   # Returns the hash digest of the given string.
   def User.digest(string)
@@ -39,4 +41,15 @@ class User < ApplicationRecord
   def forget
     update_attribute(:remember_digest, nil)
   end
+
+  def create_wallet
+    @wallet = Wallet.create
+    @user.wallet = wallet
+  end
+
+  def debt
+    @user.wallet.purchases.reduce { |sum, n| sum += n }
+  end
+
+
 end

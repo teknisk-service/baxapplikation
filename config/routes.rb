@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get 'debts/new'
+  resources :line_items
+  get 'wallets/show'
+
+  get 'wallets/total'
 
   get 'products/new'
 

@@ -4,7 +4,7 @@
  <%= product.price %> kr
  <br>
  <div class="buy-button">
- 	<%= button_to "Köp", @product, :method => :buy %>
+ 	<%= button_to 'Add to Wallet', line_items_path(line_item: {product_id: product}) %>
  </div>
   <% if current_user.admin? %>
     <%= link_to "delete", product, method: :delete,
