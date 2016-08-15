@@ -1,3 +1,22 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.profile .user {
+  text-align: center;
+  margin: 0 auto;
+  .gravatar {
+    margin: 0 auto;
+    width: 250px;
+    height: auto;
+
+  }
+}
+
+.users {
+  width: 100%;
+  .user {
+    width: 25%;
+    float: left;
+  }
+}

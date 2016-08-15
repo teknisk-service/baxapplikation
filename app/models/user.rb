@@ -45,4 +45,7 @@ class User < ApplicationRecord
     self.purchases.map { |p| p.product.price }.reduce(0, :+)
   end
 
+  def admin?
+    self.admin
+  end
 end
