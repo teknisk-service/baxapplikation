@@ -1,13 +1,20 @@
-<li>
- <%= link_to product.name, product %> 
- <br>
- <%= product.price %> kr
- <br>
- <div class="buy-button">
- 	<%= button_to 'Add to Wallet', line_items_path(line_item: {product_id: product}) %>
- </div>
+<li class="product">
+  <h1>
+    <%= link_to product.name, product %>
+  </h1>
+  <h2>
+    <%= product.price %> kr
+  </h2>
+
+  <%= form_for(@purchase) do |f| %>
+    <%= collection_select(:purchase, :product_id, Product.all, :id, :name) %>
+    <%= collection_select(:purchase, :user_id, User.all, :id, :name) %>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+
   <% if current_user.admin? %>
-    <%= link_to "delete", product, method: :delete,
-                                  data: { confirm: "You sure?" } %>
+    <%= link_to "delete", product, method: :delete, data: { confirm: "You sure?" } %>
   <% end %>
 </li>
