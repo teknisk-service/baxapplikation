@@ -1,11 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
 
 /* mixins, variables, etc. */
 
 $accent-color: #E53155;
 $accent-hover: #9a1951;
-$background-color: #282825;
+$background-color: #fff;
 $menu-color: #10100F;
 $gray-medium-light: #eaeaea;
 
@@ -15,19 +16,23 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
-header nav {
-    display: inline-block;
-    float: right !important; 
-    font-size: 16px; 
-    position: relative;
-    position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+body {
+    background-color: $background-color;
+    margin: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    padding: 5% 0 0 0;
+    font-size: 16px;
+    font-family: 'Roboto', serif;
+    font-weight: 400;
+    color: $accent-color;
 }
 
 a {
   font-family: 'Roboto', sans-serif;
-    color: $accent-color !important; 
+    color: $accent-color !important;
 }
 
 a:hover {
@@ -36,14 +41,33 @@ a:hover {
 
 
 header {
-    text-align: justify;
-    letter-spacing: 1px;
-    height: 3em;
-    padding: 2em 10%;
-}
-
-.navbar {
   background-color: $menu-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+
+  .menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    // width: 33.33%;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      margin-right: 1em;
+    }
+  }
+
+  li {
+    display: inline;
+  }
 }
 
 .dropdown-menu {
@@ -51,12 +75,9 @@ header {
 }
 
 #logo {
-  float: left; 
-  height: 3.5em; 
+  height: 2em;
   width: auto;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  padding-left: 1em;
 }
 
 /* miscellaneous */
@@ -92,33 +113,32 @@ h1 {
 }
 
 a {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Roboto', serif;
   text-decoration: none;
   color: $accent-color;
 }
 
 form {
   color: $accent-color;
-  font-family: 'Roboto Slab', serif;
-  font-weight: 400; 
+  font-family: 'Roboto', serif;
+  font-weight: 400;
   display: inline-block;
     margin-left: auto;
     margin-right: auto;
     text-align: left;
 }
 
-body {
-    background-color: $background-color;
-    margin: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    padding: 5% 0 0 0;
-    font-size: 16px; 
-    font-family: 'Roboto Slab', serif; 
-    font-weight: 400; 
-    color: $accent-color;
+
+main {
+  margin: 33px;
+}
+
+button, input[type="submit"] {
+  background-color: $accent-color;
+  color: black;
+  padding: .75em;
+  border: none;
+  border-radius: 6px;
 }
 
 .buttons {
@@ -132,7 +152,7 @@ a.newuser {
     text-align: center;
     color: $accent-color;
     letter-spacing: 0.05em;
-    text-decoration: none !important; 
+    text-decoration: none !important;
 }
 
 a.newuser:hover {
@@ -144,7 +164,7 @@ a.newuser:hover {
     height: auto;
     display: block;
     margin-left: auto;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 /* sidebar */
@@ -176,8 +196,9 @@ aside {
 }
 
 .gravatar {
-  float: left;
-  margin-right: 10px;
+  border-radius: 50%;
+//   float: left;
+//   margin-right: 10px;
 }
 
 .gravatar_edit {
@@ -187,12 +208,12 @@ aside {
 /* forms */
 
 form {
-  align-content: center; 
+  align-content: center;
 }
 
 label {
-  font-size: 16px; 
-    font-family: 'Roboto Slab', serif; 
+  font-size: 16px;
+  font-family: 'Roboto', serif;
 }
 
 input, textarea, select, .uneditable-input {
@@ -257,6 +278,7 @@ p {
     overflow: auto;
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
+    text-align: center;
   }
 }
 
@@ -270,4 +292,21 @@ p {
   }
 }
 
+.alert-notice {
+  width: 90%;
+  background: $accent-color;
+  color: black;
+  text-align: center;
+  padding: 1em;
+  // position: absolute;
+  margin: 3em auto;
+}
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+main {
+  margin-top: 5em;
+}
