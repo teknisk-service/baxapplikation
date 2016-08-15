@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  resources :line_items
-  get 'wallets/show'
 
-  get 'wallets/total'
-
-  get 'products/new'
+  resources :purchases
+  resources :users
+  resources :products
 
   get 'sessions/new'
 
