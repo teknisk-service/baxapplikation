@@ -49,6 +49,7 @@ GEM
       will_paginate
     builder (3.2.2)
     byebug (9.0.5)
+    coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -93,6 +94,12 @@ GEM
       pkg-config (~> 1.1.7)
     pg (0.18.4)
     pkg-config (1.1.7)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
     puma (3.6.0)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -135,6 +142,7 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    slop (3.6.0)
     spring (1.7.2)
     spring-watcher-listen (2.0.0)
       listen (>= 2.7, < 4.0)
@@ -180,6 +188,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   pg (~> 0.18)
+  pry-rails
   puma (~> 3.0)
   rails (~> 5.0.0)
   rails-controller-testing
@@ -191,6 +200,9 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   web-console
   will_paginate (= 3.1.0)
+
+RUBY VERSION
+   ruby 2.3.0p0
 
 BUNDLED WITH
    1.12.5
