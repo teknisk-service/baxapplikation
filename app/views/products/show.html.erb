@@ -1,6 +1,13 @@
-<% provide(:title, @product.name) %>
-      <h1>
-        <%= @product.name %>
-        <%= @product.price %>
-      </h1>
-  
+<div class="product">
+  <h1>
+    <%= @product.name %>
+  </h1>
+  <h2>
+    <%= @product.price %> kr
+  </h2>
+
+  <% if current_user.admin? %>
+    <%= button_to "edit", edit_product_path(id: @product.id), method: :get %>
+    <%= button_to "delete", @product, method: :delete, data: { confirm: "You sure?" } %>
+  <% end %>
+</div>
