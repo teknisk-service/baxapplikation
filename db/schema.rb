@@ -15,6 +15,22 @@ ActiveRecord::Schema.define(version: 20160815200927) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "line_items", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "cart_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "microposts", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at", using: :btree
+    t.index ["user_id"], name: "index_microposts_on_user_id", using: :btree
+  end
+
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.integer  "price"
@@ -40,4 +56,5 @@ ActiveRecord::Schema.define(version: 20160815200927) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
+  add_foreign_key "microposts", "users"
 end
