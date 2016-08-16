@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
   resources :purchases
-  resources :users
+  resources :users do
+    member do
+      get '/purchases', to: 'users#purchases'
+    end
+  end
   resources :products
 
   get 'sessions/new'
