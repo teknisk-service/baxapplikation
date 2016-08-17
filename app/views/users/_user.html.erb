@@ -6,4 +6,8 @@
   <h4>
     <%= user.debt %> pix
   </h4>
+    Skuld: <%= user.debt %>
+  <% if current_user.admin? %>
+    <%= button_to "edit" %>
+  <% end %>
 </li>

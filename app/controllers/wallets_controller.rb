@@ -17,5 +17,7 @@ class WalletsController < ApplicationController
   def total
   	products.sum(&:price)
   end
+
+  
   
 end
