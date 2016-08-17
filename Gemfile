@@ -7,7 +7,6 @@ gem 'bcrypt', '3.1.11'
 gem 'rails-controller-testing'
 gem 'will_paginate', '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
-gem 'faker', '1.6.3'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
@@ -51,6 +50,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Seed data
+  gem 'faker', '>= 1.6.6'
+  gem 'fabrication'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
