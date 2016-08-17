@@ -48,4 +48,8 @@ class User < ApplicationRecord
   def admin?
     self.admin
   end
+
+  def purchases
+    Purchase.all.select { |purchase| purchase.user.id == self.id }
+  end
 end
