@@ -123,12 +123,8 @@ form {
   color: $accent-color;
   font-family: 'Roboto', serif;
   font-weight: 400;
-  display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
+  margin: 0 auto;
 }
-
 
 main {
   margin: 33px;
@@ -276,7 +272,6 @@ p {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
     text-align: center;
   }
 }
@@ -301,7 +296,7 @@ p {
   margin: 3em auto;
 }
 
-ul {
+li {
   list-style-type: none;
   padding: 0;
 }
