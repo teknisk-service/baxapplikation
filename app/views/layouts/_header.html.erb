@@ -4,10 +4,13 @@
   <% end %>
   <nav class="menu">
     <span>
-      <%= link_to "Strecka", products_path %>
+      <%= link_to "Strecka", new_purchase_path %>
     </span>
     <span>
-      <%= link_to "Mina streck", purchases_path(current_user)%>
+      <%= link_to "Mina streck", purchases_user_path %>
+    </span>
+    <span>
+      <%= link_to "Produkter", products_path %>
     </span>
     <span>
       <%= link_to "Topplistan", users_path %>
