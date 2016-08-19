@@ -15,8 +15,18 @@
 
 .users {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   .user {
-    width: 25%;
-    float: left;
+    flex: 0 0 100%;
+    @media (min-width: 40em) {
+      flex: 0 0 50%;
+    }
+    @media (min-width: 55em) {
+      flex: 0 0 33.333%;
+    }
+    @media (min-width: 75em) {
+      flex: 0 0 25%;
+    }
   }
 }
