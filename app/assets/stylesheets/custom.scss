@@ -65,6 +65,7 @@ header {
     }
   }
 
+
   li {
     display: inline;
   }
@@ -105,7 +106,7 @@ input {
 
 h1 {
     font-family: 'Bungee', cursive;
-    font-size: 5vw;
+    font-size: 6vw;
     text-align: center;
     color: $accent-color;
     letter-spacing: 0.05em;
@@ -316,4 +317,32 @@ img {
 
 section {
   text-align: center;
+}
+
+@media only screen and (min-width: 750px) {
+.mobile-only {
+  display: none;
+  }
+}
+
+  @media only screen and (max-width: 750px) {
+    .menu {
+      font-size: 4vw;
+    }
+    .tequilacroquet {
+      display: none; 
+    }
+    h1 {
+      font-size: 35px; 
+      text-align: center; 
+    }
+  }
+
+.mobile-only {
+  padding-top: 3%; 
+  text-align: center; 
+  font-size: 7vw;
+}
+
+.mobile-only-inner {
 }
