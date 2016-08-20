@@ -6,10 +6,16 @@ table.purchases {
   width: 100%;
 
   tbody tr:nth-child(odd) {
-    background: #eee;
+    background: lighten($background-color, 5%);
   }
 
   th, td {
     padding: 1em;
+  }
+}
+
+.purchases form {
+  select {
+    height: 3em;
   }
 }
