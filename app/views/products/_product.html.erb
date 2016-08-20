@@ -1,14 +1,14 @@
 <li class="product">
-  <h1>
+  <h3>
     <%= link_to product.name, product %>
-  </h1>
-  <h2>
+  </h3>
+  <h5>
     <%= product.price %> kr
-  </h2>
+  </h5>
 
   <%= form_for(@purchase) do |f| %>
-    <%= collection_select(:purchase, :product_id, Product.all, :id, :name) %>
-    <%= collection_select(:purchase, :user_id, User.all, :id, :name) %>
+    <%= collection_select(:purchase, :product_id, Product.all.sort_by(&:name), :id, :name) %>
+    <%= collection_select(:purchase, :user_id, User.all.sort_by(&:name), :id, :name) %>
     <div class="actions">
       <%= f.submit "Strecka" %>
     </div>
