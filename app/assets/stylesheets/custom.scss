@@ -318,6 +318,15 @@ section {
 .mobile-only {
   display: none;
   }
+  .whip {
+    display: none; 
+  }
+}
+
+.whip {
+  width: 100%;
+  height: auto;
+  max-width: 900px;
 }
 
   @media only screen and (max-width: 750px) {
@@ -328,6 +337,9 @@ section {
     h1 {
       font-size: 35px; 
       text-align: center; 
+    }
+    .tequilacroquet {
+      display: none; 
     }
   }
 
@@ -341,8 +353,3 @@ section {
   padding-top: 2%; 
 }
 
-@media only screen and (max-width: 750px) {
-  .piska-logo {
-    display: none; 
-  }
-}
