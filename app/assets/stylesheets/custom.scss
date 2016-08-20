@@ -340,3 +340,7 @@ section {
 .actions {
   padding-top: 2%; 
 }
+
+@media only screen and (max-width: 750px) {
+  max-width: 100%; 
+}
