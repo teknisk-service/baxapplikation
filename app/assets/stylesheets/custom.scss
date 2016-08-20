@@ -266,17 +266,6 @@ p {
   color: $accent-color;
 }
 
-
-.products {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
-  }
-}
-
 .alert-notice {
   width: 90%;
   background: $accent-color;
@@ -306,32 +295,31 @@ section {
 }
 
 @media only screen and (min-width: 750px) {
-.mobile-only {
-  display: none;
+  .mobile-only {
+    display: none;
   }
 }
 
-  @media only screen and (max-width: 750px) {
-    .menu {
-      font-size: 4vw;
-    }
-    
-    h1 {
-      font-size: 35px; 
-      text-align: center; 
-    }
+@media only screen and (max-width: 750px) {
+  .menu {
+    font-size: 4vw;
   }
+  h1 {
+    font-size: 35px;
+    text-align: center;
+  }
+}
 
 .mobile-only {
-  padding-top: 3%; 
-  text-align: center; 
+  padding-top: 3%;
+  text-align: center;
   font-size: 7vw;
 }
 
 .actions {
-  padding-top: 2%; 
+  padding-top: 2%;
 }
 
 @media only screen and (max-width: 750px) {
-  max-width: 100%; 
+  max-width: 100%;
 }
