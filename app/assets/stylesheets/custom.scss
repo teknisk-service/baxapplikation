@@ -342,5 +342,7 @@ section {
 }
 
 @media only screen and (max-width: 750px) {
-  max-width: 100%; 
+  .piska-logo {
+    display: none; 
+  }
 }
