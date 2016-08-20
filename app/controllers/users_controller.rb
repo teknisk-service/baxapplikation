@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :correct_user, :purchases]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :authorize, :purchases]
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
-  before_action :correct_user,   only: [:edit, :update]
+  before_action :authorize, only: [:edit, :update, :purchases]
 
   def index
     @users = User.all.sort_by { |user| user.debt }.reverse
@@ -26,9 +26,11 @@ class UsersController < ApplicationController
   end
 
   def edit
+    head :forbidden unless authorize
   end
 
   def update
+    head :forbidden unless authorize
     if @user.update(user_params)
       flash[:success] = "Profile updated"
       redirect_to @user
@@ -44,8 +46,13 @@ class UsersController < ApplicationController
   end
 
   def purchases
-    @purchases = @user.purchases
-    render 'purchases'
+    if authorize
+      @purchases = @user.purchases
+      render 'purchases'
+    else
+      flash[:notice] = "Det där får du inte se!"
+      redirect_to root_path
+    end
   end
 
   private
@@ -67,8 +74,7 @@ class UsersController < ApplicationController
       end
     end
 
-    def correct_user
-      redirect_to(root_url) unless current_user?(@user)
+    def authorize
+      current_user?(@user) || current_user.admin?
     end
 end
-
