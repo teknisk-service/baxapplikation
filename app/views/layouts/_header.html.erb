@@ -4,8 +4,10 @@
   <% end %>
   <nav class="menu">
     <span>
+    <% if logged_in? %>
       <%= link_to "Strecka", new_purchase_path %>
     </span>
+    <% end %>
     <% if logged_in? %>
       <span>
         <%= link_to "Mina streck", purchases_user_path(id: current_user.id) %>
