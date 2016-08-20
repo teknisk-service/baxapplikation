@@ -28,6 +28,9 @@ body {
     font-family: 'Roboto', serif;
     font-weight: 400;
     color: $accent-color;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 a {
@@ -84,8 +87,6 @@ header {
 /* miscellaneous */
 
 .debug_dump {
-  clear: both;
-  float: left;
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
@@ -128,6 +129,7 @@ form {
 
 main {
   margin: 33px;
+  flex: 1;
 }
 
 button, input[type="submit"] {
