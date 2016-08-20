@@ -30,7 +30,7 @@ class PurchasesController < ApplicationController
     respond_to do |format|
       if @purchase.save
         flash[:notice] = "Streck check!"
-        format.html { redirect_to :controller => 'products', notice: 'Purchase was successfully created.' }
+        format.html { redirect_to :controller => 'purchases', :action => 'new', notice: 'Purchase was successfully created.' }
         format.json { render :show, status: :created, location: @purchase }
       else
         format.html { render :new }
