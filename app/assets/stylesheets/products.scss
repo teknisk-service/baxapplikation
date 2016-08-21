@@ -3,15 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 ul.products {
-  li {
-    margin: 1em auto;
+  display: flex;
+  flex-wrap: wrap;
+  .product {
     text-align: center;
-    width: 50%;
-    display: block;
-    float: left;
+    flex: 0 0 100%;
+    padding: 1em;
+    @media (min-width: 40em) {
+      flex: 0 0 50%;
+    }
+    @media (min-width: 70em) {
+      flex: 0 0 33.333%;
+    }
+    @media (min-width: 95em) {
+      flex: 0 0 25%;
+    }
   }
-}
-
-.product {
-  text-align: center;
 }

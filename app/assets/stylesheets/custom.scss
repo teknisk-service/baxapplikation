@@ -28,6 +28,9 @@ body {
     font-family: 'Roboto', serif;
     font-weight: 400;
     color: $accent-color;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 a {
@@ -42,26 +45,26 @@ a:hover {
 
 header {
   background-color: $menu-color;
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 3em;
+  height: 100%;
   display: flex;
+  padding: 1em;
   align-items: center;
-  // justify-content: center;
+  justify-content: center;
 
   .menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    // width: 33.33%;
-    height: 3em;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     span {
-      margin-right: 1em;
+      margin: 0 1em;
+    }
+    #logo {
+      margin-right: 2em;
     }
   }
 
@@ -84,8 +87,6 @@ header {
 /* miscellaneous */
 
 .debug_dump {
-  clear: both;
-  float: left;
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
@@ -128,6 +129,7 @@ form {
 
 main {
   margin: 33px;
+  flex: 1;
 }
 
 button, input[type="submit"] {
@@ -188,16 +190,6 @@ aside {
       margin-top: 0px;
     }
   }
-}
-
-.gravatar {
-  border-radius: 50%;
-//   float: left;
-//   margin-right: 10px;
-}
-
-.gravatar_edit {
-  margin-top: 15px;
 }
 
 /* forms */
@@ -264,28 +256,6 @@ p {
   color: $accent-color;
 }
 
-/* Users index */
-
-.users {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    text-align: center;
-  }
-}
-
-.products {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
-  }
-}
-
 .alert-notice {
   width: 90%;
   background: $accent-color;
@@ -315,11 +285,11 @@ section {
 }
 
 @media only screen and (min-width: 750px) {
-.mobile-only {
-  display: none;
+  .mobile-only {
+    display: none;
   }
   .whip {
-    display: none; 
+    display: none;
   }
 }
 
@@ -329,27 +299,26 @@ section {
   max-width: 900px;
 }
 
-  @media only screen and (max-width: 750px) {
-    .menu {
-      font-size: 4vw;
-    }
-    
-    h1 {
-      font-size: 35px; 
-      text-align: center; 
-    }
-    .tequilacroquet {
-      display: none; 
-    }
+@media only screen and (max-width: 750px) {
+  .menu {
+    font-size: 4vw;
   }
 
+  h1 {
+    font-size: 35px;
+    text-align: center;
+  }
+  .tequilacroquet {
+    display: none;
+  }
+}
+
 .mobile-only {
-  padding-top: 3%; 
-  text-align: center; 
+  padding-top: 3%;
+  text-align: center;
   font-size: 7vw;
 }
 
 .actions {
-  padding-top: 2%; 
+  padding-top: 2%;
 }
-
