@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.gravatar {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
 .profile .user {
   text-align: center;
   margin: 0 auto;
@@ -9,7 +19,6 @@
     margin: 0 auto;
     width: 250px;
     height: auto;
-
   }
 }
 
