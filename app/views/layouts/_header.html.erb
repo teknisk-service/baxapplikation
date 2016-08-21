@@ -1,24 +1,18 @@
-<header class="">
-  <%= link_to root_url do %>
-  <div class="piska-logo">
-    <%= image_tag "piska.png", id: "logo" %>
-    </div>
-  <% end %>
+<header>
   <nav class="menu">
-    <span>
-    <% if logged_in? %>
-      <%= link_to "Strecka", new_purchase_path %>
-    </span>
+    <%= link_to root_url do %>
+      <%= image_tag "piska.png", id: "logo" %>
     <% end %>
     <% if logged_in? %>
       <span>
+        <%= link_to "Strecka", new_purchase_path %>
+      </span>
+      <span>
         <%= link_to "Mina streck", purchases_user_path(id: current_user.id) %>
       </span>
-    <% end %>
-    <span>
-      <%= link_to "Topplistan", users_path %>
-    </span>
-    <% if logged_in? %>
+      <span>
+        <%= link_to "Topplistan", users_path %>
+      </span>
       <span class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           Användare <b class="caret"></b>
@@ -33,7 +27,7 @@
         </ul>
       </span>
     <% else %>
-      <span><%= link_to "Logga in", login_path %></span>>
+      <span><%= link_to "Logga in", login_path %></span>
     <% end %>
   </nav>
 </header>

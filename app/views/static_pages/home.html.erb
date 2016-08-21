@@ -1,5 +1,17 @@
 <h1>Drifveriets brutala baxapp</h1>
 <%= image_tag("tequilacroquet.jpg", :class => "tequilacroquet") %>
+<div class="mobile-only">
+	<div id="buttons-home">
+	<% if logged_in? %>
+      <span>
+        <%= link_to "Strecka", new_purchase_path %>
+      </span>
+      <span>
+        <%= link_to "Mina streck", purchases_user_path(id: current_user.id) %>
+      </span>
+      <span>
+      <% end %>
+</div>
 
 
 	

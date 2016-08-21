@@ -23,8 +23,9 @@
     <link href='https://fonts.googleapis.com/css?family=Bungee' rel='stylesheet' type='text/css'>
     <main>
       <%= yield %>
-      <%= debug(params) if Rails.env.development? %>
     </main>
+    <%= debug(params) if Rails.env.development? %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
 
