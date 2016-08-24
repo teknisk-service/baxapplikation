@@ -127,8 +127,14 @@ form {
   margin: 0 auto;
 }
 
+@media only screen and (max-width: 750px) {
+  main {
+    margin: 15% auto; 
+  }
+}
+
 main {
-  margin: 33px;
+  //margin: 33px;
   flex: 1;
 }
 
@@ -271,9 +277,9 @@ p {
   background: $accent-color;
   color: black;
   text-align: center;
-  padding: 1em;
+  //padding: 1em;
   // position: absolute;
-  margin: 3em auto;
+  margin: 0 auto;
 }
 
 li {
@@ -282,7 +288,7 @@ li {
 }
 
 main {
-  margin-top: 5em;
+  //margin-top: 5em;
 }
 
 img {
@@ -329,5 +335,6 @@ section {
 .actions {
   padding-top: 2%;
 }
+
 
 }
