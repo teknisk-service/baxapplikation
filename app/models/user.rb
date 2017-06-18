@@ -52,8 +52,4 @@ class User < ApplicationRecord
   def purchases
     Purchase.all.select { |purchase| purchase.user.id == self.id }
   end
-
-  def purchases_grouped 
-    @purchases_grouped = Purchase.all.select {|purchase| purchase.user.id == self.id}.group(purchase.product.id)
-  end
 end

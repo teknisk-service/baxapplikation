@@ -16,21 +16,4 @@
       <% end %>
     </tbody>
   </table>
-
-  <table class="purchases">
-    <thead>
-      <tr>
-        <th>Product</th>
-        <th>Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @user.purchases_grouped.each do |purchase| %>
-        <tr>
-          <td><%= purchase.product.name %></td>
-          <td><%= purchase.product.price %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
 </div>

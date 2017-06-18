@@ -3,7 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 table.purchases {
-  width: 100%;
+  width: 50%;
+  margin-left: auto; 
+  margin-right: auto; 
 
   tbody tr:nth-child(odd) {
     background: lighten($background-color, 5%);

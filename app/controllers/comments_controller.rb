@@ -13,7 +13,6 @@ class CommentsController < ApplicationController
   	 def create
        @comment = Comment.new(comment_params)
        if @comment.save! 
-       		flash[:sucess] = "Produktönskan tillagd"
        		redirect_to :controller => 'comments', :action => 'index'
        	else
        		render 'new'
