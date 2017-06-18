@@ -4,4 +4,21 @@
     <%= render 'form', comment: @comment %>
   </div>
 </div>
-<%= render @comments %>
+<table class="purchases">
+	<thead>
+		<tr>
+			<th>Produkt</th>
+			<th>Önskad av</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @comments.each do |c| %>
+			<tr>
+				<td><%= c.comment %></td>
+				<td><%= c.user.name%></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+<br>
