@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sum: 1
+  description: MyString
+  mammerist: MyString
+
+two:
+  sum: 1
+  description: MyString
+  mammerist: MyString
