@@ -40,9 +40,8 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
-
   def debt
-    self.purchases.map { |p| p.product.price }.reduce(0, :+)
+    Purchase.where(user: self).includes(:product).sum(:price)
   end
 
   def admin?
@@ -50,7 +49,7 @@ class User < ApplicationRecord
   end
 
   def purchases
-    Purchase.all.select { |purchase| purchase.user.id == self.id }
+    Purchase.where(user: self)
   end
 
   def purchases_grouped

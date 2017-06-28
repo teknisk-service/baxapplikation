@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :authorize, only: [:edit, :update, :purchases]
 
   def index
-    @users = User.all.sort_by { |user| user.debt }.reverse
+    @users = User.all.sort_by(&:debt).reverse
   end
 
   def show
