@@ -52,4 +52,8 @@ class User < ApplicationRecord
   def purchases
     Purchase.all.select { |purchase| purchase.user.id == self.id }
   end
+
+  def purchases_grouped
+    Purchase.where(user_id: self.id).group(:product_id).count
+  end
 end

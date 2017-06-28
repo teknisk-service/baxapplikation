@@ -55,6 +55,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def purchases_grouped
+    @purchases_grouped = @user.purchases_grouped
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
