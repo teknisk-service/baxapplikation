@@ -53,6 +53,6 @@ class User < ApplicationRecord
   end
 
   def purchases_grouped
-    Purchase.where(user_id: self.id).group(:product_id).count
+    purchases.group_by(&:product).to_h
   end
 end

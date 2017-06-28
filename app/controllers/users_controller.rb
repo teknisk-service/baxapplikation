@@ -48,6 +48,7 @@ class UsersController < ApplicationController
   def purchases
     if authorize
       @purchases = @user.purchases
+      purchases_grouped
       render 'purchases'
     else
       flash[:notice] = "Det där får du inte se!"
