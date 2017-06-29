@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :authorize, only: [:edit, :update, :purchases]
 
   def index
-    @users = User.all.sort_by { |user| user.debt }.reverse
+    @users = User.all.sort_by(&:debt).reverse
   end
 
   def show
@@ -48,11 +48,16 @@ class UsersController < ApplicationController
   def purchases
     if authorize
       @purchases = @user.purchases
+      purchases_grouped
       render 'purchases'
     else
       flash[:notice] = "Det där får du inte se!"
       redirect_to root_path
     end
+  end
+
+  def purchases_grouped
+    @purchases_grouped = @user.purchases_grouped
   end
 
   private

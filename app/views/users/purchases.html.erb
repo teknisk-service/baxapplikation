@@ -5,13 +5,15 @@
       <tr>
         <th>Product</th>
         <th>Price</th>
+        <th>Times purchased</th>
       </tr>
     </thead>
     <tbody>
-      <% @purchases.each do |purchase| %>
+      <% @purchases_grouped.each do |product, purchases| %>
         <tr>
-          <td><%= purchase.product.name %></td>
-          <td><%= purchase.product.price %></td>
+          <td><%= product.name %></td>
+          <td><%= product.price %></td>
+          <td><%= purchases.size %></td>
         </tr>
       <% end %>
     </tbody>
