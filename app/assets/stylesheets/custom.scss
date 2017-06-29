@@ -116,6 +116,16 @@ h1 {
     clear: both;
 }
 
+h2 {
+    font-family: 'Patua One', cursive;
+    font-style: bold; 
+    font-size: 3.5vw;
+    text-align: center;
+    color: $accent-color;
+    letter-spacing: 0.05em;
+    clear: both;
+}
+
 a {
   font-family: 'Roboto', serif;
   text-decoration: none;

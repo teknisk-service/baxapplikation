@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   has_many :purchases
+  has_many :payments
 
   # Returns the hash digest of the given string.
   def User.digest(string)
@@ -44,6 +45,14 @@ class User < ApplicationRecord
     Purchase.where(user: self).includes(:product).sum(:price)
   end
 
+  def payed
+    Payment.where(user: self).sum(:amount)
+  end
+
+  def total
+    debt-payed
+  end
+
   def admin?
     self.admin
   end
@@ -54,5 +63,9 @@ class User < ApplicationRecord
 
   def purchases_grouped
     purchases.group_by(&:product).to_h
+  end
+
+  def payments
+    Payment.where(user: self)
   end
 end

@@ -1,0 +1,22 @@
+<div class="betala-form">
+<%= form_for(payment) do |f| %>
+  <% if payment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
+
+      <ul>
+      <% payment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= collection_select(:payment, :user_id, User.all.sort_by(&:name), :id, :name, {selected: current_user.id}) %>
+  <%= f.label :summa %>
+  <%= f.number_field :amount, class: 'form-control' %>
+  <div class="actions">
+    <%= f.submit "Betala" %>
+  </div>
+<% end %>
+</div>

@@ -4,6 +4,12 @@
     <%= link_to user.name, user %>
   </h2>
   <h4>
-    <%= user.debt %> pix
+    Streckat för: <%= user.debt %> pix
   </h4>
+  <h4>
+    Total skuld: <%= user.total %> pix
+  </h4>
+  <h4>
+  <%= link_to "Betala", new_payment_path %>
+  <h4>
 </li>

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :products
   resources :admin_panel
   resources :comments 
+  resources :payments
 
   get 'sessions/new'
 
