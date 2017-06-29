@@ -1,3 +1,7 @@
 class Shopping < ApplicationRecord
-	has_many: products
+	validates :sum, presence: true
+  	validates :description, presence: true
+  	validates :mammerist, presence: true
+
+	has_many :products
 end
