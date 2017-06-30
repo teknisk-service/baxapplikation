@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :admin_panel
   resources :comments 
   resources :payments
+  resources :order_items
+  resources :shoppings
 
   get 'sessions/new'
 
