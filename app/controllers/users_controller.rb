@@ -60,6 +60,12 @@ class UsersController < ApplicationController
     @purchases_grouped = @user.purchases_grouped
   end
 
+  def set_admin
+    @user = User.find(params[:id])
+    @user.update_attribute :admin, true
+    flash[:success] = "Användaren är nu admin"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

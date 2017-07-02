@@ -32,3 +32,16 @@
     }
   }
 }
+
+.admin {
+  button, input[type="submit"] {
+    background-color: $accent-color;
+    color: black;
+    padding: .75em;
+    border: none;
+    border-radius: 6px;
+    width: 25%; 
+    float: center !important; 
+  }
+
+}

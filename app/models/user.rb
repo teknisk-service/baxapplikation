@@ -68,4 +68,8 @@ class User < ApplicationRecord
   def payments
     Payment.where(user: self)
   end
+
+  def set_admin
+    update_attribute(:admin, true)
+  end
 end
