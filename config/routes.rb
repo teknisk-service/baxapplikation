@@ -8,11 +8,9 @@ Rails.application.routes.draw do
     end
   end
   resources :products
-  resources :admin_panel
   resources :comments 
   resources :payments
-  resources :order_items
-  resources :shoppings
+  resources :inventories
 
   get 'sessions/new'
 
