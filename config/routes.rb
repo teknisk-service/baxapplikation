@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :comments 
   resources :payments
   resources :inventories
+  resources :carts
 
   get 'sessions/new'
 
