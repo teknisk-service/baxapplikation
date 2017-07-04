@@ -1,0 +1,35 @@
+<h1>Nytt inköp</h1>
+<%= form_for(@cart) do |f| %>
+  <% if @cart.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cart.errors.count, "error") %> prohibited this cart from being saved:</h2>
+
+      <ul>
+      <% @cart.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :datum %><br>
+    <%= f.date_select(:date, :order => [:day, :month, :year]) %>
+    <%= f.label :mammerist %>
+    <%= f.text_field :mammerist %>
+
+  </div>
+
+  <%= fields_for(@cart_item) do |cp| %>
+    <div class="field">
+      <%= cp.label "Alla produkter" %><br/>
+      <%= collection_select(:products, :id, @all_products, :id, :name, {}, {:multiple => true}) %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
