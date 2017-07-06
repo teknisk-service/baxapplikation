@@ -1,0 +1,7 @@
+<h1>Inköp</h1>
+<% for cart in @carts %>
+	<%= cart.date %>
+	<% for cart_items in cart.cart_items %>
+		<%= cart_item.id %>
+	<% end %>
+<% end %>

@@ -1,14 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<p><strong>Produkter:</strong>
-  <ol>
-  <% @cart_item.each do |cp| %>
-     <li><%= cp.product.name %></li>
-  <% end %>
-  </ol>
-</p>
-
-<hr>
-
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+<%= @cart.date %>
+<% for cart_item in @cart.cart_items %>
+<%= cart_item.product_id %>
+<% end %> 
