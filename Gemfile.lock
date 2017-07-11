@@ -49,6 +49,7 @@ GEM
       will_paginate
     builder (3.2.2)
     byebug (9.0.5)
+    cocoon (1.2.10)
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -186,6 +187,7 @@ DEPENDENCIES
   bootstrap-sass (= 3.3.6)
   bootstrap-will_paginate (= 0.0.10)
   byebug
+  cocoon
   coffee-rails (~> 4.2)
   fabrication
   faker (>= 1.6.6)
@@ -209,7 +211,7 @@ DEPENDENCIES
   will_paginate (= 3.1.0)
 
 RUBY VERSION
-   ruby 2.3.0p0
+   ruby 2.3.1p112
 
 BUNDLED WITH
-   1.12.5
+   1.14.6

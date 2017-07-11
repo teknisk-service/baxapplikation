@@ -45,6 +45,8 @@ group :development, :test do
   gem "pry-rails", "~> 0.3.2"
 end
 
+gem "cocoon"
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
