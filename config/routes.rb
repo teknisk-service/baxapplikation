@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :orders
   resources :purchases
   resources :users do
     member do
@@ -10,8 +11,8 @@ Rails.application.routes.draw do
   resources :products
   resources :comments 
   resources :payments
-  resources :inventories
-  resources :carts
+  resources :orders
+
 
   get 'sessions/new'
 
@@ -21,5 +22,6 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+
 
 end

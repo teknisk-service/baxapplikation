@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  date: 2017-07-03 23:00:53
-  payed: false
+  total: 9.99
+  date: 2017-07-11
   mammerist: MyString
 
 two:
-  date: 2017-07-03 23:00:53
-  payed: false
+  total: 9.99
+  date: 2017-07-11
   mammerist: MyString
