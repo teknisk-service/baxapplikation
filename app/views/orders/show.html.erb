@@ -15,5 +15,22 @@
   <%= @order.mammerist %>
 </p>
 
+<strong>Produkter</strong>
+<table class="products">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @order.order_items.each do |oi| %>
+        <tr>
+          <td><%= oi.product_id %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

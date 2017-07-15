@@ -5,9 +5,6 @@
   <h2>
     <%= @product.price %> kr
   </h2>
-  <h2>
-  <%= button_to "Add #{product.name} to cart", cart_items_path(:product_id => product.id) %>
-  </h2>
 
   <% if current_user.admin? %>
     <%= button_to "edit", edit_product_path(id: @product.id), method: :get %>

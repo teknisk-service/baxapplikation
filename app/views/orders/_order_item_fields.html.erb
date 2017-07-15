@@ -1,7 +1,10 @@
-<tr class="nested-fields">
-  <td>
-    <%= link_to_remove_association "Ta bort produkt", f, class: 'btn btn-primary btn-xs' %>
-  </td>
-  <td><%= f.input :quantity, label: false %></td>
-  <td><%= f.input :product_id, label: false %></td>
-</tr>
+<div class="nested-fields">
+  <%= f.label :product_id %>
+  <!--TODO: FIX -->
+  <%= collection_select(:order_item, :product_id, Product.all.sort_by(&:name), :id, 
+      	  :name) %>
+  <%= f.label :antal %>
+  <%= f.number_field :quantity %>
+
+  <%= link_to_remove_association "remove item", f %>
+</div>

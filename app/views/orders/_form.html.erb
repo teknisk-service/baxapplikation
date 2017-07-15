@@ -1,33 +1,25 @@
-<%= simple_form_for(@order) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.date_field :date, as: :date, value: f.object.try(:strftime,"%d/%m/%Y"), class: 'form-control' %>
+<%= form_for @order do |f| %>
+  <div>
+    <%= f.label :date %> <%= f.date_select(:date, :order => [:day, :month, :year]) %>
     <%= f.label :mammerist %>
     <%= f.text_field :mammerist, class: 'form-control' %>
     <%= f.label :total %>
     <%= f.number_field :total, class: 'form-control' %>
   </div>
-  <h2>Produkter</h2>
 
-  <table class='table'>
-    <thead>
-      <tr>
-        <th></th>
-        <th>Produkt-ID</th>
-        <th>Antal</th>
-      </tr>
-    </thead>
-    <tbody class='tasks'>
-      <%= f.simple_fields_for :order_items do |builder| %>
-        <%= render 'order_item_fields', f: builder %>
+  <div>
+    <p><strong>Produkter:</strong></p>
+
+    <div id="addresses">
+      <%= f.fields_for :order_items do |p| %>
+        <%= render 'order_item_fields', f: p %>
       <% end %>
-    </tbody>
 
-  </table>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-    <%= link_to_add_association 'Lägg till inköp', f, :order_items, class: 'btn btn-primary', data: { association_insertion_node: '.order_items', association_insertion_method: :append } %>
+      <div class="links">
+        <%= link_to_add_association 'add item', f, :order_items %>
+      </div>
+    </div>
   </div>
+
+  <%= f.submit %>
 <% end %>
