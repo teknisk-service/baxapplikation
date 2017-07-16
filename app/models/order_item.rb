@@ -1,9 +1,8 @@
 class OrderItem < ApplicationRecord
-  belongs_to :order, optional: true 
-  belongs_to :product, optional: true
+  belongs_to :order
+  belongs_to :product
 
-  validates :product_id, presence: true
-  validates :order_id, presence: true, allow_nil: true
+  accepts_nested_attributes_for :product, :reject_if => :all_blank
 
   def products
   	@products = Product.all

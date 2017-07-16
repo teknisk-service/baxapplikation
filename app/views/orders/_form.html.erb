@@ -1,4 +1,4 @@
-<%= form_for @order do |f| %>
+<%= simple_form_for @order do |f| %>
  <% if @order.errors.any? %>
             <div id="errorExplanation">
 
@@ -12,27 +12,23 @@
             </div>
   <% end %>
   <div>
-    <%= f.label :date %> <%= f.date_select(:date, :order => [:day, :month, :year]) %>
-    <%= f.label :mammerist %>
+    <%= f.date_select(:date, :order => [:day, :month, :year]) %>
     <%= f.text_field :mammerist, class: 'form-control' %>
-    <%= f.label :total %>
     <%= f.number_field :total, class: 'form-control' %>
-    <%= f.hidden_field :order_id, :value => @order.id %>
   </div>
 
   <div>
     <p><strong>Produkter:</strong></p>
 
-    <div id="addresses">
-      <%= f.fields_for :order_items do |p| %>
-        <%= render 'order_item_fields', f: p %>
+    <div id="order_items">
+      <%= f.simple_fields_for :order_items do |order_item| %>
+        <%= render 'order_item_fields', f: order_item %>
       <% end %>
-
-      <div class="links">
         <%= link_to_add_association 'add item', f, :order_items %>
-      </div>
     </div>
   </div>
 
   <%= f.submit %>
 <% end %>
+
+

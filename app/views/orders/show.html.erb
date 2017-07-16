@@ -2,7 +2,7 @@
 
 <p>
   <strong>Total:</strong>
-  <%= @order.total %>
+  <%= @order.total %> kr
 </p>
 
 <p>
@@ -26,7 +26,8 @@
     <tbody>
       <% @order.order_items.each do |oi| %>
         <tr>
-          <td><%= oi.product_id %></td>
+          <td><%= oi.product.name%></td>
+          <td><%= oi.quantity%></td>
         </tr>
       <% end %>
     </tbody>

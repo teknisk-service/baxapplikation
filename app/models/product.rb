@@ -3,5 +3,6 @@ class Product < ApplicationRecord
   validates :price, presence: true
 
   has_many :purchases
-  has_many :cart_items, dependent: :destroy 
+  has_many :orders, through: :order_items
+  has_many :order_items, inverse_of: :product
 end

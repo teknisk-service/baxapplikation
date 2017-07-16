@@ -1,9 +1,7 @@
 <div class="nested-fields">
   <!--TODO: FIX -->
-  <%= f.label :produkt %>
-  <%= f.number_field :product_id %>
-  <%= f.label :antal %>
-  <%= f.number_field :quantity %>
+   <%= f.association :product, collection: Product.order(:name)%>
+   <%= f.number_field :quantity %>
+  <%= link_to_remove_association "remove task", f %>
 
-  <%= link_to_remove_association "remove item", f %>
 </div>
