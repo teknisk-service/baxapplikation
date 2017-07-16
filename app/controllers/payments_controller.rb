@@ -3,6 +3,7 @@ class PaymentsController < ApplicationController
   def index
     @payments = Payment.all
     @total_in = Payment.all.sum(:amount)
+    @total_out = Order.all.sum(:total)
   end
 
   def show
