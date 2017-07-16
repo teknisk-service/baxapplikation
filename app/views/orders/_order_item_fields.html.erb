@@ -1,8 +1,7 @@
 <div class="nested-fields">
-  <%= f.label :product_id %>
   <!--TODO: FIX -->
-  <%= collection_select(:order_item, :product_id, Product.all.sort_by(&:name), :id, 
-      	  :name) %>
+  <%= f.label :produkt %>
+  <%= f.number_field :product_id %>
   <%= f.label :antal %>
   <%= f.number_field :quantity %>
 
