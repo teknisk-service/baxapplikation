@@ -17,3 +17,6 @@
 //= require cocoon
 //= require_tree .
 
+$(document).on('turbolinks:load', function() {
+    console.log("-- Page Load --");
+   });

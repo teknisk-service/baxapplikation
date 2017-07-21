@@ -1,34 +1,35 @@
 <%= simple_form_for @order do |f| %>
- <% if @order.errors.any? %>
-            <div id="errorExplanation">
+<% if @order.errors.any? %>
+<div id="errorExplanation">
 
-                <h2><%= pluralize(@order.errors.count, "error") %> prohibited this post from being saved:</h2>
+  <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
-                <ul>
-                    <% @order.errors.full_messages.each do |msg| %>
-                    <li><%= msg %></li>
-                    <% end %>
-                  </ul>
-            </div>
-  <% end %>
-  <div>
-    <%= f.date_select(:date, :order => [:day, :month, :year]) %>
-    <%= f.text_field :mammerist, class: 'form-control' %>
-    <%= f.number_field :total, class: 'form-control' %>
-  </div>
+  <ul>
+    <% @order.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div>
+  <%= f.date_select(:date, :order => [:day, :month, :year]) %>
+  <%= f.text_field :mammerist, class: 'form-control' %>
+  <%= f.number_field :total, class: 'form-control' %>
+</div>
 
-  <div>
-    <p><strong>Produkter:</strong></p>
+<div>
+  <p><strong>Produkter:</strong></p>
 
-    <div id="order_items">
-      <%= f.simple_fields_for :order_items do |order_item| %>
-        <%= render 'order_item_fields', f: order_item %>
-      <% end %>
-        <%= link_to_add_association 'add item', f, :order_items %>
+  <div id="order_items">
+    <%= f.simple_fields_for :order_items do |order_item| %>
+    <%= render 'order_item_fields', f: order_item %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'add item', f, :order_items %>
     </div>
   </div>
-
-  <%= f.submit %>
+<div>
+<%= f.submit %>
 <% end %>
 
 
