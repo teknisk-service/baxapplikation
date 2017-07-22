@@ -1,3 +1,2 @@
 class Outlay < ApplicationRecord
-
 end
