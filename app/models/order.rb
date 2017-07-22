@@ -4,4 +4,9 @@ class Order < ApplicationRecord
 	
 	accepts_nested_attributes_for :order_items, :reject_if => :all_blank, :allow_destroy => true
 	accepts_nested_attributes_for :products, :reject_if => :all_blank, :allow_destroy => true
+
+	def payed_text 
+		return 'Ja' if self.payed == true
+		return 'Nej' if self.payed == false 
+	end
 end
