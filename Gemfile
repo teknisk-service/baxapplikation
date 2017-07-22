@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby "2.3.1"
+ruby "2.4.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0'
+gem 'rails', github: 'rails/rails', branch: "5-0-stable"
 gem 'bcrypt', '3.1.11'
 gem 'rails-controller-testing'
 gem 'will_paginate', '3.1.0'
@@ -44,6 +44,9 @@ group :development, :test do
   gem "pry-byebug", "~> 3.2"
   gem "pry-rails", "~> 0.3.2"
 end
+
+gem "cocoon"
+gem 'simple_form'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

@@ -1,0 +1,42 @@
+<%= simple_form_for @order do |f| %>
+<% if @order.errors.any? %>
+<div id="errorExplanation">
+
+  <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+  <ul>
+    <% @order.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div>
+  <%= label :date, "Datum" %>
+  <%= f.date_select(:date, :order => [:day, :month, :year]) %>
+  <%= label :mammerist, "Mammerist som betalade" %>
+  <%= f.text_field :mammerist, class: 'form-control' %>
+  <%= label :total, "Summa" %>
+  <%= f.number_field :total, class: 'form-control' %>
+  <%= f.label 'payed_true', 'Ja' %>
+  <%= f.radio_button :payed, true %>
+  <%= f.label 'payed_false', 'Nej' %>
+  <%= f.radio_button :payed, false %>
+</div>
+
+<div>
+  <p><strong>Produkter:</strong></p>
+
+  <div id="order_items">
+    <%= f.simple_fields_for :order_items do |order_item| %>
+    <%= render 'order_item_fields', f: order_item %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'add item', f, :order_items %>
+    </div>
+  </div>
+<div>
+<%= f.submit %>
+<% end %>
+
+

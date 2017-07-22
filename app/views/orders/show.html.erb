@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+<div class="order">
+  <h4>
+    Summa: <%= @order.total %> kr
+  </h4>
+
+  <h4>
+    Datum: <%= @order.date %>
+  </h4>
+
+  <h4>
+    Mammerist: <%= @order.mammerist %>
+  </h4>
+
+  <h4>
+    Betalad: <%= @order.payed_text %>
+  </h4>
+
+  <h2>Produkter</h2>
+  <table class="purchases">
+    <thead>
+      <tr>
+        <th>Namn</th>
+        <th>Antal</th>
+        <th>Pris</th>
+        <th>Summa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @order.order_items.each do |oi| %>
+      <tr>
+        <td><%= oi.product.name%></td>
+        <td><%= oi.quantity%></td>
+        <td><%= oi.product.price%> kr</td>
+        <td><%= oi.quantity * oi.product.price%> kr</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to 'Redigera', edit_order_path(@order) %> |
+  <%= link_to 'Tillbaka', orders_path %>
+</div>

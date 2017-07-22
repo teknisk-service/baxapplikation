@@ -1,0 +1,2 @@
+class OutlayController < ApplicationController
+end

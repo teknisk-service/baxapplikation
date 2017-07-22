@@ -5,7 +5,7 @@
 /* mixins, variables, etc. */
 
 $accent-color: #E53155;
-$accent-hover: #9a1951;
+$accent-hover: #c11f3f;
 $background-color: #1a1a1a;
 $menu-color: #10100F;
 $gray-medium-light: #eaeaea;
@@ -90,6 +90,7 @@ header {
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+  display: none; 
 }
 
 /* forms */
@@ -106,11 +107,25 @@ input {
 }
 
 h1 {
-    font-family: 'Bungee', cursive;
-    font-size: 6vw;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700; 
+    font-size: 5.5vw;
     text-align: center;
     color: $accent-color;
-    letter-spacing: 0.05em;
+    clear: both;
+}
+
+.homepage h1 {
+  text-transform: uppercase; 
+  font-size: 6vw; 
+}
+
+h2 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700; 
+    font-size: 3.5vw;
+    text-align: center;
+    color: $accent-color;
     clear: both;
 }
 
@@ -144,6 +159,8 @@ button, input[type="submit"] {
   padding: .75em;
   border: none;
   border-radius: 6px;
+  width: 25%; 
+  float: center; 
 }
 
 .buttons {
@@ -205,7 +222,11 @@ aside {
 }
 
 .gravatar_edit {
-  margin-top: 15px;
+  text-align: center; 
+  margin: 0 auto; 
+  .gravatar-link {
+    padding-top: 2%; 
+  }
 }
 
 /* forms */
@@ -266,7 +287,14 @@ input {
 
 .btn:hover {
   background-color: $accent-hover;
+  color: black; 
 }
+
+.btn:active {
+  background-color: $accent-hover;
+  color: black; 
+}
+
 
 p {
   color: $accent-color;
@@ -335,6 +363,5 @@ section {
 .actions {
   padding-top: 2%;
 }
-
 
 }

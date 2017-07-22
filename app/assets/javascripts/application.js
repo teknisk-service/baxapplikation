@@ -14,5 +14,9 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
+//= require cocoon
 //= require_tree .
 
+$(document).on('turbolinks:load', function() {
+    console.log("-- Page Load --");
+   });

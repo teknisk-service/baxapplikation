@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Baxkassa</h1>
+<h2>Total</h2>
+<table class="purchases">
+  <thead>
+    <tr>
+      <th>Totalt in</th>
+      <th>Totalt ut</th>
+      <th>Balans</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @total_in%> kr</td>
+        <td><%= @total_out%> kr</td>
+        <td><%= @total_in - @total_out %> kr</td>
+      </tr>
+  </tbody>
+</table>
+
+<h2>Alla inbetalningar</h2>
+<table class="purchases">
+  <thead>
+    <tr>
+      <th>Belopp</th>
+      <th>Användare</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @payments.each do |p| %>
+      <tr>
+        <td><%= p.amount %> kr</td>
+        <td><%= p.user.name %></td>
+        <td><%= link_to 'Visa', p %></td>
+        <td><%= link_to 'Redigera', edit_payment_path(p) %></td>
+        <td><%= link_to 'Ta bort', p, method: :delete, data: { confirm: 'Är du säker?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

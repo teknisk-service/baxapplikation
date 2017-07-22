@@ -1,9 +1,11 @@
-// Place all the styles related to the Purchases controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 table.purchases {
-  width: 100%;
+  @media only screen and (max-width: 750px) {
+    width: 100% !important; 
+  }
+
+  width: 50%;
+  margin-left: auto; 
+  margin-right: auto; 
 
   tbody tr:nth-child(odd) {
     background: lighten($background-color, 5%);
@@ -15,6 +17,11 @@ table.purchases {
 }
 
 .purchases form {
+  @media only screen and (min-width: 750px) {
+    width: 50%; 
+    margin-left: auto; 
+    margin-right: auto; 
+  }
   select {
     height: 3em;
   }
