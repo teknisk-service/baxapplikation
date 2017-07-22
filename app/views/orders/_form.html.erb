@@ -12,9 +12,16 @@
 </div>
 <% end %>
 <div>
+  <%= label :date, "Datum" %>
   <%= f.date_select(:date, :order => [:day, :month, :year]) %>
+  <%= label :mammerist, "Mammerist som betalade" %>
   <%= f.text_field :mammerist, class: 'form-control' %>
+  <%= label :total, "Summa" %>
   <%= f.number_field :total, class: 'form-control' %>
+  <%= f.label 'payed_true', 'Ja' %>
+  <%= f.radio_button :payed, true %>
+  <%= f.label 'payed_false', 'Nej' %>
+  <%= f.radio_button :payed, false %>
 </div>
 
 <div>

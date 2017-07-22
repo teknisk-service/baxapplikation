@@ -15,12 +15,18 @@
   <%= @order.mammerist %>
 </p>
 
+<p>
+  <strong>Betalad:</strong>
+  <%= @order.payed %>
+</p>
+
 <strong>Produkter</strong>
 <table class="products">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Quantity</th>
+        <th>Namn</th>
+        <th>Antal</th>
+        <th>Pris</th>
       </tr>
     </thead>
     <tbody>
@@ -28,6 +34,7 @@
         <tr>
           <td><%= oi.product.name%></td>
           <td><%= oi.quantity%></td>
+          <td><%= oi.product.price%></td>
         </tr>
       <% end %>
     </tbody>
