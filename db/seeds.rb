@@ -1,4 +1,4 @@
-Fabricate(:user, name: "Aron", email: "aronst@kth.se", password: 'asdfasdf')
+Fabricate(:user, name: "Aron", email: "aronst@kth.se", password: 'asdfasdf', admin: true)
 Fabricate(:user, name: "Bob", email: "r.gileborg@gmail.com")
 Fabricate(:user, name: "Hanna", email: "hnyblom@kth.se")
 Fabricate(:user, name: "Helena", email: "halinder@kth.se")

@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
   resources :orders
-  resources :purchases
+  resources :purchases do 
+    collection do 
+        get 'remove_all'
+      end
+    end
   resources :users do
     member do
       get '/purchases', to: 'users#purchases'
@@ -22,6 +26,4 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
-
-
 end

@@ -15,6 +15,7 @@
     <% @purchases.each do |purchase| %>
       <tr>
         <td><%= purchase.product.name %></td>
+        <td><%= purchase.user.name %></td>
         <td><%= link_to 'Show', purchase %></td>
         <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>
         <td><%= link_to 'Destroy', purchase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,4 +26,7 @@
 
 <br>
 
-<%= link_to 'New Purchase', new_purchase_path %>
+<%= link_to 'Nytt streck', new_purchase_path %>
+  <% if current_user.admin? %>
+   <%= link_to "Ta bort alla", remove_all_purchases_path, :method => :get %>
+  <% end %>
