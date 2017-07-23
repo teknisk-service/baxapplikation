@@ -8,6 +8,7 @@ $accent-color: #E53155;
 $accent-hover: #c11f3f;
 $background-color: #1a1a1a;
 $menu-color: #10100F;
+$menu-light: #21211e;
 $gray-medium-light: #eaeaea;
 
 @mixin box_sizing {
@@ -75,7 +76,12 @@ header {
 }
 
 .dropdown-menu {
-  background-color: $menu-color;
+  background-color: $menu-color; 
+  li {
+    a:hover {
+      background-color: $menu-light; 
+    }
+  }
 }
 
 #logo {
