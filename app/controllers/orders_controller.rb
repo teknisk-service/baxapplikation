@@ -3,6 +3,8 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.all
+    @order_items_grouped = OrderItem.all.group_by(&:product).to_h
+    @order_items = OrderItem.all
   end
 
   def show
