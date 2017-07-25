@@ -2,6 +2,9 @@
 <h1>Drifveriets Baxapp</h1>
 <%= image_tag("tequilacroquet17slim.jpg", :class => "tequilacroquet") %>
 <div class="mobile-only">
+<% if logged_in? %>
+<h2>Hej <%= @user.name %></h2>
+<% end %>
 	<div id="buttons-home">
 	<% if logged_in? %>
       <span>
