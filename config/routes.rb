@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
 
+  get 'admins', to: 'static_pages#admins'
+
   root 'static_pages#home'
   get  'static_pages/makeawish'
   get  '/signup',  to: 'users#new'
