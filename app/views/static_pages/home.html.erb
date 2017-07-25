@@ -1,6 +1,28 @@
 <div class="homepage">
+<% if !logged_in? %>
 <h1>Drifveriets Baxapp</h1>
 <%= image_tag("tequilacroquet17slim.jpg", :class => "tequilacroquet") %>
+<% end %>
+<h2>Hej <%= current_user.name %>!</h2>
+<div class="icons">
+  <div class="icons-row">
+    <div class="icon">
+      <%= image_tag("purchase.svg", :class => "toplist-img") %>
+      <h4>Strecka</h4>
+    </div>
+    <div class="icon">
+      <%= image_tag("user.svg", :class => "user-img") %>
+      <h4>Mina streck</h4>
+    </div>
+     <div class="icon">
+      <%= image_tag("toplist.svg", :class => "toplist-img") %>
+      <h4>Topplistan</h4>
+    </div>
+    <div class="icon">
+      <%= image_tag("makeawish.svg", :class => "makeawish-img") %>
+      <h4>Önska produkter</h4>
+    </div>
+  </div>
 <div class="mobile-only">
 	<div id="buttons-home">
 	<% if logged_in? %>
