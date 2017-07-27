@@ -23,6 +23,23 @@
       <h4>Önska produkter</h4>
     </div>
   </div>
+<% if current_user.admin? %>
+<div class="icons">
+  <div class="icons-row">
+    <div class="icon">
+      <%= image_tag("orders.svg", :class => "toplist-img") %>
+      <h4>Nytt inköp</h4>
+    </div>
+    <div class="icon">
+      <%= image_tag("baxkassa.svg", :class => "user-img") %>
+      <h4>Baxkassa</h4>
+    </div>
+     <div class="icon">
+      <%= image_tag("products.svg", :class => "toplist-img") %>
+      <h4>Ny produkt</h4>
+    </div>
+  </div>
+<% end %>
 <div class="mobile-only">
 	<div id="buttons-home">
 	<% if logged_in? %>
