@@ -19,7 +19,10 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-
+    @products = Product.all 
+    @products.each do |p|
+      p.set_price
+    end
     if @order.save
       redirect_to edit_order_path(@order), notice: 'Inköp tillagt'
     else
@@ -46,6 +49,6 @@ class OrdersController < ApplicationController
     end
 
     def order_params
-      params.require(:order).permit(:total, :date, :mammerist, :payed, order_items_attributes: [:id, :_destroy, :product_id, :quantity, product_attributes: [:id, :_destroy, :name]])
+      params.require(:order).permit(:total, :date, :mammerist, :payed, order_items_attributes: [:id, :_destroy, :product_id, :quantity, :price, product_attributes: [:id, :_destroy, :name]])
     end
 end
