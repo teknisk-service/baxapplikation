@@ -17,4 +17,8 @@ class Product < ApplicationRecord
   	@price = self.product_price 
   	update_attribute(:price, @price)
   end
+
+  def total_quantity
+    OrderItem.where(product: self).sum(:quantity)
+  end
 end
