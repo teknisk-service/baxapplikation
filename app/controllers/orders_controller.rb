@@ -19,7 +19,10 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-
+    @products = Product.all 
+    @products.each do |p|
+      p.set_price
+    end
     if @order.save
       redirect_to edit_order_path(@order), notice: 'Inköp tillagt'
     else
