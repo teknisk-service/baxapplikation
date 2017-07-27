@@ -1,5 +1,4 @@
 <div class="nested-fields">
-   <%= label :product, "Produkt" %>
    <%= f.association :product, collection: Product.order(:name)%>
    <%= label :quantity, "Antal" %>
    <%= f.number_field :quantity %>
