@@ -16,6 +16,7 @@
 
   <body>
     <%= render 'layouts/header' %>
+    <%= render 'layouts/dropdown' %>
     <% flash.each do |message_type, message| %>
       <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
     <% end %>
