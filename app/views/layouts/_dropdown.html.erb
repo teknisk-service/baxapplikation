@@ -1,24 +1,26 @@
-<header>
-   <nav class="menu">
-       <span class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          Meny <b class="caret"></b>
-      </a>
-      <ul class="dropdown-menu">
-          <li><%= link_to "Profil", current_user %></li>
-          <li><%= link_to "Inställningar", edit_user_path(current_user) %></li>
-          <% if logged_in? %>
-          <li><%= link_to "Strecka", new_purchase_path %></li>
-          <li><%= link_to "Mina streck", purchases_user_path(id: current_user.id) %></li>
-          <li><%= link_to "Topplistan", users_path %></li>
-          <li><%= link_to "Önska produkter", comments_path %></li>
-          <li><%= link_to "Baxkassa", payments_path %></li>
-        <li class="divider"></li>
-        <li>
-            <%= link_to "Logga ut", logout_path, method: "delete" %>
-        </li>
-        <% end %>
-    </ul>
-</span>
+<div class="mobile">
+    <header>
+     <nav class="menu">
+         <span class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Meny <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+              <li><%= link_to "Profil", current_user %></li>
+              <li><%= link_to "Inställningar", edit_user_path(current_user) %></li>
+              <% if logged_in? %>
+              <li><%= link_to "Strecka", new_purchase_path %></li>
+              <li><%= link_to "Mina streck", purchases_user_path(id: current_user.id) %></li>
+              <li><%= link_to "Topplistan", users_path %></li>
+              <li><%= link_to "Önska produkter", comments_path %></li>
+              <li><%= link_to "Baxkassa", payments_path %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Logga ut", logout_path, method: "delete" %>
+            </li>
+            <% end %>
+        </ul>
+    </span>
 </nav>
 </header>
+</div>

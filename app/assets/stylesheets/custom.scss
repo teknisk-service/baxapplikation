@@ -329,4 +329,12 @@ section {
   }
 }
 
+@media only screen and (min-width: 750px) {
+  .mobile {
+    header {
+      display: none; 
+    }
+  }
+}
+
 
