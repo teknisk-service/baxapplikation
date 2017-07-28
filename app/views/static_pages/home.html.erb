@@ -1,8 +1,11 @@
 <div class="homepage">
   <% if !logged_in? %>
+  <div class="home-title">
   <h1>Drifveriets Baxapp</h1>
+  </div>
   <%= image_tag("tequilacroquet17slim.jpg", :class => "tequilacroquet") %>
   <% end %>
+  <% if logged_in? %>
   <h1>Hej <%= current_user.name %>!</h1>
   <div class="icons">
     <div class="icons-row">
@@ -41,7 +44,7 @@
         <h4>Nytt inköp</h4>
         <% end %>
       </div>
-       <div class="icon">
+      <div class="icon">
         <%= link_to new_product_path do %>
         <%= image_tag("products.svg", :class => "link-icon") %>
         <h4>Ny produkt</h4>
@@ -54,6 +57,7 @@
         <% end %>
       </div>
     </div>
+    <% end %>
     <% end %>
 
 
