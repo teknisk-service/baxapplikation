@@ -1,0 +1,36 @@
+.icons {
+  .icons-row {
+    display: table;
+    margin: 0 auto;
+    padding: 2%; 
+    h4 {
+      text-align: center; 
+    }
+    .icon {
+      display: table-cell;
+      img {
+        margin: 2rem; 
+        height: 10rem; 
+      }
+    }
+    .icon:hover {
+      opacity: 0.8; 
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+ .mobile-only {
+    padding-top: 5%;
+    padding-right: 5%; 
+    text-align: center;
+    font-size: 7vw; 
+  }
+
+  .tequilacroquet {
+    display: none; 
+  }
+  #logo {
+    display: none; 
+  }
+}

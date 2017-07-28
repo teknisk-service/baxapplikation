@@ -34,7 +34,27 @@ body {
   flex-direction: column;
 }
 
+/* Headings and fonts */
+h1 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700; 
+  font-size: 5vw;
+  text-align: center;
+  color: $accent-color;
+  clear: both;
+}
+
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700; 
+  font-size: 5vh;
+  text-align: center;
+  color: $accent-color;
+  clear: both;
+}
+
 a {
+  text-decoration: none;
   font-family: 'Roboto', sans-serif;
   color: $accent-color !important;
 }
@@ -43,6 +63,10 @@ a:hover {
  color: $accent-hover;
 }
 
+p {
+  font-size: 2vmin;
+  color: $accent-color;
+}
 
 header {
   background-color: $menu-color;
@@ -112,35 +136,6 @@ input {
   height: auto !important;
 }
 
-h1 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700; 
-  font-size: 5.5vw;
-  text-align: center;
-  color: $accent-color;
-  clear: both;
-}
-
-.homepage h1 {
-  text-transform: uppercase; 
-  font-size: 6vw; 
-}
-
-h2 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700; 
-  font-size: 3.5vw;
-  text-align: center;
-  color: $accent-color;
-  clear: both;
-}
-
-a {
-  font-family: 'Roboto', serif;
-  text-decoration: none;
-  color: $accent-color;
-}
-
 form {
   color: $accent-color;
   font-family: 'Roboto', serif;
@@ -155,7 +150,6 @@ form {
 }
 
 main {
-  //margin: 33px;
   flex: 1;
 }
 
@@ -172,19 +166,6 @@ button, input[type="submit"] {
 .buttons {
   text-align: center;
   padding-top: 1.5%;
-}
-
-a.newuser {
-  font-family: 'Bungee', cursive;
-  font-size: 30px;
-  text-align: center;
-  color: $accent-color;
-  letter-spacing: 0.05em;
-  text-decoration: none !important;
-}
-
-a.newuser:hover {
-  color:$accent-hover;
 }
 
 .tequilacroquet {
@@ -301,30 +282,17 @@ input {
   color: black; 
 }
 
-
-p {
-  color: $accent-color;
-}
-
 .alert-notice {
   width: 25%;
   background: $accent-color;
   color: black;
   text-align: center;
-  //padding: 1em;
-  // position: absolute;
   margin: 0 auto;
 }
-
-
 
 li {
   list-style-type: none;
   padding: 0;
-}
-
-main {
-  //margin-top: 5em;
 }
 
 img {
@@ -336,12 +304,6 @@ section {
   text-align: center;
 }
 
-@media only screen and (min-width: 750px) {
-  .mobile-only {
-    display: none;
-  }
-}
-
 @media only screen and (max-width: 750px) {
   .menu {
     font-size: 3vw;
@@ -351,44 +313,13 @@ section {
     font-size: 35px; 
     text-align: center; 
   }
-  .tequilacroquet {
-    display: none; 
-  }
-  #logo {
-    display: none; 
-  }
   
   .alert-notice {
     width: 100%; 
   }
-
-  .mobile-only {
-    padding-top: 5%;
-    padding-right: 5%; 
-    text-align: center;
-    font-size: 7vw; 
-  }
-
 
   .actions {
     padding-top: 2%;
   }
 }
 
-.icons {
-  .icons-row {
-    display: table;
-    margin: 0 auto;
-    padding: 2%; 
-    h4 {
-      text-align: center; 
-    }
-    .icon {
-      display: table-cell;
-      img {
-        margin: 2rem; 
-        height: 6vw; 
-      }
-    }
-  }
-}
