@@ -1,0 +1,46 @@
+.icons {
+  .icons-row {
+    h4 {
+      text-align: center; 
+    }
+    .icon {
+      img {
+        margin: 0 auto; 
+        height: 75px; 
+        display: block;
+      }
+    }
+    .icon:hover {
+      opacity: 0.8; 
+    }
+  }
+}
+
+.home-title {
+  h1 {
+    text-transform: uppercase; 
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .icons {
+    .icons-row {
+     display: table;
+     margin: 0 auto;
+     padding: 2%; 
+     .icon {
+      padding: 2rem;
+      display: table-cell; 
+    }
+  }
+}
+}
+
+@media only screen and (max-width: 750px) {
+  nav.menu {
+    justify-content: flex-start; 
+  }
+  main {
+    margin: 0; 
+  }
+}
