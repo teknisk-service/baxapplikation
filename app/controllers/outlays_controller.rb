@@ -38,6 +38,10 @@ class OutlaysController < ApplicationController
 	end
 
 	private
+	def set_outlay
+      @outlay = Outlay.find(params[:id])
+    end
+
 	def outlay_params
 		params.require(:outlay).permit(:sum, :description, debters_attributes: [:id, :_destroy, :user_id, :amount, :payed, user_attributes: [:id, :_destroy, :name]])
 	end

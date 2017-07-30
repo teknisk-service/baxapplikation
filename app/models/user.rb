@@ -12,6 +12,9 @@ class User < ApplicationRecord
   has_many :purchases, dependent: :destroy
   has_many :payments, dependent: :destroy
 
+  has_many :outlays, through: :debters
+  has_many :debters, inverse_of: :user
+
   # Returns the hash digest of the given string.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
