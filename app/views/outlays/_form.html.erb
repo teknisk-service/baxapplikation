@@ -24,7 +24,7 @@
       <p><strong>Användare:</strong></p>
 
       <div id="debters">
-        <%= f.simple_fields_for :debter do |debter| %>
+        <%= f.simple_fields_for :debters do |debter| %>
         <%= render 'debter_fields', f: debter %>
         <% end %>
         <div class="links">
@@ -36,5 +36,3 @@
         <% end %>
       </div>
     </div>
-
-
