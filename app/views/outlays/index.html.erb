@@ -1,31 +1,6 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Utlägg</h1>
-
-<table class="purchases">
-  <thead>
-    <tr>
-      <th>Beskrivning</th>
-      <th>Summa</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @outlays.each do |outlay| %>
-      <tr>
-        <td><%= outlay.description %></td>
-        <td><%= outlay.sum %> kr</td>
-        <td><%= link_to 'Show', outlay %></td>
-        <td><%= link_to 'Edit', edit_outlay_path(outlay) %></td>
-        <td><%= link_to 'Destroy', outlay, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<h2>Användare</h2>
-
-
-<%= link_to 'Nytt utlägg', new_outlay_path %>
+<ul class="users">
+<%= render @outlays %>
+</ul>
 
 

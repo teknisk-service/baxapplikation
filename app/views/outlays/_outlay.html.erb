@@ -1,0 +1,28 @@
+<li>
+  <h4>Vad: <%= outlay.description %></h4>
+  <h4>Summa: <%= outlay.sum %> kr</h4>
+  <h4>Betala till:</h4>
+  <table class="purchases">
+    <thead>
+      <tr>
+      <th>Användare</th>
+      <th>Skuld<th>
+        <th>Betalat</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% outlay.debters.each do |d| %>
+      <tr>
+        <td><%= d.user.name %></td>
+        <td><%= d.amount %><td>
+        <td><%= d.payed_text %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Ändra', edit_outlay_path(outlay)%>
+</li>
+
+
