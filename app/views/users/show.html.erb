@@ -12,4 +12,7 @@
   <% if current_user?(@user) %>
   <h4><%= link_to 'Visa dina streck', purchases_user_path %></h4>
   <% end %>
+  <% if current_user.admin? %>
+  <h4> <%= link_to "Ändra", edit_user_path(@user) %> </h4>
+  <% end %>
 </section>
