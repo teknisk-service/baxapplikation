@@ -7,4 +7,8 @@ class Outlay < ApplicationRecord
 	def debters
 		Debter.all.where(outlay_id: self)
 	end
+
+	def user
+		User.find_by(id: self.user_id).name 
+	end
 end
