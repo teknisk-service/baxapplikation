@@ -56,6 +56,14 @@ ActiveRecord::Schema.define(version: 20170802074202) do
     t.boolean  "payed"
   end
 
+  create_table "outlays", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "description"
+    t.integer  "sum"
+    t.integer  "user_id"
+  end
+
   create_table "payments", force: :cascade do |t|
     t.integer  "amount"
     t.integer  "user_id"
