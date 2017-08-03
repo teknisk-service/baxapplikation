@@ -1,0 +1,12 @@
+<div class="nested-fields">
+  <%= f.association :user, collection: User.order(:name) %>
+  <%= label :amount, "Summa" %>
+  <%= f.number_field :amount %> 
+  <%= label :payed, "Betalat" %>
+    <div class="radio-buttons">
+        <%= f.label 'payed_true', 'Ja' %>
+        <%= f.radio_button :payed, true %>
+        <%= f.label 'payed_false', 'Nej' %>
+        <%= f.radio_button :payed, false %>
+      </div>
+</div>

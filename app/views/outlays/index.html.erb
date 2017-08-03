@@ -1,0 +1,11 @@
+<h1>Utlägg</h1>
+<div class="centered-buttons-outer">
+	<div class="centered-buttons-inner">
+		<%= button_to "Nytt utlägg", new_outlay_path, method: :get %>
+	</div>
+</div>
+<ul class="users">
+	<%= render @outlays %>
+</ul>
+
+

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :comments 
   resources :payments
   resources :orders
+  resources :outlays
 
 
   get 'sessions/new'

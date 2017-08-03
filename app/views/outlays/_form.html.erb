@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= simple_form_for @outlay do |f| %>
+    <% if @outlay.errors.any? %>
+    <div id="errorExplanation">
+
+      <h2><%= pluralize(@outlay.errors.count, "error") %> prohibited this outlay from being saved:</h2>
+
+      <ul>
+        <% @outlay.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <div>
+      <%= label :description, "Beskrivning" %>
+      <%= f.text_field :description, class: 'form-control' %>
+      <%= label :sum, "Summa" %>
+      <%= f.number_field :sum %>
+      <%= label :user_id, "Betalade" %>
+      <%= collection_select(:outlay, :user_id, User.all.sort_by(&:name), :id, :name, {selected: current_user.id}) %>
+    </div>
+
+    <div>
+      <p><strong>Användare:</strong></p>
+
+      <div id="debters">
+        <%= f.simple_fields_for :debters do |debter| %>
+        <%= render 'debter_fields', f: debter %>
+        <% end %>
+        <div class="links">
+        <%= link_to_add_association 'Lägg till användare', f, :debters %>
+        </div>
+      </div>
+      <div>
+         <%= f.submit "Go!", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
