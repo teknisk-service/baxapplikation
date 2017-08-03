@@ -19,6 +19,8 @@
 .home-title {
   h1 {
     text-transform: uppercase; 
+    font-size: 6vw;
+    padding-top: 2%;  
   }
 }
 
@@ -43,4 +45,10 @@
   main {
     margin: 0; 
   }
+}
+
+.piska-stor {
+  padding-top: 2%; 
+  width: 33%;  
+  height: auto; 
 }
