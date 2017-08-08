@@ -15,6 +15,10 @@ class PurchasesController < ApplicationController
 
   # GET /purchases/new
   def new
+    @products = Product.all 
+    @products.each do |p|
+      p.set_price
+    end
     @purchase = Purchase.new
   end
 

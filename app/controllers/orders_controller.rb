@@ -5,6 +5,10 @@ class OrdersController < ApplicationController
     @orders = Order.all
     @order_items_grouped = OrderItem.all.group_by(&:product).to_h
     @order_items = OrderItem.all
+    @products = Product.all 
+     @products.each do |p|
+      p.set_price
+    end
   end
 
   def show
