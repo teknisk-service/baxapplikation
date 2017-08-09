@@ -1,0 +1,22 @@
+<h1>Baxbollstoppen</h1>
+<div class="h4-center">
+	<h4>Den här tabellen börjar funka så fort Baxmor har kirrat lite baxbollar</h4>
+</div>
+<table class="purchases">
+  <thead>
+    <tr>
+      <th>Drifter</th>
+      <th>Baxbollar</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @toplist.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.baxbollar %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
