@@ -10,6 +10,10 @@ class UsersController < ApplicationController
   def show
   end
 
+  def baxbollstoppen
+    @toplist = User.all.sort_by(&:baxbollar).reverse
+  end
+
   def new
     @user = User.new
   end
