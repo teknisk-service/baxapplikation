@@ -45,6 +45,12 @@
         <% end %>
       </div>
       <div class="icon">
+        <%= link_to new_order_path do %>
+        <%= image_tag("allorders.svg", :class => "link-icon") %>
+        <h4>Alla inköp</h4>
+        <% end %>
+      </div>
+      <div class="icon">
         <%= link_to new_product_path do %>
         <%= image_tag("products.svg", :class => "link-icon") %>
         <h4>Ny produkt</h4>
