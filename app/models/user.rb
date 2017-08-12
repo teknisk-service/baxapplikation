@@ -68,6 +68,10 @@ class User < ApplicationRecord
     purchases.group_by(&:product).to_h
   end
 
+  def baxbollar
+    Purchase.where(product_id: 30).where(user: self).count #får hårdkodas för tillfället
+  end
+
   def payments
     Payment.where(user: self)
   end
