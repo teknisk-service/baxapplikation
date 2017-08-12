@@ -69,7 +69,7 @@ class User < ApplicationRecord
   end
 
   def baxbollar
-    Purchase.where(product_id: 1).where(user: self).count #får hårdkodas för tillfället
+    Purchase.where(product_id: 30).where(user: self).count #får hårdkodas för tillfället
   end
 
   def payments
