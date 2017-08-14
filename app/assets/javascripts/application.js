@@ -20,3 +20,9 @@
 $(document).on('turbolinks:load', function() {
     console.log("-- Page Load --");
    });
+
+$(function() {
+  setTimeout(function(){
+    $('.alert-notice').slideUp(500);
+  }, 1000);
+});
