@@ -12,7 +12,7 @@
     </div>
   <% end %>
 
-  <%= collection_select(:purchase, :product_id, Product.all.sort_by(&:name), :id, :name) %>
+  <%= collection_select(:purchase, :product_id, Product.all.sort_by(&:name), :id, :name, :prompt => "Välj produkt") %>
   <%= collection_select(:purchase, :user_id, User.all.sort_by(&:name), :id, :name, {selected: current_user.id}) %>
   <div class="actions">
     <%= f.submit "Strecka" %>
