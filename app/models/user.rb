@@ -65,7 +65,7 @@ class User < ApplicationRecord
   end
 
   def purchases_grouped
-    purchases.group_by(&:product).to_h
+    purchases.group_by(&:product).to_h.sort_by(&:name)
   end
 
   def baxbollar
