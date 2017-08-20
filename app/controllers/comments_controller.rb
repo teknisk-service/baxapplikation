@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :set_comment, only: [:show, :edit, :update, :destroy]
 	def index
     	@comments = Comment.all
   	end
@@ -19,9 +20,18 @@ class CommentsController < ApplicationController
        	end
    end
 
+    def destroy
+    @comment.destroy
+    redirect_to comments_url, notice: 'Önskning borttagen'
+  end
+
    private
 
    def comment_params
         params.require(:comment).permit(:user_id, :comment)
+   end
+
+   def set_comment
+    @comment = Comment.find(params[:id])
    end
 end

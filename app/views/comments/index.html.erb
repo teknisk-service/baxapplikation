@@ -20,9 +20,7 @@
 			<tr>
 				<td><%= c.comment %></td>
 				<td><%= c.user.name%></td>
-				<td><%= link_to 'Show', c %></td>
-         		<td><%= link_to 'Edit', edit_comment_path(c) %></td>
-         		<td><%= link_to 'Destroy', c, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         		<td><%= link_to 'Ta bort', c, method: :delete, data: { confirm: 'Är du säker?' } %></td>
 			</tr>
 			<% end %>
 		</tbody>
