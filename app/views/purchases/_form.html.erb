@@ -2,7 +2,7 @@
 <%= form_for(purchase) do |f| %>
   <% if purchase.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
+      <div class="h4-center"><h4>Detta gick inte att strecka av följande anledning(ar):</h4></div>
 
       <ul>
       <% purchase.errors.full_messages.each do |message| %>

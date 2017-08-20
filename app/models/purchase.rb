@@ -10,6 +10,8 @@ class Purchase < ApplicationRecord
   end
 
   def product
+    if product_id 
   	@product = products.find(product_id)
+  end
   end
 end
