@@ -12,7 +12,7 @@
       <% @purchases_grouped.each do |product, purchases| %>
         <tr>
           <td><%= product.name %></td>
-          <td><%= product.price %></td>
+          <td><%= product.price %> kr</td>
           <td><%= purchases.size %></td>
         </tr>
       <% end %>
@@ -31,7 +31,7 @@
       <% @purchases.each do |purchase| %>
         <tr>
           <td><%= purchase.product.name %></td>
-          <td><%= purchase.product.price %></td>
+          <td><%= purchase.product.price %> kr</td>
           <td><%= purchase.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
           <% if current_user.admin? %>
           <td><%= link_to 'Ta bort', purchase, method: :delete, data: { confirm: 'Är du säker?' } %></td>
