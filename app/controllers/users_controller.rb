@@ -14,6 +14,10 @@ class UsersController < ApplicationController
     @toplist = User.all.sort_by(&:baxbollar).reverse
   end
 
+  def alkoholtoppen
+    @toplist = User.all.sort_by(&:alcohol).reverse
+  end
+
   def new
     @user = User.new
   end
