@@ -61,7 +61,7 @@ class User < ApplicationRecord
   end
 
   def purchases
-    Purchase.where(user: self)
+    Purchase.where(user: self).sort_by(&:created_at).reverse
   end
 
   def purchases_grouped

@@ -6,6 +6,7 @@ class PurchasesController < ApplicationController
   # GET /purchases.json
   def index
     @purchases = Purchase.all
+    @purchases_grouped = Purchase.all.group_by(&:product).to_h
   end
 
   # GET /purchases/1

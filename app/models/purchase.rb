@@ -13,5 +13,6 @@ class Purchase < ApplicationRecord
     if product_id 
   	@product = products.find(product_id)
   end
+
   end
 end

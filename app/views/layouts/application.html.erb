@@ -15,6 +15,9 @@
   </head>
 
   <body>
+
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+
     <%= render 'layouts/header' %>
     <%= render 'layouts/dropdown' %>
     <% flash.each do |message_type, message| %>

@@ -1,6 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Streck</h1>
+<table class="purchases">
+    <thead>
+      <tr>
+        <th>Produkt</th>
+        <th>Pris</th>
+        <th>Antal</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @purchases_grouped.each do |product, purchases| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.price %> kr</td>
+          <td><%= purchases.size %> st</td>
+          <td><%= product.price * purchases.size %> kr</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 <table class="purchases">
   <thead>
