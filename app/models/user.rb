@@ -85,4 +85,13 @@ class User < ApplicationRecord
   def set_admin
     update_attribute(:admin, true)
   end
+
+  def whitelisted
+    whitelist = Whitelist.select("email")
+    if whitelist.exists?(:email => params[:user][:email].downcase)
+      return true
+    else
+      return false
+    end
+  end
 end
