@@ -156,7 +156,7 @@ main {
 button, input[type="submit"] {
   background-color: $accent-color;
   color: black;
-  padding: .75em;
+  padding: 5px;
   border: none;
   border-radius: 6px;
   width: 25%; 
@@ -365,6 +365,7 @@ img.menu-icon {
   padding-top: 2%; 
   text-align: center; 
   .centered-buttons-inner {
+    width: 10% !important; 
     margin: auto; 
   }
 }
