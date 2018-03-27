@@ -69,11 +69,12 @@ class User < ApplicationRecord
   end
 
   def baxbollar
-    Purchase.where(product_id: 30).where(user: self).count #får hårdkodas för tillfället
+    baxboll = Product.select("id").where(name: "Baxboll")
+    Purchase.where(product_id: baxboll).where(user: self).count #får hårdkodas för tillfället
   end
 
   def alcohol
-    alcId = [52, 54, 21, 28, 27, 20, 19, 56, 53, 23, 24, 26, 25, 22]
+    alcId = Product.select("id").where(alcohol: true)
     Purchase.where(product_id: alcId).where(user: self).count
   end
 
@@ -83,5 +84,14 @@ class User < ApplicationRecord
 
   def set_admin
     update_attribute(:admin, true)
+  end
+
+  def whitelisted
+    whitelist = Whitelist.select("email")
+    if whitelist.exists?(:email => params[:user][:email].downcase)
+      return true
+    else
+      return false
+    end
   end
 end

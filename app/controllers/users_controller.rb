@@ -24,11 +24,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
+    whitelist = Whitelist.select("email")
+    if @user.save && whitelist.exists?(:email => params[:user][:email].downcase)
       log_in @user
       flash[:success] = "Välkommen till baxapplikationen!"
       redirect_to @user
     else
+      flash[:error] = "Du har inte tillåtelse att registrera dig"
       render 'new'
     end
   end

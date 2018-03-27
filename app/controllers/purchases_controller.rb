@@ -27,21 +27,14 @@ class PurchasesController < ApplicationController
   def edit
   end
 
-  # POST /purchases
-  # POST /purchases.json
   def create
     @purchase = Purchase.new(purchase_params)
-
-    respond_to do |format|
       if @purchase.save
         flash[:notice] = "Streck check!"
-        format.html { redirect_to :controller => 'purchases', :action => 'new', notice: 'Purchase was successfully created.' }
-        format.json { render :show, status: :created, location: @purchase }
+        redirect_to root_url
       else
-        format.html { render :new }
-        format.json { render json: @purchase.errors, status: :unprocessable_entity }
+         render 'new'
       end
-    end
   end
 
   # PATCH/PUT /purchases/1

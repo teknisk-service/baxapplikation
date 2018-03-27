@@ -68,6 +68,16 @@ p {
   color: $accent-color;
 }
 
+@media only screen and (max-width: 750px) {
+  h1 {
+    font-size: 13vw  !important; 
+  }
+
+  h2 {
+    font-size: 5vh !important; 
+  }
+}
+
 header {
   background-color: $menu-color;
   top: 0;
@@ -156,7 +166,7 @@ main {
 button, input[type="submit"] {
   background-color: $accent-color;
   color: black;
-  padding: .75em;
+  padding: 5px;
   border: none;
   border-radius: 6px;
   width: 25%; 
@@ -172,34 +182,6 @@ button, input[type="submit"] {
   width: 50%;
   height: auto;
   max-width: 900px;
-}
-
-/* sidebar */
-
-aside {
-  section.user_info {
-    margin-top: 20px;
-  }
-  section {
-    padding: 10px 0;
-    margin-top: 20px;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
-    }
-    span {
-      display: block;
-      margin-bottom: 3px;
-      line-height: 1;
-    }
-    h1 {
-      font-size: 1.4em;
-      text-align: left;
-      letter-spacing: -1px;
-      margin-bottom: 3px;
-      margin-top: 0px;
-    }
-  }
 }
 
 .gravatar {
@@ -290,6 +272,7 @@ input {
   margin: 0 auto;
 }
 
+
 li {
   list-style-type: none;
   padding: 0;
@@ -305,13 +288,18 @@ section {
 }
 
 @media only screen and (max-width: 750px) {
+  .alert-notice {
+    width: 100% !important; 
+  }
+
+  
+  button, input[type="submit"] {
+    width: 50% !important; 
+    height: 2.5em !important;
+  }
   .menu {
     font-size: 3vw;
     float: right; 
-  }
-  
-  h1 {
-    font-size: 15vw; 
   }
   
   .alert-notice {
@@ -365,6 +353,7 @@ img.menu-icon {
   padding-top: 2%; 
   text-align: center; 
   .centered-buttons-inner {
+    width: 10% !important; 
     margin: auto; 
   }
 }

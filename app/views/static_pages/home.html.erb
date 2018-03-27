@@ -7,33 +7,12 @@
   <% end %>
   <% if logged_in? %>
   <h1>Hej <%= current_user.name %>!</h1>
-  <div class="icons">
-    <div class="icons-row">
-      <div class="icon">
-        <%= link_to new_purchase_path do %>
-        <%= image_tag("purchase.svg", :class => "link-icon") %>
-        <h4>Strecka</h4>
-        <% end %>
-      </div>
-      <div class="icon">
-        <%= link_to purchases_user_path(id: current_user.id) do %>
-        <%= image_tag("user.svg", :class => "link-icon") %>
-        <h4>Mina streck</h4>
-        <% end %>
-      </div>
-      <div class="icon">
-       <%= link_to users_path do %>
-       <%= image_tag("toplist.svg", :class => "link-icon") %>
-       <h4>Topplistan</h4>
-       <% end %>
-     </div>
-     <div class="icon">
-      <%= link_to comments_path do %>
-      <%= image_tag("makeawish.svg", :class => "link-icon") %>
-      <h4>Önska produkter</h4>
-      <% end %>
-    </div>
-  </div>
+  <h2>Strecka</h2>
+  <section class="purchases">
+  <%= render 'purchases/form', purchase: @purchase %>
+  </section>
+  <h2>Dina streck</h2>
+  <%= render 'users/purchases_table', user: @user %>
   <% if current_user.admin? %>
   <h2>Baxmor</h2>
   <div class="icons">
