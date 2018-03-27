@@ -73,7 +73,7 @@ class User < ApplicationRecord
   end
 
   def alcohol
-    alcId = [52, 54, 21, 28, 27, 20, 19, 56, 53, 23, 24, 26, 25, 22]
+    alcId = Product.select("id").where(alcohol: true)
     Purchase.where(product_id: alcId).where(user: self).count
   end
 

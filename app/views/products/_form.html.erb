@@ -2,6 +2,12 @@
 
   <%= f.label :namn %>
   <%= f.text_field :name, class: 'form-control' %>
-
+  <%= label :alcohol, "Alkohol" %>
+   <div class="radio-buttons">
+        <%= f.label 'alcohol_true', 'Ja' %>
+        <%= f.radio_button :alcohol, true %>
+        <%= f.label 'alcohol_false', 'Nej' %>
+        <%= f.radio_button :alcohol, false %>
+   </div>
   <%= f.submit "Go!", class: "btn btn-primary" %>
 <% end %>
