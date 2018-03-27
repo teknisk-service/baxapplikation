@@ -69,7 +69,8 @@ class User < ApplicationRecord
   end
 
   def baxbollar
-    Purchase.where(product_id: 30).where(user: self).count #får hårdkodas för tillfället
+    baxboll = Product.select("id").where(name: "Baxboll")
+    Purchase.where(product_id: baxboll).where(user: self).count #får hårdkodas för tillfället
   end
 
   def alcohol
