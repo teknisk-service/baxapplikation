@@ -290,6 +290,7 @@ input {
   margin: 0 auto;
 }
 
+
 li {
   list-style-type: none;
   padding: 0;
@@ -305,6 +306,15 @@ section {
 }
 
 @media only screen and (max-width: 750px) {
+  .alert-notice {
+    width: 100% !important; 
+  }
+
+  
+  button, input[type="submit"] {
+    width: 50% !important; 
+    height: 2.5em !important;
+  }
   .menu {
     font-size: 3vw;
     float: right; 
