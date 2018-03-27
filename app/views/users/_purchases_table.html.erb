@@ -1,0 +1,18 @@
+ <table class="purchases">
+    <thead>
+      <tr>
+        <th>Produkt</th>
+        <th>Pris</th>
+        <th>Antal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @purchases_grouped.each do |product, purchases| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.price %> kr</td>
+          <td><%= purchases.size %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
