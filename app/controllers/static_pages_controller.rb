@@ -1,8 +1,10 @@
 class StaticPagesController < ApplicationController
   def home
   	@purchase = Purchase.new
-  	@user = current_user
-  	@purchases_grouped = @user.purchases_grouped
+    if current_user
+  	 @user = current_user
+  	 @purchases_grouped = @user.purchases_grouped
+    end
   end
 
   def help
