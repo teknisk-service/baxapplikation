@@ -1,4 +1,5 @@
 class PaymentsController < ApplicationController
+before_action :set_payment, only: [:show, :edit, :update, :destroy]
 
   def index
     @payments = Payment.all
@@ -45,10 +46,8 @@ class PaymentsController < ApplicationController
 
   def destroy
     @payment.destroy
-    respond_to do |format|
-      format.html { redirect_to purchases_url, notice: 'Payment was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:success] = "Inbetalning borttagen"
+    redirect_to payments_url
   end
 
   private
