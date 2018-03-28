@@ -3,7 +3,11 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.all
-    @order_items_grouped = OrderItem.all.group_by(&:product).to_h
+    if Product.all.count > 0
+      @order_items_grouped = OrderItem.all.group_by(&:product).to_h
+    else
+      @order_items_grouped = []
+    end
     @order_items = OrderItem.all
     @products = Product.all 
      @products.each do |p|
@@ -44,7 +48,8 @@ class OrdersController < ApplicationController
 
   def destroy
     @order.destroy
-    redirect_to orders_url, notice: 'Inköp borttaget'
+    flash[:success] = "Inköp borttaget"
+    redirect_to orders_url
   end
 
   private
