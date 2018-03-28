@@ -11,8 +11,6 @@
   <section class="purchases">
   <%= render 'purchases/form', purchase: @purchase %>
   </section>
-  <h2>Dina streck</h2>
-  <%= render 'users/purchases_table', user: @user %>
   <% if current_user.admin? %>
   <h2>Baxmor</h2>
   <div class="icons">
@@ -43,6 +41,8 @@
       </div>
     </div>
     <% end %>
+  <h2>Dina streck</h2>
+  <%= render 'users/purchases_table', user: @user %>
     <% end %>
 
 
