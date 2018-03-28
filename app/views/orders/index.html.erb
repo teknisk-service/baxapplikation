@@ -28,27 +28,7 @@
   </tbody>
 </table>
 <h2>Alla produkter</h2>
-<% unless @order_items_grouped.blank? %>
-<table class="purchases">
-  <thead>
-    <tr>
-      <th>Produkt</th>
-      <th>Antal</th>
-      <th>Pris</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
- <tbody>
-    <% @order_items_grouped.each do |product, order_items| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.total_quantity %></td>
-        <td><%= product.price %> kr</td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<% end %>
+
 
 <%= link_to 'New Order', new_order_path %>
 
