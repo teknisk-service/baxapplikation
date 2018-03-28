@@ -28,6 +28,7 @@
   </tbody>
 </table>
 <h2>Alla produkter</h2>
+<% unless @order_items_grouped.blank? %>
 <table class="purchases">
   <thead>
     <tr>
@@ -47,6 +48,7 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
 
 <%= link_to 'New Order', new_order_path %>
 
