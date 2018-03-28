@@ -1,0 +1,22 @@
+<h2>Följande emailadresser kan registrear sig</h2>
+<div class="makeawishtable">
+	<table class="purchases">
+		<thead>
+			<tr>
+				<th>Mailadress</th>
+				<th>Tillagd</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @whitelists.each do |w| %>
+			<tr>
+				<td><%= w.email %></td>
+				<td><%= cw.created_at%></td>
+         		<td><%= link_to 'Ta bort', w, method: :delete, data: { confirm: 'Är du säker?' } %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
