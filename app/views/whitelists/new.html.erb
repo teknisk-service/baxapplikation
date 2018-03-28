@@ -1,0 +1,10 @@
+<h1>Lägg till ny mailadress</h1>
+<div class="whitelist-form">
+<%= form_for Whitelist.new do |f| %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email, class: 'form-control' %>
+
+  <%= f.submit "Go!", class: "button" %>
+<% end %>
+</div>
