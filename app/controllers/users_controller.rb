@@ -76,6 +76,13 @@ class UsersController < ApplicationController
     flash[:success] = "Användaren är nu admin"
   end
 
+  def delete_purchases
+    @user = User.find(params[:id])
+    @user.delete_purchases
+    redirect_to @user
+    flash[:succes] = "Streck borttagna"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
