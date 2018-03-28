@@ -94,4 +94,8 @@ class User < ApplicationRecord
       return false
     end
   end
+
+  def delete_purchases
+    Purchase.where(user: self).destroy_all
+  end
 end
