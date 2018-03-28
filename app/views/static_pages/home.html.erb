@@ -1,15 +1,23 @@
 <div class="homepage">
   <% if !logged_in? %>
   <div class="home-title">
-  <h1>Drifveriets Baxapp</h1>
+    <h1>Drifveriets Baxapp</h1>
   </div>
   <%= image_tag("drifvarpiska.svg", :class => "piska-stor") %>
   <% end %>
   <% if logged_in? %>
   <h1>Hej <%= current_user.name %>!</h1>
+  <div class = "centered-text">
+  <p>Tid sedan du streckade sist:</p>
+  <% if @last_purchase %>
+  <%= time_ago_in_words(@last_purchase.created_at) %>
+  <% else %>
+  <p>Du har inte streckat än</p>
+  <% end %>
+</div>
   <h2>Strecka</h2>
   <section class="purchases">
-  <%= render 'purchases/form', purchase: @purchase %>
+    <%= render 'purchases/form', purchase: @purchase %>
   </section>
   <% if current_user.admin? %>
   <h2>Baxmor</h2>
@@ -41,8 +49,8 @@
       </div>
     </div>
     <% end %>
-  <h2>Dina streck</h2>
-  <%= render 'users/purchases_table', user: @user %>
+    <h2>Dina streck</h2>
+    <%= render 'users/purchases_table', user: @user %>
     <% end %>
 
 

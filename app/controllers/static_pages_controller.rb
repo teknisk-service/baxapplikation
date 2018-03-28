@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
     if current_user
   	 @user = current_user
   	 @purchases_grouped = @user.purchases_grouped
+     @last_purchase = @user.purchases.first
     end
   end
 
