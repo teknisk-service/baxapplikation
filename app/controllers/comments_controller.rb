@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 	def index
-    	@comments = Comment.all
+    	@comments = Comment.all.order(:comment)
   	end
 
   	def show
@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
 
   	 def create
        @comment = Comment.new(comment_params)
-       if @comment.save! 
+       if @comment.save!
        		redirect_to :controller => 'comments', :action => 'index'
        	else
        		render 'new'
