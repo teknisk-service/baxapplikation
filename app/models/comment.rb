@@ -7,6 +7,8 @@ class Comment < ApplicationRecord
 	end
 
 	def user 
-		@user = users.find(user_id)
+		if User.exists?(id: user_id)
+			@user = users.find(user_id)
+		end
 	end
 end

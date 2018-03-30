@@ -19,7 +19,11 @@
 			<% @comments.each do |c| %>
 			<tr>
 				<td><%= c.comment %></td>
-				<td><%= c.user.name%></td>
+				<% if (c.user != nil) then %>
+					<td><%= c.user.name%></td>
+				<% else %>
+					<td> Användare borttagen </td>
+				<% end %>
          		<td><%= link_to 'Ta bort', c, method: :delete, data: { confirm: 'Är du säker?' } %></td>
 			</tr>
 			<% end %>
