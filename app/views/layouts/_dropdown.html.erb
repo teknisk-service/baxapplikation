@@ -18,6 +18,9 @@
             <li><%= link_to "Utlägg", outlays_path %></li>
             <li class="divider"></li>
             <li><%= link_to "Inställningar", edit_user_path(current_user) %></li>
+            <% if current_user.admin? %>
+              <li><%= link_to "Whitelist", whitelists_path %></li>
+            <% end %>
             <li><%= link_to "Logga ut", logout_path, method: "delete" %></li>
           <% else %>
             <li><%= link_to "Logga in", login_path %></li>

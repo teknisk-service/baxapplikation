@@ -33,6 +33,9 @@
         <ul class="dropdown-menu">
           <li><%= link_to "Profil", current_user %></li>
           <li><%= link_to "Inställningar", edit_user_path(current_user) %></li>
+          <% if current_user.admin? %>
+            <li><%= link_to "Whitelist", whitelists_path %></li>
+          <% end %>
           <li class="divider"></li>
           <li>
             <%= link_to "Logga ut", logout_path, method: "delete" %>
