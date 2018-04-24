@@ -18,5 +18,10 @@
 			<% end %>
 		</tbody>
 	</table>
+  <% if current_user.admin? %>
+		<div class="centered-buttons-outer">
+				<%= button_to 'Lägg till person', new_whitelist_path, method: :get %>
+		</div>
+  <% end %>
 </div>
 
