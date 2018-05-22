@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   resources :orders
-  resources :purchases do 
-    collection do 
+  resources :purchases do
+    collection do
       get 'remove_all'
     end
   end
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
   end
   resources :products
-  resources :comments 
+  resources :requests
   resources :payments
   resources :orders
   resources :outlays
