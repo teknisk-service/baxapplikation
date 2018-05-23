@@ -1,4 +1,4 @@
-class Comment < ApplicationRecord
+class Request < ApplicationRecord
 	validates :comment, presence: true
 	belongs_to :user
 
@@ -6,7 +6,7 @@ class Comment < ApplicationRecord
 		User.all
 	end
 
-	def user 
+	def user
 		if User.exists?(id: user_id)
 			@user = users.find(user_id)
 		end
