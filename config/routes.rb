@@ -33,4 +33,8 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get '/baxbollstoppen', to: 'users#baxbollstoppen'
   get '/alkoholtoppen', to: 'users#alkoholtoppen'
+
+  get "/404", :to => "errors#not_found"
+  get "/422", :to => "errors#unacceptable"
+  get "/500", :to => "errors#internal_error"
 end
