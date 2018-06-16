@@ -1,0 +1,2 @@
+class SharedPurchasesController < ApplicationController
+end

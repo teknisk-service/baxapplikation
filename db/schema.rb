@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180522212254) do
+ActiveRecord::Schema.define(version: 20180616090701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "debters", force: :cascade do |t|
+  create_table "debters", id: :serial, force: :cascade do |t|
     t.integer "user_id"
     t.boolean "payed"
     t.datetime "created_at", null: false
@@ -24,13 +24,13 @@ ActiveRecord::Schema.define(version: 20180522212254) do
     t.integer "outlay_id"
   end
 
-  create_table "inventories", force: :cascade do |t|
+  create_table "inventories", id: :serial, force: :cascade do |t|
     t.integer "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "order_items", force: :cascade do |t|
+  create_table "order_items", id: :serial, force: :cascade do |t|
     t.integer "order_id"
     t.integer "quantity"
     t.integer "price"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20180522212254) do
     t.index ["order_id"], name: "index_order_items_on_order_id"
   end
 
-  create_table "orders", force: :cascade do |t|
+  create_table "orders", id: :serial, force: :cascade do |t|
     t.decimal "total"
     t.date "date"
     t.string "mammerist"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20180522212254) do
     t.boolean "payed"
   end
 
-  create_table "outlays", force: :cascade do |t|
+  create_table "outlays", id: :serial, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "description"
@@ -57,14 +57,14 @@ ActiveRecord::Schema.define(version: 20180522212254) do
     t.integer "user_id"
   end
 
-  create_table "payments", force: :cascade do |t|
+  create_table "payments", id: :serial, force: :cascade do |t|
     t.integer "amount"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "products", force: :cascade do |t|
+  create_table "products", id: :serial, force: :cascade do |t|
     t.string "name"
     t.decimal "price", precision: 10, scale: 2
     t.datetime "created_at", null: false
@@ -72,29 +72,28 @@ ActiveRecord::Schema.define(version: 20180522212254) do
     t.boolean "alcohol"
   end
 
-  create_table "purchases", force: :cascade do |t|
+  create_table "purchases", id: :serial, force: :cascade do |t|
     t.integer "product_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "requests", force: :cascade do |t|
+  create_table "requests", id: :serial, force: :cascade do |t|
     t.string "comment"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "shoppings", id: :serial, force: :cascade do |t|
-    t.integer "sum"
-    t.string "description"
-    t.string "mammerist"
+  create_table "shared_purchases", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :serial, force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.datetime "created_at", null: false
