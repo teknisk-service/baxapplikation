@@ -19,6 +19,11 @@ Rails.application.routes.draw do
   resources :orders
   resources :outlays
   resources :whitelists
+  resources :shared_purchases do
+    member do
+      get '/shared_purchases', to: 'shared_purchases#new'
+    end
+  end
 
 
   get 'sessions/new'

@@ -1,0 +1,28 @@
+<h1>Alla gemensamma köp</h1>
+<div class="centered-buttons-outer">
+  <div class="centered-buttons-inner">
+    <%= button_to "Nytt köp", new_shared_purchase_path, method: :get %>
+  </div>
+</div>
+<table class="purchases">
+  <thead>
+    <tr>
+      <th>Produkt</th>
+      <th>Pris</th>
+      <th>Pris per drifter</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shared_purchases.each do |sp| %>
+      <tr>
+        <td><%= sp.name %></td>
+        <td><%= sp.price %> kr</td>
+        <td><%= (sp.price.to_f/9).ceil%> kr</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
