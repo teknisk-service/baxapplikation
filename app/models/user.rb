@@ -45,7 +45,11 @@ class User < ApplicationRecord
   end
 
   def debt
-    Purchase.where(user: self).includes(:product).sum(:price)
+    Purchase.where(user: self).includes(:product).sum(:price) + debt_per_drifter
+  end
+
+  def debt_per_drifter
+    (SharedPurchase.all.sum(:price).to_f/9).ceil
   end
 
   def payed

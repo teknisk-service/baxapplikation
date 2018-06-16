@@ -1,0 +1,2 @@
+module SharedPurchasesHelper
+end

@@ -1,0 +1,15 @@
+<h1>Gemensamt köp</h1>
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<%= form_for(@shared_purchase) do |f| %>
+
+		<%= f.label :namn %>
+		<%= f.text_field :name, class: 'form-control' %>
+		<%= f.label :pris %>
+		<%= f.number_field :price, class: 'form-control' %>
+		<%= f.submit "Go!", class: "btn btn-primary" %>
+		<% end %>
+
+	</div>
+</div>
