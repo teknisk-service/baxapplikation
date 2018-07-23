@@ -14,7 +14,12 @@ Rails.application.routes.draw do
     end
   end
   resources :products
-  resources :requests
+  resources :requests do
+    member do
+      put "upvote", to: "requests#upvote"
+      put "downvote", to: "requests#downvote"
+    end
+  end
   resources :payments
   resources :orders
   resources :outlays

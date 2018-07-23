@@ -1,5 +1,7 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
+  helper_method :upvote
+  helper_method :downvote
 
   def index
     @requests = Request.all.order(:comment)
@@ -26,6 +28,17 @@ class RequestsController < ApplicationController
     redirect_to requests_url, notice: 'Önskning borttagen'
   end
 
+  def upvote
+    @request = Request.find(params[:id])
+    @request.upvote_by current_user
+    redirect_to requests_url
+  end
+
+  def downvote
+    @request = Request.find(params[:id])
+    @request.downvote_by current_user
+    redirect_to requests_url
+  end
    private
 
    def request_params
