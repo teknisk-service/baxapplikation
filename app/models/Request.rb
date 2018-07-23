@@ -1,4 +1,5 @@
 class Request < ApplicationRecord
+	acts_as_votable
 	validates :comment, presence: true
 	belongs_to :user
 
