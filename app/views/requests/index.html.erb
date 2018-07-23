@@ -29,12 +29,12 @@
 					<%= c.get_upvotes.size - c.get_downvotes.size %>
 				</td>
 				<td class="no-padding">
-				<%= link_to upvote_request_path(c), method: :put do %>
-				<%= image_tag("arrow-up.svg", :class => "thumb-icon") %>
-				<% end %>
-				<%= link_to downvote_request_path(c), method: :put do %>
-				<%= image_tag("arrow-down.svg", :class => "thumb-icon") %>
-				<% end %>
+					<%= link_to upvote_request_path(c), method: :put do %>
+					<%= image_tag("arrow-up.svg", :class => "thumb-icon") %>
+					<% end %>
+					<%= link_to downvote_request_path(c), method: :put do %>
+					<%= image_tag("arrow-down.svg", :class => "thumb-icon") %>
+					<% end %>
 				</td>
 				<td><%= link_to 'Ta bort', c, method: :delete, data: { confirm: 'Är du säker?' } %></td>
 			</tr>
