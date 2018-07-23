@@ -1,0 +1,27 @@
+$menu-color: #10100F;
+
+.sidenav {
+  height: 100%;
+  width: 15%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: $menu-color;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a, .dropdown-btn {
+  padding: 2% 2% 2% 8%;
+  font-size: 3vh;
+  display: block;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+#logo {
+  margin: 0;
+  padding: 0;
+}
