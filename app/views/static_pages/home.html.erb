@@ -36,6 +36,22 @@
 <section>
   <div class="row">
     <h3>Topplistan</h3>
+    <table class="purchases">
+  <thead>
+    <tr>
+      <th>Drifter</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |u| %>
+    <tr>
+      <td><%= gravatar_for u, size: 250 %><%= u.name %></td>
+      <td><%= u.debt %> kr</td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
   </div>
 </section>
 

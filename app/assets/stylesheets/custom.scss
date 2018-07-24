@@ -34,6 +34,23 @@ body {
   flex-direction: column;
 }
 
+tr {
+  .gravatar {
+    width: 2.25em;
+    height: 2.25em;
+    margin-right: 0.5em;
+  }
+}
+
+td {
+  vertical-align: middle;
+}
+
+td a, td input, td img {
+    vertical-align: middle;
+    display: inline-block;
+}
+
 main {
   padding-left: 15%;
 }
@@ -313,8 +330,8 @@ section {
 }
 
 .row {
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 25%;
+  padding-right: 25%;
 }
 
 @media only screen and (max-width: 750px) {
