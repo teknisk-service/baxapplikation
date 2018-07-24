@@ -34,6 +34,10 @@ body {
   flex-direction: column;
 }
 
+main {
+  padding-left: 15%;
+}
+
 /* Headings and fonts */
 h1 {
   font-family: 'Raleway', sans-serif;
@@ -53,6 +57,20 @@ h2 {
   clear: both;
 }
 
+h2.left {
+  text-align: left !important;
+}
+
+h3 {
+  font-family: 'Roboto', serif;
+  font-weight: 700;
+  text-align: left;
+  color: $accent-color;
+  text-transform: uppercase;
+  font-size: 3vh;
+  clear: both;
+}
+
 a {
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
@@ -61,6 +79,10 @@ a {
 
 a:hover {
  color: $accent-hover;
+}
+
+p.left {
+  text-align: left !important;
 }
 
 p {
@@ -143,7 +165,7 @@ input, textarea, select, .uneditable-input {
 }
 
 input {
-  height: auto !important;
+  height: 3em;
 }
 
 form {
@@ -171,6 +193,7 @@ button, input[type="submit"] {
   border-radius: 6px;
   width: 25%; 
   float: center; 
+  height: 3em !important;
 }
 
 .buttons {
@@ -284,7 +307,14 @@ img {
 }
 
 section {
+  display: block;
   text-align: center;
+  padding-left: 5%;
+}
+
+.row {
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 @media only screen and (max-width: 750px) {
