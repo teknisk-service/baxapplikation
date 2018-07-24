@@ -51,6 +51,15 @@ td a, td input, td img {
     display: inline-block;
 }
 
+.inline {
+  vertical-align: middle;
+}
+
+.inline-content {
+  vertical-align: middle;
+  display: inline-block;
+}
+
 main {
   padding-left: 15%;
 }

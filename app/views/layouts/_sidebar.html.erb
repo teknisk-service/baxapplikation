@@ -1,13 +1,25 @@
 <div class="sidenav">
   <%= link_to root_url do %>
-      <%= image_tag "drifvarpiska.svg", id: "logo" %>
+  <%= image_tag "drifvarpiska.svg", id: "logo" %>
   <% end %>
   <% if logged_in? %>
-    <% if current_user.admin? %>
-      <%= link_to "Inköp", new_order_path %>
-    <% end %>
-    <%= link_to "Mina streck", purchases_user_path(id: current_user.id) %>
-    <%= link_to current_user.name, current_user %>
-    <%= link_to "Logga ut", logout_path, method: "delete" %>
+  <% if current_user.admin? %>
+  <%= link_to "Inköp", new_order_path %>
+  <% end %>
+  <%= link_to "Mina streck", purchases_user_path(id: current_user.id) %>
+  <div class="bottom">
+    <div class="inline">
+      <div class="inline-content">
+        <%= gravatar_for current_user, size: 250 %>
+      </div>
+      <div class="inline-content">
+        <%= link_to current_user.name, current_user %>
+      </div>
+  </div>
+    <div class="discrete">
+      <%= link_to "Inställningar", edit_user_path(current_user) %>
+      <%= link_to "Logga ut", logout_path, method: "delete" %>
+    </div>
+  </div>
   <% end %>
 </div>
