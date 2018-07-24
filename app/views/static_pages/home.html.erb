@@ -7,6 +7,7 @@
   <% end %>
   <% if logged_in? %>
 </div>
+<div class="main">
 <section>
   <div class="row">
     <h2 class="left">Baxapp</h2>
@@ -29,7 +30,7 @@
 <section>
   <div class="row">
     <h3>Dina streck</h3>
-    <%= pie_chart @purchases_stats, colors: ["#ed1869", "#cc004f", "#6b0029", "#f2694b"] %>
+    <%= pie_chart @purchases_stats, legend: false, colors: ["#ed1869", "#cc004f", "#6b0029", "#f2694b"] %>
   </div>
 </section>
 
@@ -54,8 +55,7 @@
 </table>
   </div>
 </section>
-
-
 <% end %>
+</div>
 
 

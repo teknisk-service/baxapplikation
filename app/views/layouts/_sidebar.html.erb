@@ -4,9 +4,15 @@
   <% end %>
   <% if logged_in? %>
   <% if current_user.admin? %>
-  <%= link_to "Inköp", new_order_path %>
+    <%= link_to "Baxmor", orders_path %>
   <% end %>
   <%= link_to "Mina streck", purchases_user_path(id: current_user.id) %>
+  <%= link_to "Drifvare", users_path %>
+  <%= link_to "Gemensamma köp", shared_purchases_path %>
+  <%= link_to "Önska produkter", requests_path %>
+  <% if current_user.admin? %>
+  <%= link_to "Whitelist", whitelists_path %>
+  <% end %>
   <div class="bottom">
     <div class="inline">
       <div class="inline-content">
@@ -15,7 +21,7 @@
       <div class="inline-content">
         <%= link_to current_user.name, current_user %>
       </div>
-  </div>
+    </div>
     <div class="discrete">
       <%= link_to "Inställningar", edit_user_path(current_user) %>
       <%= link_to "Logga ut", logout_path, method: "delete" %>

@@ -18,8 +18,9 @@
 
     <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
 
-    
+    <% if logged_in? %>
     <%= render 'layouts/sidebar' %>
+    <% end %>
     <% flash.each do |message_type, message| %>
       <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
     <% end %>

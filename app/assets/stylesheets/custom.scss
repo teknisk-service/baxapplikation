@@ -60,10 +60,6 @@ td a, td input, td img {
   display: inline-block;
 }
 
-main {
-  padding-left: 15%;
-}
-
 /* Headings and fonts */
 h1 {
   font-family: 'Raleway', sans-serif;
@@ -330,6 +326,10 @@ li {
 img {
   display: block;
   margin: auto;
+}
+
+.main {
+  padding-left: 15% !important;
 }
 
 section {
