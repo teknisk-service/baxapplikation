@@ -64,7 +64,7 @@ td a, td input, td img {
 h1 {
   font-family: 'Raleway', sans-serif;
   font-weight: 700; 
-  font-size: 5vw;
+  font-size: 5vh;
   text-align: center;
   color: $accent-color;
   clear: both;
@@ -77,6 +77,10 @@ h2 {
   text-align: left;
   color: $accent-color;
   clear: both;
+}
+
+h2.center {
+  text-align: center !important;
 }
 
 h3 {
@@ -331,7 +335,6 @@ img {
 section {
   display: block;
   text-align: center;
-  padding-left: 5%;
 }
 
 .row {
