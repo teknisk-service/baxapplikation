@@ -1,9 +1,6 @@
 <div class="homepage">
   <% if !logged_in? %>
-  <div class="home-title">
-    <h1>Drifveriets Baxapp</h1>
-  </div>
-  <%= image_tag("drifvarpiska.svg", :class => "piska-stor") %>
+  <%= render "sessions/new" %>
   <% end %>
   <% if logged_in? %>
 </div>
@@ -29,7 +26,11 @@
 <section>
   <div class="row">
     <h3>Dina streck</h3>
-    <%= pie_chart @purchases_stats, legend: false, colors: ["#ed1869", "#cc004f", "#6b0029", "#f2694b"] %>
+      <% if @last_purchase %>
+      <%= pie_chart @purchases_stats, legend: false, colors: ["#ed1869", "#cc004f", "#6b0029", "#f2694b"] %>
+      <% else %>
+      <i>Du har inte streckat.</i>
+      <% end %>
   </div>
 </section>
 

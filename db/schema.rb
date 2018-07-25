@@ -84,7 +84,6 @@ ActiveRecord::Schema.define(version: 20180723142705) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "votes"
   end
 
   create_table "shared_purchases", force: :cascade do |t|
