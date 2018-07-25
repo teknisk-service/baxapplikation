@@ -1,9 +1,6 @@
 <div class="homepage">
   <% if !logged_in? %>
-  <div class="home-title">
-    <h1>Drifveriets Baxapp</h1>
-  </div>
-  <%= image_tag("drifvarpiska.svg", :class => "piska-stor") %>
+  <%= render "sessions/new" %>
   <% end %>
   <% if logged_in? %>
 </div>
