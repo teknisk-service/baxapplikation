@@ -20,6 +20,7 @@
 
     <% if logged_in? %>
     <%= render 'layouts/sidebar' %>
+    <%= render 'layouts/dropdown' %>
     <% end %>
     <% flash.each do |message_type, message| %>
       <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>

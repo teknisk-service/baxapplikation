@@ -1,5 +1,11 @@
 $menu-color: #10100F;
 
+@media only screen and (max-width: 750px) {
+  .sidenav {
+    display: none;
+  }
+}
+
 .sidenav {
   height: 100%;
   width: 15%;

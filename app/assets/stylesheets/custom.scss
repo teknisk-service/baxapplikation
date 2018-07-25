@@ -329,7 +329,7 @@ img {
 }
 
 .main {
-  padding-left: 15% !important;
+  padding-left: 15%;
 }
 
 section {
@@ -347,6 +347,14 @@ section {
     width: 100% !important; 
   }
 
+  .main {
+    padding: 0;
+  }
+
+  .row {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
   
   button, input[type="submit"] {
     width: 50% !important; 
