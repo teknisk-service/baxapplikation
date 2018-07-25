@@ -1,27 +1,31 @@
-<h2>Följande emailadresser kan registrera sig</h2>
-<div class="makeawishtable">
-	<table class="purchases">
-		<thead>
-			<tr>
-				<th>Mailadress</th>
-				<th>Tillagd</th>
-			</tr>
-		</thead>
+<section>
+	<div class="row">
+		<h2>Whitelistade mailadresser</h2>
+		<div class="makeawishtable">
+			<table class="purchases">
+				<thead>
+					<tr>
+						<th>Mailadress</th>
+						<th>Tillagd</th>
+					</tr>
+				</thead>
 
-		<tbody>
-			<% @whitelists.each do |w| %>
-			<tr>
-				<td><%= w.email %></td>
-				<td><%= w.created_at%></td>
-         		<td><%= link_to 'Ta bort', w, method: :delete, data: { confirm: 'Är du säker?' } %></td>
-			</tr>
-			<% end %>
-		</tbody>
-	</table>
-  <% if current_user.admin? %>
-		<div class="centered-buttons-outer">
+				<tbody>
+					<% @whitelists.each do |w| %>
+					<tr>
+						<td><%= w.email %></td>
+						<td><%= w.created_at%></td>
+						<td><%= link_to 'Ta bort', w, method: :delete, data: { confirm: 'Är du säker?' } %></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<% if current_user.admin? %>
+			<div class="centered-buttons-outer">
 				<%= button_to 'Lägg till person', new_whitelist_path, method: :get %>
+			</div>
+			<% end %>
 		</div>
-  <% end %>
-</div>
+	</div>
+</section>
 
