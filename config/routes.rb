@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     member do
       get '/purchases', to: 'users#purchases'
       post "/set_admin"   => "users#set_admin",   :as => :make_user_admin
+      post "/remove_admin"   => "users#remove_admin",   :as => :remove_user_admin
       post "/delete_purchases" => "users#delete_purchases", :as => :delete_purchases
     end
   end

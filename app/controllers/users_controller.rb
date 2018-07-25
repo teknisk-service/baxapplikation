@@ -87,6 +87,12 @@ class UsersController < ApplicationController
     flash[:success] = "Användaren är nu admin"
   end
 
+  def remove_admin
+    @user = User.find(params[:id])
+    @user.update_attribute :admin, false
+    flash[:success] = "Användaren inte längre admin"
+  end
+
   def delete_purchases
     @user = User.find(params[:id])
     @user.delete_purchases

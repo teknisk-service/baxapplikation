@@ -6,7 +6,11 @@
     <% end %>
 
     <% if current_user.admin? && !current_user?(@user) %>
-    <%= button_to "Gör till admin", make_user_admin_user_path, :method => :post %>
+      <% if @user.admin?  %>
+        <%= button_to "Ta bort som admin", remove_user_admin_user_path, :method => :post %>
+      <% else %>
+        <%= button_to "Gör till admin", make_user_admin_user_path, :method => :post %>
+      <% end %>
     <% end %>
 
     <% if current_user.admin? %>
