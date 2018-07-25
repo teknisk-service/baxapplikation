@@ -7,27 +7,25 @@
         </a>
         <ul class="dropdown-menu">
           <% if logged_in? %>
-            <li><%= link_to "Hem", root_url %>
-            <li><%= link_to "Strecka", new_purchase_path %></li>
-            <li><%= link_to "Mina streck", purchases_user_path(id: current_user.id) %></li>
-            <li><%= link_to "Topplistan", users_path %></li>
-            <li><%= link_to "Alkoholtoppen", alkoholtoppen_path %></li>
-            <li><%= link_to "Baxbollstoppen", baxbollstoppen_path %></li>
-            <li><%= link_to "Önska produkter", requests_path %></li>
-            <li><%= link_to "Gemensamma köp", shared_purchases_path %></li>
-            <li><%= link_to "Baxkassa", payments_path %></li>
-            <li><%= link_to "Utlägg", outlays_path %></li>
-            <li class="divider"></li>
-            <li><%= link_to "Inställningar", edit_user_path(current_user) %></li>
-            <% if current_user.admin? %>
-              <li><%= link_to "Whitelist", whitelists_path %></li>
-            <% end %>
-            <li><%= link_to "Logga ut", logout_path, method: "delete" %></li>
-          <% else %>
-            <li><%= link_to "Logga in", login_path %></li>
-          <% end %>
-        </ul>
-      </span>
-    </nav>
-  </header>
+          <li><%= link_to "Hem", root_url %>
+            <li><% if current_user.admin? %>
+              <%= link_to "Baxmor", orders_path %>
+              <% end %></li>
+              <li><%= link_to "Mina streck", purchases_user_path(id: current_user.id) %></li>
+              <li><%= link_to "Drifvare", users_path %></li>
+              <li><%= link_to "Topplistor", toplists_path %></li>
+              <li><%= link_to "Baxkassa", payments_path %></li>
+              <li><%= link_to "Gemensamma köp", shared_purchases_path %></li>
+              <li><%= link_to "Önska produkter", requests_path %></li>
+                <li class="divider"></li>
+                <li><%= link_to "Inställningar", edit_user_path(current_user) %></li>
+                <% if current_user.admin? %>
+                <li><%= link_to "Whitelist", whitelists_path %></li>
+                <% end %>
+                <li><%= link_to "Logga ut", logout_path, method: "delete" %></li>
+                <% end %>
+              </ul>
+            </span>
+          </nav>
+        </header>
 </div>
