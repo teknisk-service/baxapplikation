@@ -17,9 +17,9 @@
     <h3>Strecka</h3>
     <p class="left">Tid sedan du streckade sist:
       <% if @last_purchase %>
-      <%= time_ago_in_words(@last_purchase.created_at) %>
+      <i><%= time_ago_in_words(@last_purchase.created_at) %>.</i>
       <% else %>
-      Du har inte streckat än
+      <i>Du har inte streckat.</i>
       <% end %>
     </p>
     <%= render 'purchases/form', purchase: @purchase %>
