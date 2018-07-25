@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+  get '/toplists', to: 'users#toplists'
   get '/baxbollstoppen', to: 'users#baxbollstoppen'
   get '/alkoholtoppen', to: 'users#alkoholtoppen'
 end

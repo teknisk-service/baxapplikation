@@ -1,26 +1,35 @@
 <div class="profile">
   <%= render @user %>
-  <%= render 'purchases_table', user: @user %>
-  <h2>Alla dina streck</h2>
-    <table class="purchases">
-    <thead>
-      <tr>
-        <th>Produkt</th>
-        <th>Pris</th>
-        <th>Streckad</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @purchases.each do |purchase| %>
-        <tr>
-          <td><%= purchase.product.name %></td>
-          <td><%= purchase.product.price %> kr</td>
-          <td><%= purchase.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
-          <% if current_user.admin? %>
-          <td><%= link_to 'Ta bort', purchase, method: :delete, data: { confirm: 'Är du säker?' } %></td>
+  <section>
+    <div class="row">
+      <h3>Dina streck</h3>
+      <%= render 'purchases_table', user: @user %>
+    </div>
+  </section>
+  <section>
+    <div class="row">
+      <h3>Enskilda streck</h3>
+      <table class="purchases">
+        <thead>
+          <tr>
+            <th>Produkt</th>
+            <th>Pris</th>
+            <th>Streckad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @purchases.each do |purchase| %>
+          <tr>
+            <td><%= purchase.product.name %></td>
+            <td><%= purchase.product.price %> kr</td>
+            <td><%= purchase.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+            <% if current_user.admin? %>
+            <td><%= link_to 'Ta bort', purchase, method: :delete, data: { confirm: 'Är du säker?' } %></td>
+            <% end %>
+          </tr>
           <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

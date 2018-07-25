@@ -1,53 +1,62 @@
-<p id="notice"><%= notice %></p>
+<section>
+    <div class="row">
+      <p id="notice"><%= notice %></p>
+      <h2>Baxmor</h2>
+    </div>
+  </section>
+  <section>
+    <div class="row">
+      <h3>Inköp</h3>
+      <%= button_to "Nytt inköp", new_order_path, method: :get %>
+      <table class="purchases">
+        <thead>
+          <tr>
+            <th>Summa</th>
+            <th>Datum</th>
+            <th>Mammerist</th>
+            <th>Betalad</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<h1>Inköp</h1>
+        <tbody>
+          <% @orders.each do |order| %>
+          <tr>
+            <td><%= order.total %> kr</td>
+            <td><%= order.date %></td>
+            <td><%= order.mammerist %></td>
+            <td><%= order.payed_text %></td>
+            <td><%= link_to 'Show', order %></td>
+            <td><%= link_to 'Edit', edit_order_path(order) %></td>
+            <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <h3>Ny produkt</h3>
+      <%= render 'products/form', product: @product %>
+      <h3>Inköpta produkter</h3>
+      <table class="purchases">
+        <thead>
+          <tr>
+            <th>Produkt</th>
+            <th>Antal</th>
+            <th>Pris</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @order_items_grouped.each do |product, order_items| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.total_quantity %></td>
+            <td><%= product.price %> kr</td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+</section>
 
-<table class="purchases">
-  <thead>
-    <tr>
-      <th>Summa</th>
-      <th>Datum</th>
-      <th>Mammerist</th>
-      <th>Betalad</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @orders.each do |order| %>
-      <tr>
-        <td><%= order.total %> kr</td>
-        <td><%= order.date %></td>
-        <td><%= order.mammerist %></td>
-        <td><%= order.payed_text %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<h2>Alla produkter</h2>
-<table class="purchases">
-  <thead>
-    <tr>
-      <th>Produkt</th>
-      <th>Antal</th>
-      <th>Pris</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
- <tbody>
-    <% @order_items_grouped.each do |product, order_items| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.total_quantity %></td>
-        <td><%= product.price %> kr</td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'New Order', new_order_path %>
 
 

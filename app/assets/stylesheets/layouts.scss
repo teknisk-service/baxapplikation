@@ -1,0 +1,64 @@
+$menu-color: #10100F;
+
+@media only screen and (max-width: 750px) {
+  .sidenav {
+    display: none;
+  }
+}
+
+.sidenav {
+  height: 100%;
+  width: 15%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: $menu-color;
+  overflow-x: hidden;
+  padding-top: 20px;
+  overflow:auto;
+}
+
+.sidenav a {
+  padding: 4% 2% 2% 8%;
+  font-size: 3vh;
+  display: block;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+#logo {
+  margin: 0;
+  padding: 0;
+}
+
+.sidenav a {
+  font-family: 'Roboto', serif;
+  text-align: left;
+  color: $accent-color;
+  font-size: 2.5vh;
+  clear: both;
+}
+
+.bottom {
+  padding-left: 1%;
+  position: fixed;
+  bottom: 0;
+}
+
+.sidenav {
+  img.gravatar {
+    margin-left: 8%;
+    display: block;
+    width: 2.25em;
+    height: 2.25em;
+  }
+}
+
+.discrete {
+  a {
+    font-size: 2vmin;
+  }
+}
+

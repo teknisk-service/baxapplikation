@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
      @products.each do |p|
       p.set_price
     end
+    @product = Product.new
   end
 
   def show

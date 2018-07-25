@@ -6,51 +6,54 @@
   <%= image_tag("drifvarpiska.svg", :class => "piska-stor") %>
   <% end %>
   <% if logged_in? %>
-  <h1>Hej <%= current_user.name %>!</h1>
-  <div class = "centered-text">
-  <p>Tid sedan du streckade sist:</p>
-  <% if @last_purchase %>
-  <%= time_ago_in_words(@last_purchase.created_at) %>
-  <% else %>
-  <p>Du har inte streckat än</p>
-  <% end %>
 </div>
-  <h2>Strecka</h2>
-  <section class="purchases">
+<section>
+  <div class="row">
+    <h2 class="left">Baxapp</h2>
+  </div>
+</section>
+<section class="purchases">
+  <div class="row">
+    <h3>Strecka</h3>
+    <p class="left">Tid sedan du streckade sist:
+      <% if @last_purchase %>
+      <i><%= time_ago_in_words(@last_purchase.created_at) %>.</i>
+      <% else %>
+      <i>Du har inte streckat.</i>
+      <% end %>
+    </p>
     <%= render 'purchases/form', purchase: @purchase %>
-  </section>
-  <% if current_user.admin? %>
-  <h2>Baxmor</h2>
-  <div class="icons">
-    <div class="icons-row">
-      <div class="icon">
-        <%= link_to new_order_path do %>
-        <%= image_tag("orders.svg", :class => "link-icon") %>
-        <h4>Nytt inköp</h4>
-        <% end %>
-      </div>
-      <div class="icon">
-        <%= link_to orders_path do %>
-        <%= image_tag("allorders.svg", :class => "link-icon") %>
-        <h4>Alla inköp</h4>
-        <% end %>
-      </div>
-      <div class="icon">
-        <%= link_to new_product_path do %>
-        <%= image_tag("products.svg", :class => "link-icon") %>
-        <h4>Ny produkt</h4>
-        <% end %>
-      </div>
-      <div class="icon">
-        <%= link_to payments_path do%>
-        <%= image_tag("baxkassa.svg", :class => "link-icon") %>
-        <h4>Baxkassa</h4>
-        <% end %>
-      </div>
-    </div>
+  </div>
+</section>
+
+<section>
+  <div class="row">
+    <h3>Dina streck</h3>
+    <%= pie_chart @purchases_stats, legend: false, colors: ["#ed1869", "#cc004f", "#6b0029", "#f2694b"] %>
+  </div>
+</section>
+
+<section>
+  <div class="row">
+    <h3>Topplistan</h3>
+    <table class="purchases">
+  <thead>
+    <tr>
+      <th>Drifter</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |u| %>
+    <tr>
+      <td><%= gravatar_for u, size: 250 %><%= u.name %></td>
+      <td><%= u.debt %> kr</td>
+    </tr>
     <% end %>
-    <h2>Dina streck</h2>
-    <%= render 'users/purchases_table', user: @user %>
-    <% end %>
+  </tbody>
+</table>
+  </div>
+</section>
+<% end %>
 
 

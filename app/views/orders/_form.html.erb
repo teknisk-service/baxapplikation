@@ -21,11 +21,15 @@
       <%= label :total, "Summa" %>
       <%= f.number_field :total, class: 'form-control' %>
       <%= label :payed, "Betalad" %>
-      <div class="radio-buttons">
+      <div class="inline">
+        <div class="inline-content">
         <%= f.label 'payed_true', 'Ja' %>
         <%= f.radio_button :payed, true %>
+      </div>
+      <div class="inline-content">
         <%= f.label 'payed_false', 'Nej' %>
         <%= f.radio_button :payed, false %>
+      </div>
       </div>
     </div>
 
