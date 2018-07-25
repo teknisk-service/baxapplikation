@@ -1,0 +1,48 @@
+<section>
+    <div class="row">
+        <h2>Topplistor</h2>
+    </div>
+</section>
+<section>
+    <div class="row">
+        <h3>Baxbollar</h3>
+        <table class="purchases">
+          <thead>
+            <tr>
+              <th>Drifter</th>
+              <th>Baxbollar</th>
+          </tr>
+      </thead>
+      <tbody>
+        <% @baxbollar.each do |u| %>
+        <tr>
+          <td><%= gravatar_for u, size: 250 %><%= u.name %></td>
+          <td><%= u.baxbollar %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+</div>
+</section>
+
+<section>
+    <div class="row">
+        <h3>Alkohol</h3>
+        <table class="purchases">
+          <thead>
+            <tr>
+              <th>Drifter</th>
+              <th>Enheter</th>
+          </tr>
+      </thead>
+      <tbody>
+        <% @alkohol.each do |u| %>
+        <tr>
+          <td><%= gravatar_for u, size: 250 %><%= u.name %></td>
+          <td><%= u.alcohol %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+</div>
+</section>
