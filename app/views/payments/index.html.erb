@@ -2,6 +2,11 @@
 <section>
   <div class="row">
     <h2>Baxkassa</h2>
+    <div class="centered-buttons-outer">
+      <div class="centered-buttons-inner">
+        <%= button_to "Ny betalning", new_payment_path, method: :get %>
+      </div>
+    </div>
     <h3>Total</h3>
     <table class="purchases">
       <thead>
