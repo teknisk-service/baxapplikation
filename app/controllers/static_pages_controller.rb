@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
   	 @user = current_user
   	 @purchases_grouped = @user.purchases_grouped
      @last_purchase = @user.purchases.first
-     @purchases_stats = Purchase.where(:user_id=> 1).joins(:product).group('products.name').count
+     @purchases_stats = Purchase.where(:user_id=> current_user.id).joins(:product).group('products.name').count
     end
   end
 
