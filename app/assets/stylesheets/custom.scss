@@ -5,6 +5,7 @@
 /* mixins, variables, etc. */
 
 $accent-color: #ED1869;
+$accent-color-light: lighten($accent-color, 10%);
 $accent-hover: #c11f3f;
 $background-color: #1a1a1a;
 $menu-color: #10100F;
@@ -432,4 +433,10 @@ img.menu-icon {
 
 .centered-text {
   text-align: center;
+}
+
+.messenger-message {
+  background-color: $menu-light;
+  color: $accent-color;
+  border: none;
 }

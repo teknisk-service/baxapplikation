@@ -17,14 +17,15 @@
 //= require cocoon
 //= require Chart.bundle
 //= require chartkick
+//= require messenger
+//= require messenger-theme-future
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
     console.log("-- Page Load --");
    });
 
-$(function() {
-  setTimeout(function(){
-    $('.alert-notice').slideUp(500);
-  }, 1000);
-});
+Messenger.options = {
+    theme: 'air',
+    extraClasses: 'messenger-fixed messenger-on-bottom messenger-on-right'
+}
