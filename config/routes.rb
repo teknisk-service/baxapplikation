@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :pingpongs
   resources :orders
   resources :purchases do
     collection do

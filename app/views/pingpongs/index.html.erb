@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pingpongs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pingpongs.each do |pingpong| %>
+      <tr>
+        <td><%= link_to 'Show', pingpong %></td>
+        <td><%= link_to 'Edit', edit_pingpong_path(pingpong) %></td>
+        <td><%= link_to 'Destroy', pingpong, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pingpong', new_pingpong_path %>

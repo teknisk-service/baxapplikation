@@ -1,0 +1,2 @@
+class Pingpong < ApplicationRecord
+end
