@@ -45,4 +45,5 @@ Rails.application.routes.draw do
   get '/toplists', to: 'users#toplists'
   get '/baxbollstoppen', to: 'users#baxbollstoppen'
   get '/alkoholtoppen', to: 'users#alkoholtoppen'
+  get '/pingis', to: 'pingpongs#index'
 end
