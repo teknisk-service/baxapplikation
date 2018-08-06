@@ -4,7 +4,9 @@ class PingpongsController < ApplicationController
   # GET /pingpongs
   # GET /pingpongs.json
   def index
+    @pingpong = Pingpong.new
     @pingpongs = Pingpong.all
+    @toplist = User.all.sort_by(&:pingpong_score).reverse
   end
 
   # GET /pingpongs/1
@@ -25,16 +27,12 @@ class PingpongsController < ApplicationController
   # POST /pingpongs.json
   def create
     @pingpong = Pingpong.new(pingpong_params)
-
-    respond_to do |format|
       if @pingpong.save
-        format.html { redirect_to @pingpong, notice: 'Pingpong was successfully created.' }
-        format.json { render :show, status: :created, location: @pingpong }
+        flash[:notice] = "Match sparad!"
+        redirect_to pingis_url
       else
-        format.html { render :new }
-        format.json { render json: @pingpong.errors, status: :unprocessable_entity }
+         render 'new'
       end
-    end
   end
 
   # PATCH/PUT /pingpongs/1
@@ -69,6 +67,6 @@ class PingpongsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pingpong_params
-      params.fetch(:pingpong, {})
+      params.require(:pingpong).permit(:winner, :looser, :sets_p1, :sets_p2)
     end
 end

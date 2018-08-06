@@ -102,4 +102,16 @@ class User < ApplicationRecord
   def delete_purchases
     Purchase.where(user: self).destroy_all
   end
+
+  def pingpong_won
+    Pingpong.where(winner: self).count
+  end
+
+  def pingpong_lost
+    Pingpong.where(looser: self).count
+  end
+
+  def pingpong_score
+    self.pingpong_won-self.pingpong_lost
+  end
 end
