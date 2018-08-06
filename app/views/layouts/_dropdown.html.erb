@@ -16,7 +16,9 @@
               <li><%= link_to "Topplistor", toplists_path %></li>
               <li><%= link_to "Baxkassa", payments_path %></li>
               <li><%= link_to "Gemensamma köp", shared_purchases_path %></li>
+              <li><%= link_to "Produkter", requests_path %></li>
               <li><%= link_to "Önska produkter", requests_path %></li>
+              <li><%= link_to "Pingis", pingis_path %></li>
                 <li class="divider"></li>
                 <li><%= link_to "Inställningar", edit_user_path(current_user) %></li>
                 <% if current_user.admin? %>
