@@ -13,6 +13,8 @@
   <% end %>
 
   <%= collection_select(:purchase, :product_id, Product.all.sort_by(&:name), :id, :name, :prompt => "Välj produkt") %>
+  <%= select_tag :antal,  options_for_select((1..10).step(1)) %>
+
   <%= collection_select(:purchase, :user_id, User.all.sort_by(&:name), :id, :name, {selected: current_user.id}) %>
   <div class="actions">
     <%= f.submit "Strecka" %>

@@ -28,13 +28,12 @@ class PurchasesController < ApplicationController
   end
 
   def create
-    @purchase = Purchase.new(purchase_params)
-      if @purchase.save
-        flash[:notice] = "Streck check!"
-        redirect_to root_url
-      else
-         render 'new'
-      end
+    params[:antal].to_i.times do |purchase|
+      purchase = Purchase.new(purchase_params)
+      purchase.save
+    end
+    flash[:notice] = "Streck check!"
+    redirect_to root_url
   end
 
   # PATCH/PUT /purchases/1
