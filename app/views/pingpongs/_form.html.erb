@@ -1,10 +1,25 @@
-<%= simple_form_for(@pingpong) do |f| %>
-  <%= f.error_notification %>
+<%= form_for(pingpong) do |p| %>
+  <% if pingpong.errors.any? %>
+    <div id="error_explanation">
+      <div class="h4-center"><h4>Det gick inte att spara matchen av följande anledning(ar):</h4></div>
 
-  <div class="form-inputs">
-  </div>
+      <ul>
+      <% pingpong.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <%= p.label :winner, "Vinnare"%>
+  <%= collection_select(:pingpong, :winner, User.all.sort_by(&:name), :id, :name) %>
+  <%= p.label :looser, "Förlorare"%>
+  <%= collection_select(:pingpong, :looser, User.all.sort_by(&:name), :id, :name) %>
+  <%= p.label :sets_p1, "Set vinnare" %>
+  <%= p.number_field :sets_p1, class: 'form-control' %>
+  <%= p.label :sets_p2 , "Set förlorare" %>
+  <%= p.number_field :sets_p2, class: 'form-control' %>
+  <div class="actions">
+    <%= p.submit "Go!" %>
   </div>
 <% end %>

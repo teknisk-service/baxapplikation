@@ -1,25 +1,50 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Pingpongs</h1>
-
-<table>
+<section>
+<div class="row">
+<h2>Pingis</h2>
+<h3>Ny match</h3>
+<%= render 'form', pingpong: @pingpong %>
+<h3>Topplista</h3>
+<table class="purchases">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Drifter</th>
+      <th>Poäng</th>
+      <th>Vunna</th>
+      <th>Förlorade</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @pingpongs.each do |pingpong| %>
+    <% @toplist.each do |user| %>
       <tr>
-        <td><%= link_to 'Show', pingpong %></td>
-        <td><%= link_to 'Edit', edit_pingpong_path(pingpong) %></td>
-        <td><%= link_to 'Destroy', pingpong, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= user.name %></td>
+        <td><%= user.pingpong_score %></td>
+        <td><%= user.pingpong_won %></td>
+        <td><%= user.pingpong_lost %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<h3>Alla matcher</h3>
+<table class="purchases">
+  <thead>
+    <tr>
+      <th>Vinnare</th>
+      <th>Förlorare</th>
+      <th>Resultat</th>
+    </tr>
+  </thead>
 
-<br>
+  <tbody>
+    <% @pingpongs.each do |p| %>
+      <tr>
+        <td><%= p.winning_user.name %></td>
+        <td><%= p.loosing_user.name %></td>
+        <td><%= p.sets_p1 %> - <%= p.sets_p2 %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</section>
 
-<%= link_to 'New Pingpong', new_pingpong_path %>
