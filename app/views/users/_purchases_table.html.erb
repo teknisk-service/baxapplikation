@@ -4,6 +4,7 @@
         <th>Produkt</th>
         <th>Pris</th>
         <th>Antal</th>
+        <th>Summa</th>
       </tr>
     </thead>
     <tbody>
@@ -12,6 +13,7 @@
           <td><%= product.name %></td>
           <td><%= product.price %> kr</td>
           <td><%= purchases.size %></td>
+          <td><%= product.price * purchases.size %></td>
         </tr>
       <% end %>
     </tbody>
