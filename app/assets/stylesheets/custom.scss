@@ -440,3 +440,8 @@ img.menu-icon {
   color: $accent-color;
   border: none;
 }
+
+.pie-chart-container {
+  display: flex;
+  justify-content: space-between;
+}
