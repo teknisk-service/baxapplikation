@@ -6,8 +6,18 @@ class StaticPagesController < ApplicationController
   	 @user = current_user
   	 @purchases_grouped = @user.purchases_grouped
      @last_purchase = @user.purchases.first
-     @purchases_stats = Purchase.where(:user_id=> current_user.id).joins(:product).group('products.name').count
-     @money_spent = Purchase.where(user: current_user).includes(:product).group('products.name').sum(:price)
+     @purchases_stats = Purchase.where(user: current_user)
+      .joins(:product)
+      .group('products.name')
+      .count
+      .sort_by(&:last)
+      .to_h
+     @money_spent = Purchase.where(user: current_user)
+      .includes(:product)
+      .group('products.name')
+      .sum(:price)
+      .sort_by(&:last)
+      .to_h
      @count = @purchases_stats.values.size
     end
   end
