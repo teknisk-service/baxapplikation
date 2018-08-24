@@ -27,7 +27,10 @@
   <div class="row">
     <h3>Dina streck</h3>
       <% if @last_purchase %>
+      <h4>Antal</h4>
       <%= pie_chart @purchases_stats, legend: false, colors: Colors.generate(size: @count) %>
+      <h4>Pengar</h4>
+      <%= pie_chart @money_spent, legend: false, colors: Colors.generate(size: @count) %>
       <% else %>
       <i>Du har inte streckat.</i>
       <% end %>
