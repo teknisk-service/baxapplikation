@@ -1,0 +1,24 @@
+<div>
+  <h1>
+    Drifveriet anno <%= @team.year %>
+  </h1>
+  <h2>
+    Aktivt: <%= @team.active ? 'Ja' : 'Nej' %>
+  </h2>
+  <table class="purchases">
+  <thead>
+    <tr>
+      <th>Drifvare</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @team.drifters.each do |d| %>
+      <tr>
+        <td><%= link_to d.name, d %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
