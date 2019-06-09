@@ -48,6 +48,8 @@ group :development, :test do
   gem "pry-rails", "~> 0.3.2"
 end
 
+gem 'rb-readline'
+
 gem "cocoon"
 gem 'simple_form'
 

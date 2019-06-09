@@ -52,6 +52,7 @@ GEM
     builder (3.2.3)
     byebug (11.0.1)
     chartkick (3.2.0)
+    chroma (0.2.0)
     cocoon (1.2.12)
     coderay (1.1.2)
     coffee-rails (4.2.2)
@@ -139,6 +140,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    rb-readline (0.5.5)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -211,6 +213,7 @@ DEPENDENCIES
   puma (~> 3.0)
   rails (~> 5.1.5)
   rails-controller-testing
+  rb-readline
   sass-rails (~> 5.0)
   simple_form
   spring
