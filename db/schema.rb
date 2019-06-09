@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190609112426) do
+ActiveRecord::Schema.define(version: 20190609151132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20190609112426) do
     t.datetime "updated_at", null: false
     t.integer "amount"
     t.integer "outlay_id"
+    t.integer "team_id"
   end
 
   create_table "inventories", id: :serial, force: :cascade do |t|
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(version: 20190609112426) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "product_id"
+    t.integer "team_id"
     t.index ["order_id"], name: "index_order_items_on_order_id"
   end
 
@@ -47,6 +49,7 @@ ActiveRecord::Schema.define(version: 20190609112426) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "payed"
+    t.integer "team_id"
   end
 
   create_table "outlays", id: :serial, force: :cascade do |t|
@@ -55,6 +58,7 @@ ActiveRecord::Schema.define(version: 20190609112426) do
     t.string "description"
     t.integer "sum"
     t.integer "user_id"
+    t.integer "team_id"
   end
 
   create_table "payments", id: :serial, force: :cascade do |t|
@@ -62,6 +66,7 @@ ActiveRecord::Schema.define(version: 20190609112426) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "team_id"
   end
 
   create_table "pingpongs", force: :cascade do |t|
@@ -79,6 +84,7 @@ ActiveRecord::Schema.define(version: 20190609112426) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "alcohol"
+    t.integer "team_id"
   end
 
   create_table "purchases", id: :serial, force: :cascade do |t|
@@ -86,6 +92,7 @@ ActiveRecord::Schema.define(version: 20190609112426) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "team_id"
   end
 
   create_table "requests", id: :serial, force: :cascade do |t|
@@ -93,6 +100,7 @@ ActiveRecord::Schema.define(version: 20190609112426) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "team_id"
   end
 
   create_table "shared_purchases", force: :cascade do |t|
@@ -100,6 +108,7 @@ ActiveRecord::Schema.define(version: 20190609112426) do
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "team_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -118,6 +127,7 @@ ActiveRecord::Schema.define(version: 20190609112426) do
     t.string "password_digest"
     t.string "remember_digest"
     t.boolean "admin", default: false
+    t.integer "teams", default: [], array: true
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
