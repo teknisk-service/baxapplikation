@@ -17,10 +17,7 @@ class TeamsController < ApplicationController
 
 	def create
 		@team = Team.new(team_params)
-	end
-
-	def create
-		@team = Team.new(team_params)
+		@team.users = params[:team][:users]
 		if @team.save!
 			redirect_to :controller => 'teams', :action => 'index'
 		else
