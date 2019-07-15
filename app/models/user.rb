@@ -114,4 +114,9 @@ class User < ApplicationRecord
   def pingpong_score
     self.pingpong_won-self.pingpong_lost
   end
+
+  def set_team(id)
+    new_team = self.teams.push(id)
+    update_attribute(:teams, new_team)
+  end
 end
