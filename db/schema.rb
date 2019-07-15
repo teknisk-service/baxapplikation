@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190714181155) do
+ActiveRecord::Schema.define(version: 20190609150953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -114,7 +114,7 @@ ActiveRecord::Schema.define(version: 20190714181155) do
   create_table "teams", force: :cascade do |t|
     t.integer "year"
     t.boolean "active"
-    t.string "users", default: => []
+    t.string "users", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -127,7 +127,7 @@ ActiveRecord::Schema.define(version: 20190714181155) do
     t.string "password_digest"
     t.string "remember_digest"
     t.boolean "admin", default: false
-    t.integer "teams", default: [], array: true
+    t.string "teams", default: [], array: true
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
