@@ -30,6 +30,10 @@ module SessionsHelper
     end
   end
 
+  def current_team
+    Team.where(active: true).sort_by(&:year).last
+  end
+
     def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
