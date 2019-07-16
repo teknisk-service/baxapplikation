@@ -119,4 +119,12 @@ class User < ApplicationRecord
     new_team = self.teams.push(id)
     update_attribute(:teams, new_team)
   end
+
+  def all_teams
+    teams ||= []
+    self.teams.each do |t|
+      teams.push(Team.find(t))
+    end
+    return teams
+  end
 end
