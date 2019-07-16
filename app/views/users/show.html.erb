@@ -1,5 +1,24 @@
 <section class="profile">
   <%= render @user %>
+  <h4>Drifverier</h4>
+  <table class="purchases">
+  <thead>
+    <tr>
+      <th>Drifverier</th>
+      <th>Aktivt</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.all_teams.each do |t| %>
+      <tr>
+        <td>Drifveriet anno <%= link_to t.year, t %></td>
+        <td><%= t.active ? 'Ja' : 'Nej'%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
   <div class="admin">
     <% if current_user.admin? && !current_user?(@user) %>
     <%= button_to "Ta bort användare", @user, method: :delete, data: { confirm: "Är du säker?" } %>
