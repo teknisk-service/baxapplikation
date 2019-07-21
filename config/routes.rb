@@ -32,7 +32,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :teams
+  resources :teams do
+    member do
+      get '/stats', to: 'teams#stats'
+    end
+  end
 
 
   get 'sessions/new'
