@@ -38,6 +38,12 @@ class TeamsController < ApplicationController
 		redirect_to teams_url, notice: 'Team borttaget'
 	end
 
+	def stats
+		team = Team.find(params[:id])
+		@purchases_grouped = team.purchases_grouped
+		@total_purchases = team.total_purchases
+	end
+
 	private
 	def team_params
 		params.require(:team).permit(:year, :active, :users => [])

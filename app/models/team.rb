@@ -9,6 +9,18 @@ class Team < ApplicationRecord
 		return @drifters
 	end
 
+	def purchases
+		Purchase.where(team_id: self)
+	end
+
+	def purchases_grouped
+		purchases.group_by(&:product).to_h
+	end
+
+	def total_purchases
+		Purchase.where(team_id: self).includes(:product).sum(:price)
+	end
+
 	private
 	def set_user_team
 		self.users.each do |u|
