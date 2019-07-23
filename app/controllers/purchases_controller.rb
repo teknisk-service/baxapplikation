@@ -63,12 +63,6 @@ class PurchasesController < ApplicationController
     end
   end
 
-  def remove_all
-    Purchase.delete_all
-    flash[:notice] = "Alla streck borttagna"
-    redirect_to purchases_path
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_purchase

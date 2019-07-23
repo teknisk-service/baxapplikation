@@ -47,6 +47,3 @@
 <br>
 
 <%= link_to 'Nytt streck', new_purchase_path %>
-  <% if current_user.admin? %>
-   <%= link_to "Ta bort alla", remove_all_purchases_path, :method => :get %>
-  <% end %>

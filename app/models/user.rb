@@ -99,10 +99,6 @@ class User < ApplicationRecord
     end
   end
 
-  def delete_purchases
-    Purchase.where(user: self).destroy_all
-  end
-
   def pingpong_won
     Pingpong.where(winner: self).count
   end
