@@ -1,9 +1,10 @@
 class SharedPurchasesController < ApplicationController
 	def index
-		@shared_purchases = SharedPurchase.all
+		team = SessionsController.helpers.current_team
+		@shared_purchases = SharedPurchase.where(team_id: team.id)
 	end
 
-	def new 
+	def new
 		@shared_purchase = SharedPurchase.new
 	end
 

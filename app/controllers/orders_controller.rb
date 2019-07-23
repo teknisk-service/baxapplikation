@@ -2,14 +2,15 @@ class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   def index
-    @orders = Order.all
-    if Product.all.count > 0
-      @order_items_grouped = OrderItem.all.group_by(&:product).to_h
+    team = SessionsController.helpers.current_team
+    @orders = Order.where(team_id: team.id)
+    if Product.where(team_id: team.id).count > 0
+      @order_items_grouped = OrderItem.where(team_id: team.id).group_by(&:product).to_h
     else
       @order_items_grouped = []
     end
-    @order_items = OrderItem.all
-    @products = Product.all 
+    @order_items = OrderItem.where(team_id: team.id)
+    @products = Product.where(team_id: team.id)
      @products.each do |p|
       p.set_price
     end
@@ -27,8 +28,9 @@ class OrdersController < ApplicationController
   end
 
   def create
+    team = SessionsController.helpers.current_team
     @order = Order.new(order_params)
-    @products = Product.all 
+    @products = Product.where(team_id: team.id)
     @products.each do |p|
       p.set_price
     end

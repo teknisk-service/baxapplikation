@@ -2,7 +2,8 @@ class OutlaysController < ApplicationController
   before_action :set_outlay, only: [:show, :edit, :update, :destroy]
 
   def index
-    @outlays = Outlay.all
+    team = SessionsController.helpers.current_team
+    @outlays = Outlay.where(active_team: team.id)
   end
 
   def show

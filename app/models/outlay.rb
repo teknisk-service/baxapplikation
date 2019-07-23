@@ -6,7 +6,8 @@ class Outlay < ApplicationRecord
 	after_create :set_team
 
 	def debters
-		Debter.all.where(outlay_id: self)
+		team = SessionsController.helpers.current_team
+		Debter.all.where(outlay_id: self).where(team_id: team.id)
 	end
 
 	def user
