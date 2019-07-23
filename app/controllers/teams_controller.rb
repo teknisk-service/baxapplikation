@@ -26,10 +26,13 @@ class TeamsController < ApplicationController
 	end
 
 	def update
+		head :forbidden unless authorize
+		@team = Team.find(params[:id])
 		if @team.update(team_params)
-			redirect_to edit_team_path(@team), notice: 'Team uppdaterat'
+			flash[:success] = "Drifveri uppdaterat"
+			redirect_to @team
 		else
-			render :edit
+			render 'edit'
 		end
 	end
 
@@ -50,7 +53,11 @@ class TeamsController < ApplicationController
 	end
 
 	def set_team
-      @team = Team.find(params[:id])
+		@team = Team.find(params[:id])
+	end
+
+	def authorize
+      current_user.admin?
     end
 end
 
