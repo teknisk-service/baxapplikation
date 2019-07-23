@@ -3,6 +3,7 @@ class SharedPurchase < ApplicationRecord
 
 	private
 	def set_team
-		current_team.add_shared_purchase(self.id)
-	end
+		team = SessionsController.helpers.current_team
+		update_attribute(:team_id, team.id)
+  	end
 end
