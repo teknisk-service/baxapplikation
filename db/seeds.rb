@@ -29,7 +29,7 @@ User.create(email: "vilma@drifveriet.se", name: "Vilma", password: "test123", ad
 
 User.create(email: "pontus@drifveriet.se", name: "Pontus", password: "test123", admin: false)
 User.create(email: "emmy@drifveriet.se", name: "Emmy", password: "test123", admin: false)
-User.create(email: "isabell@drifveriet.se", name: "Isabell", password: "test123", admin: false)
+User.create(email: "isabel@drifveriet.se", name: "Isabel", password: "test123", admin: false)
 User.create(email: "amanda@drifveriet.se", name: "Amanda", password: "test123", admin: false)
 User.create(email: "timas@drifveriet.se", name: "Timas", password: "test123", admin: false)
 User.create(email: "magnus@drifveriet.se", name: "Magnus", password: "test123", admin: false)
