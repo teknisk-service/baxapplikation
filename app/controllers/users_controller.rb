@@ -4,23 +4,18 @@ class UsersController < ApplicationController
   before_action :authorize, only: [:edit, :update, :purchases]
 
   def index
-    @users = User.all.sort_by(&:debt).reverse
+    team = SessionsController.helpers.current_team
+    @users = User.where('teams && ARRAY[?]::varchar[]', [team.id]).sort_by(&:debt).reverse
   end
 
   def show
   end
 
-  def baxbollstoppen
-    @toplist = User.all.sort_by(&:baxbollar).reverse
-  end
-
-  def alkoholtoppen
-    @toplist = User.all.sort_by(&:alcohol).reverse
-  end
-
   def toplists
-    @baxbollar = User.all.sort_by(&:baxbollar).reverse
-    @alkohol = User.all.sort_by(&:alcohol).reverse
+    team = SessionsController.helpers.current_team
+    active = User.where('teams && ARRAY[?]::varchar[]', [team.id])
+    @baxbollar = active.sort_by(&:baxbollar).reverse
+    @alkohol = active.all.sort_by(&:alcohol).reverse
   end
 
   def new

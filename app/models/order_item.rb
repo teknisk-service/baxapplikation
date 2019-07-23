@@ -5,7 +5,8 @@ class OrderItem < ApplicationRecord
   after_create :set_team
 
   def products
-  	@products = Product.all
+    team = SessionsController.helpers.current_team
+  	@products = Product.where(team_id: team.id)
   end
 
   private

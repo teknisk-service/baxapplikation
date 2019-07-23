@@ -9,7 +9,8 @@ class Order < ApplicationRecord
 	after_create :set_team
 
 	def update_product_price
-		@products = Product.all
+		team = SessionsController.helpers.current_team
+		@products = Product.where(team_id: team.id)
 		@products.each do |p|
 			p.set_price
 		end
