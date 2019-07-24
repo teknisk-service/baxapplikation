@@ -21,3 +21,24 @@
     </tbody>
  </table>
  <p>Totalt streckat för: <%= @total_purchases %> kr</p>
+
+ <h2>Inköp</h2>
+ <table class="purchases">
+  <thead>
+    <tr>
+      <th>Produkt</th>
+      <th>Antal</th>
+      <th>Pris</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order_items.each do |product, order_items| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.total_quantity %></td>
+      <td><%= product.price %> kr</td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<p>Totalt köpt för: <%= @total_orders %> kr</p>

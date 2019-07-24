@@ -45,6 +45,8 @@ class TeamsController < ApplicationController
 		team = Team.find(params[:id])
 		@purchases_grouped = team.purchases_grouped
 		@total_purchases = team.total_purchases
+		@order_items = team.order_items_grouped
+		@total_orders = team.total_orders
 	end
 
 	private
