@@ -1,6 +1,5 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Streck</h1>
+<h1>Stats</h1>
+<h2>Streck</h2>
 <table class="purchases">
     <thead>
       <tr>
@@ -20,30 +19,26 @@
         </tr>
       <% end %>
     </tbody>
-  </table>
+ </table>
+ <p>Totalt streckat för: <%= @total_purchases %> kr</p>
 
-<table class="purchases">
+ <h2>Inköp</h2>
+ <table class="purchases">
   <thead>
     <tr>
       <th>Produkt</th>
-      <th>Användare</th>
-      <th colspan="3"></th>
+      <th>Antal</th>
+      <th>Pris</th>
     </tr>
   </thead>
-
   <tbody>
-    <% @purchases.each do |purchase| %>
-      <tr>
-        <td><%= purchase.product.name %></td>
-        <td><%= purchase.user.name %></td>
-        <td><%= link_to 'Show', purchase %></td>
-        <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>
-        <td><%= link_to 'Destroy', purchase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% @order_items.each do |product, order_items| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.total_quantity %></td>
+      <td><%= product.price %> kr</td>
+    </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'Nytt streck', new_purchase_path %>
+<p>Totalt köpt för: <%= @total_orders %> kr</p>

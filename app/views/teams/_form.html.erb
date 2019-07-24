@@ -1,0 +1,42 @@
+<%= simple_form_for(@team) do |t| %>
+  <% if team.errors.any? %>
+    <div id="error_explanation">
+      <div class="h4-center"><h4>Det gick inte att spara teamet av följande anledning(ar):</h4></div>
+
+      <ul>
+      <% team.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= t.label :year, "År"%>
+  <%= t.select :year, (Date.today.year-5)..(Date.today.year+5), :selected => Time.current.year %>
+
+  <%= label :active, "Aktivt" %>
+   <div class="inline">
+    <div class="inline-content">
+        <%= t.label 'active_true', 'Ja' %>
+        <%= t.radio_button :active, true %>
+    </div>
+    <div class="inline-content">
+        <%= t.label 'active_false', 'Nej' %>
+        <%= t.radio_button :active, false %>
+    </div>
+   </div>
+   <%= t.input :users, :as => :array  %>
+   <%= t.input :users, :as => :array  %>
+   <%= t.input :users, :as => :array  %>
+   <%= t.input :users, :as => :array  %>
+   <%= t.input :users, :as => :array  %>
+   <%= t.input :users, :as => :array  %>
+   <%= t.input :users, :as => :array  %>
+   <%= t.input :users, :as => :array  %>
+   <%= t.input :users, :as => :array  %>
+
+  <div class="actions">
+    <%= t.submit "Go!" %>
+  </div>
+<% end %>
+

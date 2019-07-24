@@ -5,8 +5,10 @@ class PurchasesController < ApplicationController
   # GET /purchases
   # GET /purchases.json
   def index
-    @purchases = Purchase.all
-    @purchases_grouped = Purchase.all.group_by(&:product).to_h
+    team = SessionsController.helpers.current_team
+    purchases = Purchase.where(team_id: team.id)
+    @purchases = purchases
+    @purchases_grouped = purchases.group_by(&:product).to_h
   end
 
   # GET /purchases/1
@@ -16,7 +18,8 @@ class PurchasesController < ApplicationController
 
   # GET /purchases/new
   def new
-    @products = Product.all 
+    team = SessionsController.helpers.current_team
+    @products = Product.where(team_id: team.id)
     @products.each do |p|
       p.set_price
     end
@@ -58,12 +61,6 @@ class PurchasesController < ApplicationController
       format.html { redirect_to purchases_url, notice: 'Purchase was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
-
-  def remove_all
-    Purchase.delete_all
-    flash[:notice] = "Alla streck borttagna"
-    redirect_to purchases_path
   end
 
   private

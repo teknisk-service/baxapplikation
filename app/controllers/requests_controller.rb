@@ -4,7 +4,8 @@ class RequestsController < ApplicationController
   helper_method :downvote
 
   def index
-    @requests = Request.all.order(:comment)
+    team = SessionsController.helpers.current_team
+    @requests = Request.where(team_id: team.id).order(:comment)
   end
 
   def show

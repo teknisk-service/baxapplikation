@@ -5,7 +5,8 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all.sort_by(&:name)
+    team = SessionsController.helpers.current_team
+    @products = Product.where(team_id: team.id).sort_by(&:name)
   end
 
   # GET /products/1

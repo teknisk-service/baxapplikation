@@ -7,8 +7,8 @@
   </h5>
 
   <%= form_for(@purchase) do |f| %>
-    <%= collection_select(:purchase, :product_id, Product.all.sort_by(&:name), :id, :name) %>
-    <%= collection_select(:purchase, :user_id, User.all.sort_by(&:name), :id, :name) %>
+    <%= collection_select(:purchase, :product_id, Product.where(team_id: SessionsController.helpers.current_team.id).sort_by(&:name), :id, :name) %>
+    <%= collection_select(:purchase, :user_id, User.where('teams && ARRAY[?]::varchar[]', [SessionsController.helpers.current_team.id]).sort_by(&:name), :id, :name) %>
     <div class="actions">
       <%= f.submit "Strecka" %>
     </div>

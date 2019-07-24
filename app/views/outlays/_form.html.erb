@@ -19,7 +19,7 @@
       <%= label :sum, "Summa" %>
       <%= f.number_field :sum %>
       <%= label :user_id, "Betalade" %>
-      <%= collection_select(:outlay, :user_id, User.all.sort_by(&:name), :id, :name, {selected: current_user.id}) %>
+      <%= collection_select(:outlay, :user_id, User.where('teams && ARRAY[?]::varchar[]', [SessionsController.helpers.current_team.id]).sort_by(&:name), :id, :name, {selected: current_user.id}) %>
     </div>
 
     <div>

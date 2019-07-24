@@ -12,7 +12,7 @@
     </div>
   <% end %>
 
-  <%= collection_select(:payment, :user_id, User.all.sort_by(&:name), :id, :name, {selected: current_user.id}) %>
+  <%= collection_select(:payment, :user_id, User.where('teams && ARRAY[?]::varchar[]', [SessionsController.helpers.current_team.id]).sort_by(&:name), :id, :name, {selected: current_user.id}) %>
   <%= f.label :summa %>
   <%= f.number_field :amount, class: 'form-control' %>
   <div class="actions">

@@ -45,15 +45,15 @@ class User < ApplicationRecord
   end
 
   def debt
-    Purchase.where(user: self).includes(:product).sum(:price) + debt_per_drifter
+    Purchase.where(user: self).where(team_id: team.id).includes(:product).sum(:price) + debt_per_drifter
   end
 
   def debt_per_drifter
-    (SharedPurchase.all.sum(:price).to_f/9).ceil
+    (SharedPurchase.where(team_id: team.id).sum(:price).to_f/9).ceil
   end
 
   def payed
-    Payment.where(user: self).sum(:amount)
+    Payment.where(user: self).where(team_id: team.id).sum(:amount)
   end
 
   def total
@@ -65,7 +65,7 @@ class User < ApplicationRecord
   end
 
   def purchases
-    Purchase.where(user: self).sort_by(&:created_at).reverse
+    Purchase.where(user: self).where(team_id: team.id).sort_by(&:created_at).reverse
   end
 
   def purchases_grouped
@@ -74,16 +74,16 @@ class User < ApplicationRecord
 
   def baxbollar
     baxboll = Product.select("id").where(name: "Baxboll")
-    Purchase.where(product_id: baxboll).where(user: self).count #får hårdkodas för tillfället
+    Purchase.where(product_id: baxboll).where(user: self).where(team_id: team.id).count
   end
 
   def alcohol
     alcId = Product.select("id").where(alcohol: true)
-    Purchase.where(product_id: alcId).where(user: self).count
+    Purchase.where(product_id: alcId).where(user: self).where(team_id: team.id).count
   end
 
   def payments
-    Payment.where(user: self)
+    Payment.where(user: self).where(team_id: team.id)
   end
 
   def set_admin
@@ -99,10 +99,6 @@ class User < ApplicationRecord
     end
   end
 
-  def delete_purchases
-    Purchase.where(user: self).destroy_all
-  end
-
   def pingpong_won
     Pingpong.where(winner: self).count
   end
@@ -113,5 +109,22 @@ class User < ApplicationRecord
 
   def pingpong_score
     self.pingpong_won-self.pingpong_lost
+  end
+
+  def set_team(id)
+    new_team = self.teams.push(id)
+    update_attribute(:teams, new_team)
+  end
+
+  def all_teams
+    teams ||= []
+    self.teams.each do |t|
+      teams.push(Team.find(t))
+    end
+    return teams
+  end
+
+  def team
+    team = SessionsController.helpers.current_team
   end
 end

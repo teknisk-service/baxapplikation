@@ -2,9 +2,10 @@ class PaymentsController < ApplicationController
 before_action :set_payment, only: [:show, :edit, :update, :destroy]
 
   def index
-    @payments = Payment.all
-    @total_in = Payment.all.sum(:amount)
-    @total_out = Order.all.sum(:total)
+    team = SessionsController.helpers.current_team
+    @payments = Payment.where(team_id: team.id)
+    @total_in = Payment.where(team_id: team.id).sum(:amount)
+    @total_out = Order.where(team_id: team.id).sum(:total)
   end
 
   def show
