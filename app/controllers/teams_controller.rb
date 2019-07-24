@@ -12,6 +12,7 @@ class TeamsController < ApplicationController
 	end
 
 	def edit
+		head :forbidden unless authorize
 		@team = Team.find(params[:id])
 	end
 
