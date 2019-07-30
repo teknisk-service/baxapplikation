@@ -4,13 +4,15 @@
 
 /* mixins, variables, etc. */
 
-$accent-color: #ED1869;
+$accent-color: rgb(237, 24, 105);
 $accent-color-light: lighten($accent-color, 10%);
 $accent-hover: #c11f3f;
-$background-color: #1a1a1a;
+$background-color: rgb(40, 40, 40);
 $menu-color: #10100F;
 $menu-light: #21211e;
 $gray-medium-light: #eaeaea;
+$light_grey: rgba(240,240,240,1);
+$text: rgb(175, 175, 175);
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -29,7 +31,7 @@ body {
   font-size: 16px;
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
-  color: $accent-color;
+  color: $text;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -61,56 +63,53 @@ td a, td input, td img {
   display: inline-block;
 }
 
-/* Headings and fonts */
 h1 {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 700; 
-  font-size: 5vh;
-  text-align: center;
-  color: $accent-color;
-  clear: both;
+    font-size: 5em;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 500;
+    color: $accent-color;
 }
 
 h2 {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 400; 
-  font-size: 5vh;
-  text-align: left;
+  font-size: 3em;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 500;
   color: $accent-color;
-  clear: both;
-}
-
-h2.center {
-  text-align: center !important;
 }
 
 h3 {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 00;
-  text-align: left;
+  font-size: 2em;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
   color: $accent-color;
-  text-transform: uppercase;
-  font-size: 3vh;
-  clear: both;
 }
 
-a {
-  text-decoration: none;
-  font-family: 'Rubik', sans-serif !important;
-  color: $accent-color !important;
+h4 {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 1.75em;
+  font-weight: 300;
 }
 
-a:hover {
- color: $accent-hover;
+h5  {
+  font-size: 1.5em !important;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: $text;
 }
 
-p.left {
-  text-align: left !important;
-}
-
-p {
-  font-size: 2vmin;
+h6, label {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   color: $accent-color;
+}
+
+p, input, button {
+    font-family: 'Roboto', sans-serif;
+}
+
+title {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
 }
 
 @media only screen and (max-width: 750px) {
@@ -169,7 +168,7 @@ header {
   padding-left: 1em;
 }
 
-/* miscellaneous */
+
 
 .debug_dump {
   width: 100%;
@@ -178,25 +177,6 @@ header {
   display: none; 
 }
 
-/* forms */
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-input {
-  height: 3em;
-}
-
-form {
-  color: $accent-color;
-  font-family: 'Roboto', serif;
-  font-weight: 400;
-  margin: 0 auto;
-}
 
 @media only screen and (max-width: 750px) {
   main {
@@ -206,17 +186,6 @@ form {
 
 main {
   flex: 1;
-}
-
-button, input[type="submit"] {
-  background-color: $accent-color;
-  color: black;
-  padding: 5px;
-  border: none;
-  border-radius: 6px;
-  width: 25%; 
-  float: center; 
-  height: 3em !important;
 }
 
 .buttons {
@@ -245,10 +214,6 @@ button, input[type="submit"] {
 }
 
 /* forms */
-
-form {
-  align-content: center;
-}
 
 label {
   font-family: 'Roboto', serif;
