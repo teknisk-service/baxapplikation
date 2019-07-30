@@ -22,6 +22,7 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 gem "bootstrap-sass", ">= 3.4.1"
+gem "bootstrap_form", ">= 4.2.0"
 
 gem "chartkick"
 gem "chroma"
