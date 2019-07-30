@@ -12,11 +12,16 @@
  *
  *= require_self
  *= require messenger
-  *= require messenger-spinner
-  *= require messenger-theme-future
+ *= require messenger-spinner
+ *= require messenger-theme-future
+ *= require rails_bootstrap_forms
  */
 
 @import "custom";
+@import "forms";
+@import "homepage";
+
+
 @import "products";
 @import "purchases";
 @import "users";
