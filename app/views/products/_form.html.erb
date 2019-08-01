@@ -1,17 +1,5 @@
-<%= form_for(product) do |f| %>
-
-  <%= f.label :namn %>
-  <%= f.text_field :name, class: 'form-control' %>
-  <%= label :alcohol, "Alkohol" %>
-   <div class="inline">
-    <div class="inline-content">
-        <%= f.label 'alcohol_true', 'Ja' %>
-        <%= f.radio_button :alcohol, true %>
-    </div>
-    <div class="inline-content">
-        <%= f.label 'alcohol_false', 'Nej' %>
-        <%= f.radio_button :alcohol, false %>
-    </div>
-   </div>
+<%= bootstrap_form_for(product) do |f| %>
+  <%= f.text_field :name, class: 'form-control', label: "Produkt" %>
+  <%= f.check_box :alcohol, custom: :switch, label: "Alkohol" %>
   <%= f.submit "Go!", class: "btn btn-primary" %>
 <% end %>

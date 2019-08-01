@@ -1,23 +1,7 @@
-<div class="strecka-form">
-<%= form_for(purchase) do |f| %>
-  <% if purchase.errors.any? %>
-    <div id="error_explanation">
-      <div class="h4-center"><h4>Detta gick inte att strecka av följande anledning(ar):</h4></div>
-
-      <ul>
-      <% purchase.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<%= bootstrap_form_for(purchase) do |f| %>
   <%= collection_select(:purchase, :product_id, Product.where(team_id: SessionsController.helpers.current_team.id).sort_by(&:name), :id, :name, :prompt => "Välj produkt") %>
   <%= select_tag :antal,  options_for_select((1..10).step(1)) %>
 
   <%= collection_select(:purchase, :user_id, User.where('teams && ARRAY[?]::varchar[]', [SessionsController.helpers.current_team.id]).sort_by(&:name), :id, :name, {selected: current_user.id}) %>
-  <div class="actions">
-    <%= f.submit "Strecka" %>
-  </div>
+  <%= f.submit "Strecka", class: "btn btn-primary" %>
 <% end %>
-</div>
