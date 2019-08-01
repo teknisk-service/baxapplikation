@@ -1,11 +1,17 @@
 input.btn.btn-primary {
     color: white;
-    background-color: $accent_color;
+    background-color: $accent-color;
+    border-color: $accent-color;
     margin-left: auto;
     margin-right: auto;
     display: block;
     width: 50%;
-    margin-top: 5%;
+    margin-top: 2%;
+}
+
+input.btn.btn-primary::after {
+    border-color: $accent-color !important;
+    background-color: $accent-color-light;
 }
 
 .form-group {
@@ -32,9 +38,22 @@ input.btn.btn-primary {
     background-color: transparent;
 }
 
+select {
+    color: $text_dark;
+    height: 3em;
+}
+
+form {
+    width: 100%;
+}
+
 @media (max-width: 480px) {
+    form {
+        margin: 0 auto;
+        width: 100%;
+    }
     .login_form_wrapper {
-        width: 90%;
+        width: 100% !important;
         margin-top: 8%;
     }
 }
