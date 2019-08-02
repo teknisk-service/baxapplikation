@@ -1,26 +1,16 @@
+<h5>Om inköpet</h5>
 <%= simple_form_for @order do |f| %>
 <div>
-  <%= label :date, "Datum" %>
-  <%= f.date_select(:date, :order => [:day, :month, :year]) %>
-  <%= label :mammerist, "Mammerist som betalade" %>
+  <%= label :date, "Inköpstdatum" %>
+  <%= f.date_field(:date, :order => [:day, :month, :year]) %>
+  <%= label :mammerist, "Person som betalade" %>
   <%= f.text_field :mammerist, class: 'form-control' %>
-  <%= label :total, "Summa" %>
+  <%= label :total, "Totalsumma" %>
   <%= f.number_field :total, class: 'form-control' %>
-  <%= label :payed, "Betalad" %>
-  <div class="inline">
-    <div class="inline-content">
-      <%= f.label 'payed_true', 'Ja' %>
-      <%= f.radio_button :payed, true %>
-    </div>
-    <div class="inline-content">
-      <%= f.label 'payed_false', 'Nej' %>
-      <%= f.radio_button :payed, false %>
-    </div>
-  </div>
-</div>
+  <%= f.input_field :payed, as: :boolean, checked_value: true, unchecked_value: false, inline_label: "Betalad",  %>
 
 <div>
-  <p><strong>Produkter:</strong></p>
+  <h5>Produkter</h5>
 
   <div id="order_items">
     <%= f.simple_fields_for :order_items do |order_item| %>

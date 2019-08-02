@@ -7,7 +7,7 @@ $accent-color: rgb(237, 24, 105);
 $accent-color-light: lighten($accent-color, 10%);
 $accent-hover: #c11f3f;
 $background-color: rgb(40, 40, 40);
-$menu-color: #10100F;
+$menu-color: rgb(25, 25, 25);
 $menu-light: #21211e;
 $gray-medium-light: #eaeaea;
 $light_grey: rgba(240,240,240,1);
@@ -106,7 +106,7 @@ h5  {
 h6, label {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  color: $accent-color;
+  color: $text;
 }
 
 p, input, button {
@@ -125,37 +125,6 @@ title {
 
   h2 {
     font-size: 5vh !important; 
-  }
-}
-
-header {
-  background-color: $menu-color;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  padding: 1em;
-  align-items: center;
-  justify-content: center;
-
-  .menu {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    span {
-      margin: 0 1em;
-    }
-    #logo {
-      margin-right: 2em;
-    }
-  }
-
-
-  li {
-    display: inline;
   }
 }
 
@@ -219,12 +188,6 @@ main {
   }
 }
 
-/* forms */
-
-label {
-  font-family: 'Roboto', serif;
-  float: left;
-}
 
 input {
   height: auto !important;

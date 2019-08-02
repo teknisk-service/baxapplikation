@@ -1,8 +1,8 @@
 <div class="nested-fields">
-   <%= f.association :product, collection: Product.order(:name)%>
+   <%= f.association :product, collection: Product.order(:name), label: "Produkt"%>
    <%= label :quantity, "Antal" %>
    <%= f.number_field :quantity %>
    <%= label :price, "Totalt pris" %>
-   <%= f.number_field :price %> 
+   <%= f.number_field :price %>
   <%= link_to_remove_association "Ta bort produkt", f %>
 </div>
