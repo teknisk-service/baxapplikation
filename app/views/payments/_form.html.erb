@@ -1,22 +1,6 @@
-<div class="betala-form">
-<%= form_for(payment) do |f| %>
-  <% if payment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
-
-      <ul>
-      <% payment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<%= bootstrap_form_for(payment) do |f| %>
   <%= collection_select(:payment, :user_id, User.where('teams && ARRAY[?]::varchar[]', [SessionsController.helpers.current_team.id]).sort_by(&:name), :id, :name, {selected: current_user.id}) %>
   <%= f.label :summa %>
-  <%= f.number_field :amount, class: 'form-control' %>
-  <div class="actions">
-    <%= f.submit "Betala" %>
-  </div>
+  <%= f.number_field :amount, class: 'form-control'%>
+  <%= f.submit "Betala", class: "btn btn-primary" %>
 <% end %>
-</div>

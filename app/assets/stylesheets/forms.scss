@@ -14,6 +14,11 @@ input.btn.btn-primary::after {
     background-color: $accent-color-light;
 }
 
+select::after{
+    border-color: $accent-color !important;
+    background-color: $accent-color-light;
+}
+
 .form-group {
     margin-left: auto;
     margin-right: auto;
