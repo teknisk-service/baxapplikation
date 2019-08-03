@@ -287,6 +287,7 @@ section {
   .row {
     padding-left: 10%;
     padding-right: 10%;
+    width: 100% !important;
   }
   
   button, input[type="submit"] {
@@ -332,10 +333,6 @@ section {
       display: none; 
     }
   }
-}
-
-img.menu-icon {
-  height: 25px !important; 
 }
 
 @media only screen and (max-width: 750px) { 
