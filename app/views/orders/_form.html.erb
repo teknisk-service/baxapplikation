@@ -7,7 +7,8 @@
   <%= f.text_field :mammerist, class: 'form-control' %>
   <%= label :total, "Totalsumma" %>
   <%= f.number_field :total, class: 'form-control' %>
-  <%= f.input_field :payed, as: :boolean, checked_value: true, unchecked_value: false, inline_label: "Betalad",  %>
+  <%= f.input :payed, as: :boolean, checked_value: true, unchecked_value: false, label: "Betalad" %>
+</div>
 
 <div>
   <h5>Produkter</h5>

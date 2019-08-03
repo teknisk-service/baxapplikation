@@ -1,3 +1,9 @@
+input[type=checkbox], input[type=radio] {
+    vertical-align: -2px;
+    margin: 0;
+    padding: 0;
+}
+
 input.btn.btn-primary {
     color: white;
     background-color: $accent-color;
@@ -28,6 +34,10 @@ select::after{
 
 .form-control {
     background: $light_grey;
+}
+
+.control-group.error .help-inline {
+  display: none;
 }
 
 .login_form_wrapper {
