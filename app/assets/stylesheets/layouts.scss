@@ -20,6 +20,7 @@ $menu-color: rgb(25, 25, 25);
 }
 
 .sidenav a {
+  color: $accent-color;
   padding: 5% 3% 3% 10%;
   display: block;
   width:100%;
@@ -27,6 +28,10 @@ $menu-color: rgb(25, 25, 25);
   cursor: pointer;
   font-size: 1em;
   clear: both;
+}
+
+.sidenav a:hover {
+  color: $accent-hover;
 }
 
 #logo {

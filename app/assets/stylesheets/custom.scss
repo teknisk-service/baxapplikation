@@ -124,12 +124,12 @@ title {
 }
 
 a {
-  color: $accent-color;
+  color: $text;
 }
 
 a:hover {
   text-decoration: none;
-  color: $accent-hover;
+  color: $text_dark;
 }
 
 @media only screen and (max-width: 750px) {
