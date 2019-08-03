@@ -6,12 +6,12 @@
 </div>
 <section>
   <div class="row">
-    <h2 class="left">Baxapp</h2>
+    <h1 class="title">Baxapp</h1>
   </div>
 </section>
 <section class="purchases">
   <div class="row">
-    <h3>Strecka</h3>
+    <h5>Strecka</h5>
     <p class="left">Tid sedan du streckade sist:
       <% if @last_purchase %>
       <i><%= time_ago_in_words(@last_purchase.created_at) %>.</i>
@@ -23,29 +23,31 @@
   </div>
 </section>
 
-<section>
+<seciton>
   <div class="row">
-    <h3>Dina streck</h3>
-    <% if @last_purchase %>
-    <div class="pie-chart-container">
-      <div>
-        <h4>Antal</h4>
-        <%= pie_chart @purchases_stats, legend: false, colors: Colors.generate(size: @count) %>
-      </div>
-      <div>
-        <h4>Pengar</h4>
-        <%= pie_chart @money_spent, legend: false, colors: Colors.generate(size: @count) %>
-      </div>
-    </div>
-    <% else %>
-    <i>Du har inte streckat.</i>
-    <% end %>
+    <h5>Din ekonomi</h5>
+      <table class="purchases">
+        <thead>
+          <tr>
+            <th>Streckat för</th>
+            <th>Att betala</th>
+            <th>Mest streckade produkt</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @user.debt %> pix</td>
+            <td><%= @user.total %> pix</td>
+            <td><%= @user.most_purchased %></td>
+          </tr>
+        </tbody>
+      </table>
   </div>
-</section>
+</seciton>
 
 <section>
   <div class="row">
-    <h3>Topplistan</h3>
+    <h5>Topplistan</h5>
     <table class="purchases">
   <thead>
     <tr>

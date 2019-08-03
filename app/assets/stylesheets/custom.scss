@@ -5,7 +5,7 @@
 
 $accent-color: rgb(237, 24, 105);
 $accent-color-light: lighten($accent-color, 10%);
-$accent-hover: #c11f3f;
+$accent-hover: rgb(212, 0, 81);
 $background-color: rgb(40, 40, 40);
 $menu-color: rgb(25, 25, 25);
 $menu-light: #21211e;
@@ -101,6 +101,7 @@ h5  {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   color: $text;
+  text-align: left;
 }
 
 h6, label {
@@ -113,9 +114,22 @@ p, input, button {
     font-family: 'Roboto', sans-serif;
 }
 
+p.left {
+  text-align: left;
+}
+
 title {
   font-family: 'Fira Sans', sans-serif;
   font-weight: 400;
+}
+
+a {
+  color: $accent-color;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $accent-hover;
 }
 
 @media only screen and (max-width: 750px) {
@@ -136,14 +150,6 @@ title {
     }
   }
 }
-
-#logo {
-  height: 2em;
-  width: auto;
-  padding-left: 1em;
-}
-
-
 
 .debug_dump {
   width: 100%;
@@ -255,14 +261,21 @@ img {
 section {
   display: block;
   text-align: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 .row {
+  display: block;
   padding-left: 25%;
   padding-right: 25%;
 }
 
 @media only screen and (max-width: 750px) {
+  section {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
   .alert-notice {
     width: 100% !important; 
   }
@@ -358,9 +371,4 @@ img.menu-icon {
   background-color: $menu-light;
   color: $accent-color;
   border: none;
-}
-
-.pie-chart-container {
-  display: flex;
-  justify-content: space-between;
 }
