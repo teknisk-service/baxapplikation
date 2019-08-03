@@ -8,7 +8,7 @@ $menu-color: rgb(25, 25, 25);
 
 .sidenav {
   height: 100%;
-  width: 15%;
+  width: 15em;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -20,26 +20,23 @@ $menu-color: rgb(25, 25, 25);
 }
 
 .sidenav a {
-  padding: 4% 2% 2% 8%;
-  font-size: 3vh;
+  padding: 5% 3% 3% 10%;
   display: block;
   width:100%;
   text-align: left;
   cursor: pointer;
+  font-size: 1em;
+  clear: both;
 }
 
 #logo {
-  margin: 0;
+  height: 3em;
+  width: auto;
   padding: 0;
+  margin: 0;
+  margin-bottom: 5%;
 }
 
-.sidenav a {
-  font-family: 'Roboto', serif;
-  text-align: left;
-  color: $accent-color;
-  font-size: 2.5vh;
-  clear: both;
-}
 
 .bottom {
   padding-left: 1%;
@@ -54,6 +51,11 @@ $menu-color: rgb(25, 25, 25);
     width: 2.25em;
     height: 2.25em;
   }
+}
+
+p.footer {
+  color: $accent-color;
+  font-size: 0.75em;
 }
 
 .discrete {
