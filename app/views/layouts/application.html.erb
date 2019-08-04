@@ -20,7 +20,7 @@
 
     <% if logged_in? %>
     <%= render 'layouts/sidebar' %>
-    <%= render 'layouts/dropdown' %>
+    <%= render 'layouts/mobile_sidebar' %>
     <% end %>
     <% flash.each do |message_type, message| %>
     <script>
@@ -37,9 +37,20 @@
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 
+    <script>
+      function openNav() {
+        document.getElementById("mobile-sidebar").style.width = "75%";
+      }
+
+      function closeNav() {
+        document.getElementById("mobile-sidebar").style.width = "0";
+      }
+    </script>
+
     <main>
       <% if logged_in? %>
-      <div class="main">
+      <%= image_tag "menu.svg", :class => "menu-icon", :onClick => "openNav()" %>
+      <div id="main" class="main">
       <%= yield %>
       </div>
       <% else %>

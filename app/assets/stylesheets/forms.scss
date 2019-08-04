@@ -1,0 +1,94 @@
+input[type=checkbox], input[type=radio] {
+    vertical-align: -2px;
+    margin: 0;
+    padding: 0;
+    padding-top: 2%;
+    width: 1em;
+}
+
+.form-check {
+    padding: 0;
+}
+
+input.btn.btn-primary {
+    color: white;
+    background-color: $accent-color;
+    border-color: $accent-color;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 50%;
+    margin-top: 2%;
+}
+
+input.btn.btn-primary::after {
+    border-color: $accent-color !important;
+    background-color: $accent-color-light;
+}
+
+select::after{
+    border-color: $accent-color !important;
+    background-color: $accent-color-light;
+}
+
+.form-group {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 100%;
+}
+
+.form-control {
+    background: $light_grey;
+}
+
+.control-group.error .help-inline {
+  display: none;
+}
+
+.login_form_wrapper {
+    border-radius: 5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent;
+    width: 25%;
+    margin: 0 auto;
+    margin-top: 1%;
+    padding-top: 2%;
+    background-color: transparent;
+}
+
+select {
+    color: $text_dark;
+    height: 3em;
+    background-color: white !important;
+}
+
+input {
+    color: $text_dark;
+    background-color: $light_grey;
+    height: 3em !important;
+}
+
+form {
+    width: 100%;
+}
+
+input, textarea, select, .uneditable-input {
+  width: 100%;
+  margin-bottom: 2.5%;
+}
+
+@media (max-width: 480px) {
+    form {
+        margin: 0 auto;
+        width: 100%;
+    }
+    .login_form_wrapper {
+        width: 100% !important;
+        margin-top: 8%;
+    }
+    .form-group {
+        width: 100% !important;
+    }
+}

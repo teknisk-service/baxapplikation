@@ -1,23 +1,19 @@
-<% provide(:title, 'Registrera dig') %>
-<h1>Registrera dig</h1>
+<h1 class="title">Baxappen</h1>
+<div class="login_form_wrapper">
+  <div class="form">
+    <%= bootstrap_form_for(@user) do |f| %>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
+    <%= f.text_field :name, label: "Namn" %>
+    <%= f.email_field :email, label: "Mail" %>
 
-      <%= f.label :namn %>
-      <%= f.text_field :name, class: 'form-control' %>
+    <%= f.password_field :password, label: "Lösenord" %>
+    <%= f.password_field :password_confirmation, label: "Bekräfta lösenord" %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-
-      <%= f.label :Lösenord %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.label :password_confirmation, "Bekräfta lösenord" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-      <%= f.submit "Go!", class: "btn btn-primary" %>
+    <%= f.submit "Reigstrera", class: "btn btn-primary" %>
+    <div class="register_text">
+     <%= link_to "Har du redan en användare? Logga in!", root_path %>
+   </div>
     <% end %>
-  </div>
+ </div>
 </div>
+

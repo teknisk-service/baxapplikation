@@ -1,15 +1,6 @@
 <li class="user">
   <%= gravatar_for user, size: 250 %>
   <h2 class="center">
-    <%= link_to user.name, user %>
+    <a class="user"><%= link_to user.name, user , class: "user-link"%></a>
   </h2>
-  <h4>
-    Streckat för: <%= user.debt %> pix
-  </h4>
-  <h4>
-    Att betala: <%= user.total %> pix
-  </h4>
-  <h4>
-  <%= link_to "Betala", new_payment_path %>
-  <h4>
 </li>

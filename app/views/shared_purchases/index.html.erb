@@ -1,31 +1,36 @@
 <div class="row">
-<h2>Gemensamma köp</h2>
-<div class="centered-buttons-outer">
-  <div class="centered-buttons-inner">
-    <%= button_to "Nytt köp", new_shared_purchase_path, method: :get %>
+  <h2 class="title">Gemensamma köp</h2>
+</div>
+
+<section>
+  <div class="row">
+    <%= button_to "Nytt köp", new_shared_purchase_path, method: :get, class: "btn btn-primary" %>
   </div>
-</div>
-<h3>Alla gemensamma köp</h3>
-<table class="purchases">
-  <thead>
-    <tr>
-      <th>Produkt</th>
-      <th>Pris</th>
-      <th>Pris per drifter</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @shared_purchases.each do |sp| %>
-      <tr>
-        <td><%= sp.name %></td>
-        <td><%= sp.price %> kr</td>
-        <td><%= (sp.price.to_f/9).ceil%> kr</td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
+</section>
 
 
+<section>
+  <div class="row">
+    <h5>Alla gemensamma köp</h5>
+    <table class="purchases">
+      <thead>
+        <tr>
+          <th>Produkt</th>
+          <th>Pris</th>
+          <th>Pris per drifter</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @shared_purchases.each do |sp| %>
+        <tr>
+          <td><%= sp.name %></td>
+          <td><%= sp.price %> kr</td>
+          <td><%= (sp.price.to_f/9).ceil%> kr</td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>

@@ -1,6 +1,11 @@
-<h1>Ändra inköp</h1>
+<div class="row">
+  <h2 class="title">Ändra inköp</h2>
+</div>
 
-<%= render 'form', order: @order %>
-
-<%= link_to 'Show', @order %> |
-<%= link_to 'Back', orders_path %>
+<section>
+  <div class="row">
+    <%= render 'form', order: @order %>
+    <%= link_to 'Show', @order %> |
+    <%= link_to 'Back', orders_path %>
+  </div>
+</section>

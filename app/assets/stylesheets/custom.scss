@@ -1,16 +1,18 @@
-@import "bootstrap-sprockets";
 @import "bootstrap";
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
 
 /* mixins, variables, etc. */
 
-$accent-color: #ED1869;
+$accent-color: rgb(237, 24, 105);
 $accent-color-light: lighten($accent-color, 10%);
-$accent-hover: #c11f3f;
-$background-color: #1a1a1a;
-$menu-color: #10100F;
+$accent-hover: rgb(212, 0, 81);
+$background-color: rgb(40, 40, 40);
+$menu-color: rgb(25, 25, 25);
 $menu-light: #21211e;
 $gray-medium-light: #eaeaea;
+$light_grey: rgba(240,240,240,1);
+$text: rgb(175, 175, 175);
+$text_dark: rgb(125, 125, 125);
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -29,10 +31,11 @@ body {
   font-size: 16px;
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
-  color: $accent-color;
+  color: $text;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 tr {
@@ -61,56 +64,90 @@ td a, td input, td img {
   display: inline-block;
 }
 
-/* Headings and fonts */
+.heading {
+  padding-top: 2%;
+}
+
 h1 {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 700; 
-  font-size: 5vh;
-  text-align: center;
-  color: $accent-color;
-  clear: both;
+    font-size: 5em;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 500;
+    color: $accent-color;
 }
 
 h2 {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 400; 
-  font-size: 5vh;
-  text-align: left;
+  font-size: 3em;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 500;
   color: $accent-color;
-  clear: both;
+  text-align: center;
 }
 
-h2.center {
-  text-align: center !important;
+h2.title {
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+a.user-link {
+  color: $accent-color;
+}
+
+a.user-link:hover {
+  text-decoration: none;
+  color: $accent-hover;
 }
 
 h3 {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 00;
-  text-align: left;
+  font-size: 2em;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
   color: $accent-color;
-  text-transform: uppercase;
-  font-size: 3vh;
-  clear: both;
 }
 
-a {
-  text-decoration: none;
-  font-family: 'Rubik', sans-serif !important;
-  color: $accent-color !important;
+h4 {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 1.75em;
+  font-weight: 300;
 }
 
-a:hover {
- color: $accent-hover;
+h5  {
+  font-size: 1.5em !important;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: $text;
+  text-align: left;
+}
+
+h5.center {
+  text-align: center;
+}
+
+h6, label {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: $text;
+}
+
+p, input, button {
+    font-family: 'Roboto', sans-serif;
 }
 
 p.left {
-  text-align: left !important;
+  text-align: left;
 }
 
-p {
-  font-size: 2vmin;
-  color: $accent-color;
+title {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+}
+
+a {
+  color: $text;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $text_dark;
 }
 
 @media only screen and (max-width: 750px) {
@@ -123,37 +160,6 @@ p {
   }
 }
 
-header {
-  background-color: $menu-color;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  padding: 1em;
-  align-items: center;
-  justify-content: center;
-
-  .menu {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    span {
-      margin: 0 1em;
-    }
-    #logo {
-      margin-right: 2em;
-    }
-  }
-
-
-  li {
-    display: inline;
-  }
-}
-
 .dropdown-menu {
   background-color: $menu-color; 
   li {
@@ -163,14 +169,6 @@ header {
   }
 }
 
-#logo {
-  height: 2em;
-  width: auto;
-  padding-left: 1em;
-}
-
-/* miscellaneous */
-
 .debug_dump {
   width: 100%;
   margin-top: 45px;
@@ -178,25 +176,6 @@ header {
   display: none; 
 }
 
-/* forms */
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-input {
-  height: 3em;
-}
-
-form {
-  color: $accent-color;
-  font-family: 'Roboto', serif;
-  font-weight: 400;
-  margin: 0 auto;
-}
 
 @media only screen and (max-width: 750px) {
   main {
@@ -206,17 +185,6 @@ form {
 
 main {
   flex: 1;
-}
-
-button, input[type="submit"] {
-  background-color: $accent-color;
-  color: black;
-  padding: 5px;
-  border: none;
-  border-radius: 6px;
-  width: 25%; 
-  float: center; 
-  height: 3em !important;
 }
 
 .buttons {
@@ -244,24 +212,6 @@ button, input[type="submit"] {
   }
 }
 
-/* forms */
-
-form {
-  align-content: center;
-}
-
-label {
-  font-family: 'Roboto', serif;
-  float: left;
-}
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
-
-}
 
 input {
   height: auto !important;
@@ -272,13 +222,6 @@ input {
   ul {
     color: red;
     margin: 0 0 30px 0;
-  }
-}
-
-.field_with_errors {
-  @extend .has-error;
-  .form-control {
-    color: $state-danger-text;
   }
 }
 
@@ -336,14 +279,22 @@ img {
 section {
   display: block;
   text-align: center;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
 }
 
 .row {
+  display: block;
   padding-left: 25%;
   padding-right: 25%;
+  margin: 0 !important;
 }
 
 @media only screen and (max-width: 750px) {
+  section {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
   .alert-notice {
     width: 100% !important; 
   }
@@ -353,8 +304,8 @@ section {
   }
 
   .row {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding: 0 !important;
+    width: 100% !important;
   }
   
   button, input[type="submit"] {
@@ -386,9 +337,6 @@ section {
 }
 
 @media only screen and (min-width: 750px) {
-  .alert {
-    margin-left: 15%;
-  }
   table {
     tr {
       width: 100% !important; 
@@ -400,10 +348,6 @@ section {
       display: none; 
     }
   }
-}
-
-img.menu-icon {
-  height: 25px !important; 
 }
 
 @media only screen and (max-width: 750px) { 
@@ -439,9 +383,4 @@ img.menu-icon {
   background-color: $menu-light;
   color: $accent-color;
   border: none;
-}
-
-.pie-chart-container {
-  display: flex;
-  justify-content: space-between;
 }

@@ -1,14 +1,14 @@
 <div class="profile">
   <%= render @user %>
-  <section>
+  <section class="purchases">
     <div class="row">
-      <h3>Dina streck</h3>
+      <h5>Dina streck</h5>
       <%= render 'purchases_table', user: @user %>
     </div>
   </section>
-  <section>
+  <section class="purchases">
     <div class="row">
-      <h3>Enskilda streck</h3>
+      <h5>Enskilda streck</h5>
       <table class="purchases">
         <thead>
           <tr>

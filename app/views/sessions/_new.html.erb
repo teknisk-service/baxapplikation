@@ -1,24 +1,19 @@
-<% provide(:title, "Logga in") %>
-<h2 class="center">Logga in</h2>
+<h1 class="title">Baxappen</h1>
+<div class="login_form_wrapper">
+  <%= image_tag "drifvarpiska.svg", class: "logo" %>
+  <div class="form">
+    <%= bootstrap_form_for(:session, url: login_path) do |f| %>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: login_path) do |f| %>
+    <%= f.email_field :email, label: "Mail" %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+    <%= f.password_field :password, label: "Lösenord" %>
+    <%= f.hidden_field :remember_me, :value => true %>
 
-      <%= f.label :lösenord %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.label :remember_me, class: "checkbox inline" do %>
-        <%= f.check_box :remember_me %>
-        <span>Kom ihåg mig</span>
-      <% end %>
-
-      <%= f.submit "Logga in", class: "btn btn-primary" %>
+    <%= f.submit "Logga in", class: "btn btn-primary" %>
     <% end %>
 
-    <p><%= link_to "Registrera dig nu!", signup_path %></p>
-  </div>
+    <div class="register_text">
+     <%= link_to "Har du ingen användare? Registrera dig nu!", signup_path %>
+   </div>
+ </div>
 </div>

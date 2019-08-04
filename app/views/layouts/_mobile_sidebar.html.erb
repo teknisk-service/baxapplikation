@@ -1,0 +1,37 @@
+<div id="mobile-sidebar" class="mobile-sidebar">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <%= link_to root_url do %>
+  <%= image_tag "drifvarpiska.svg", id: "logo" %>
+  <% end %>
+  <% if logged_in? %>
+  <% if current_user.admin? %>
+    <%= link_to "Baxmor", orders_path %>
+  <% end %>
+  <%= link_to "Mina streck", purchases_user_path(id: current_user.id) %>
+  <%= link_to "Drifvare", users_path %>
+  <%= link_to "Drifverier", teams_path %>
+  <%= link_to "Topplistor", toplists_path %>
+  <%= link_to "Baxkassa", payments_path %>
+  <%= link_to "Gemensamma köp", shared_purchases_path %>
+  <%= link_to "Produkter", products_path %>
+  <%= link_to "Önska produkter", requests_path %>
+  <%= link_to "Pingis", pingis_path %>
+  <% if current_user.admin? %>
+  <%= link_to "Whitelist", whitelists_path %>
+  <% end %>
+  <div class="bottom-mobile">
+    <div class="inline">
+      <div class="inline-content">
+        <%= gravatar_for current_user, size: 250 %>
+      </div>
+      <div class="inline-content">
+        <%= link_to current_user.name, current_user %>
+      </div>
+    </div>
+    <div class="discrete">
+      <%= link_to "Inställningar", edit_user_path(current_user) %>
+      <%= link_to "Logga ut", logout_path, method: "delete" %>
+    </div>
+  </div>
+  <% end %>
+</div>

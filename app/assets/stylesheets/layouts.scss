@@ -1,4 +1,4 @@
-$menu-color: #10100F;
+$menu-color: rgb(25, 25, 25);
 
 @media only screen and (max-width: 750px) {
   .sidenav {
@@ -6,9 +6,15 @@ $menu-color: #10100F;
   }
 }
 
+@media only screen and (min-width: 750px) {
+  button.openbtn {
+    display: none;
+  }
+}
+
 .sidenav {
   height: 100%;
-  width: 15%;
+  width: 15em;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -20,26 +26,28 @@ $menu-color: #10100F;
 }
 
 .sidenav a {
-  padding: 4% 2% 2% 8%;
-  font-size: 3vh;
+  color: $accent-color;
+  padding: 5% 3% 3% 10%;
   display: block;
   width:100%;
   text-align: left;
   cursor: pointer;
+  font-size: 1em;
+  clear: both;
+}
+
+.sidenav a:hover {
+  color: $accent-hover;
 }
 
 #logo {
-  margin: 0;
+  height: 3em;
+  width: auto;
   padding: 0;
+  margin: 0;
+  margin-bottom: 5%;
 }
 
-.sidenav a {
-  font-family: 'Roboto', serif;
-  text-align: left;
-  color: $accent-color;
-  font-size: 2.5vh;
-  clear: both;
-}
 
 .bottom {
   padding-left: 1%;
@@ -56,9 +64,91 @@ $menu-color: #10100F;
   }
 }
 
+p.footer {
+  color: $accent-color;
+  font-size: 0.75em;
+}
+
 .discrete {
   a {
     font-size: 2vmin;
+  }
+}
+
+.mobile-sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: $menu-color;
+  overflow-x: hidden !important;
+  padding-top: 60px;
+  transition: 0.5s;
+  img.gravatar {
+    width: 2em;
+    height: 2em;
+    margin: 5% 3% 3% 10%;
+  }
+  #logo {
+    width: 2.5em;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.mobile-sidebar a {
+  color: $accent-color;
+  padding: 3% 3% 3% 10%;
+  display: block;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1em;
+  clear: both;
+}
+
+.mobile-sidebar a:hover {
+  color: $accent-hover;
+}
+
+.mobile-sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  margin: 0%;
+  margin-right: 2%;
+  margin-left: 5%;
+  font-size: 3em;
+  padding: 0;
+  float: left;
+}
+
+img.menu-icon {
+  float: left;
+  margin: 0;
+  position: absolute;
+  height: 1.5em;
+  width: auto;
+  padding: 0;
+  margin-bottom: 2%;
+  margin-right: 2%;
+}
+
+.bottom-mobile {
+  margin-top: 10%;
+}
+
+.inline {
+  padding: 3% 3% 3% 8%;
+  .inline-content {
+    margin-right: 2%;
+  }
+}
+
+@media only screen and (min-height: 700px) {
+  .mobile-sidebar a {
+    font-size: 1em;
   }
 }
 

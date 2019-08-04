@@ -1,53 +1,30 @@
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= simple_form_for @order do |f| %>
-    <% if @order.errors.any? %>
-    <div id="errorExplanation">
+<h5>Om inköpet</h5>
+<%= simple_form_for @order do |f| %>
+<div>
+  <%= label :date, "Inköpstdatum" %>
+  <%= f.date_field(:date, :order => [:day, :month, :year]) %>
+  <%= label :mammerist, "Person som betalade" %>
+  <%= f.text_field :mammerist, class: 'form-control' %>
+  <%= label :total, "Totalsumma" %>
+  <%= f.number_field :total, class: 'form-control' %>
+  <%= f.input :payed, as: :boolean, checked_value: true, unchecked_value: false, label: "Betalad" %>
+</div>
 
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+<div>
+  <h5>Produkter</h5>
 
-      <ul>
-        <% @order.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+  <div id="order_items">
+    <%= f.simple_fields_for :order_items do |order_item| %>
+    <%= render 'order_item_fields', f: order_item %>
     <% end %>
-    <div>
-      <%= label :date, "Datum" %>
-      <%= f.date_select(:date, :order => [:day, :month, :year]) %>
-      <%= label :mammerist, "Mammerist som betalade" %>
-      <%= f.text_field :mammerist, class: 'form-control' %>
-      <%= label :total, "Summa" %>
-      <%= f.number_field :total, class: 'form-control' %>
-      <%= label :payed, "Betalad" %>
-      <div class="inline">
-        <div class="inline-content">
-        <%= f.label 'payed_true', 'Ja' %>
-        <%= f.radio_button :payed, true %>
-      </div>
-      <div class="inline-content">
-        <%= f.label 'payed_false', 'Nej' %>
-        <%= f.radio_button :payed, false %>
-      </div>
-      </div>
+    <div class="links">
+      <%= link_to_add_association 'Lägg till produkt', f, :order_items %>
     </div>
-
-    <div>
-      <p><strong>Produkter:</strong></p>
-
-      <div id="order_items">
-        <%= f.simple_fields_for :order_items do |order_item| %>
-        <%= render 'order_item_fields', f: order_item %>
-        <% end %>
-        <div class="links">
-        <%= link_to_add_association 'Lägg till produkt', f, :order_items %>
-        </div>
-      </div>
-      <div>
-         <%= f.submit "Go!", class: "btn btn-primary" %>
-        <% end %>
-      </div>
-    </div>
+  </div>
+  <div>
+   <%= f.submit "Go!", class: "btn btn-primary" %>
+   <% end %>
+ </div>
+</div>
 
 

@@ -127,4 +127,8 @@ class User < ApplicationRecord
   def team
     team = SessionsController.helpers.current_team
   end
+
+  def most_purchased
+    purchases_grouped.keys.first.name
+  end
 end

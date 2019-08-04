@@ -33,3 +33,6 @@ User.create(email: "isabel@drifveriet.se", name: "Isabel", password: "test123", 
 User.create(email: "amanda@drifveriet.se", name: "Amanda", password: "test123", admin: false)
 User.create(email: "timas@drifveriet.se", name: "Timas", password: "test123", admin: false)
 User.create(email: "magnus@drifveriet.se", name: "Magnus", password: "test123", admin: false)
+
+Team.create(year: 2018, active: true, users: [1, 2, 3, 4, 5, 6, 7, 8, 9])
+
