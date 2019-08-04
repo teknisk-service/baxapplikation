@@ -1,13 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <h2 class="title">Baxkassa</h2>
+</div>
+
 <section>
   <div class="row">
-    <h2>Baxkassa</h2>
-    <div class="centered-buttons-outer">
-      <div class="centered-buttons-inner">
-        <%= button_to "Ny betalning", new_payment_path, method: :get %>
-      </div>
-    </div>
-    <h3>Total</h3>
+    <%= button_to "Ny betalning", new_payment_path, method: :get, class: "btn btn-primary" %>
+  </div>
+</section>
+
+<section>
+  <div class="row">
+    <h5>Total</h5>
     <table class="purchases">
       <thead>
         <tr>
@@ -25,8 +28,12 @@
         </tr>
       </tbody>
     </table>
+  </div>
+</section>
 
-    <h3>Alla inbetalningar</h3>
+<section>
+  <div class="row">
+    <h5>Alla inbetalningar</h5>
     <table class="purchases">
       <thead>
         <tr>

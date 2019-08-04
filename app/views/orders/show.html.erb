@@ -1,23 +1,35 @@
-<p id="notice"><%= notice %></p>
-<div class="order">
-  <h4>
-    Summa: <%= @order.total %> kr
-  </h4>
+<div class="row">
+  <h2 class="title">Inköp</h2>
+</div>
 
-  <h4>
-    Datum: <%= @order.date %>
-  </h4>
-
-  <h4>
-    Mammerist: <%= @order.mammerist %>
-  </h4>
-
-  <h4>
-    Betalad: <%= @order.payed_text %>
-  </h4>
-
-  <h2>Produkter</h2>
+<section>
+  <div class="row">
+  <h5>Info</h5>
   <table class="purchases">
+        <thead>
+          <tr>
+            <th>Summa</th>
+            <th>Datum</th>
+            <th>Betalad av</th>
+            <th>Betalad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @order.total %> kr</td>
+            <td><%= @order.date %></td>
+            <td><%= @order.mammerist %></td>
+            <td><%= @order.payed_text %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</section>
+
+<section>
+  <div class="row">
+  <h5>Produkter</h5>
+    <table class="purchases">
     <thead>
       <tr>
         <th>Namn</th>
@@ -37,7 +49,12 @@
       <% end %>
     </tbody>
   </table>
-
-  <%= link_to 'Redigera', edit_order_path(@order) %> |
-  <%= link_to 'Tillbaka', orders_path %>
 </div>
+</section>
+
+<section>
+  <div class="row">
+    <%= link_to 'Redigera', edit_order_path(@order) %> |
+    <%= link_to 'Tillbaka', orders_path %>
+  </div>
+</section>

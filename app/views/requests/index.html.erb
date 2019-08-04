@@ -1,14 +1,18 @@
+<div class="row">
+	<h2 class="title">Önskningar</h2>
+</div>
+
 <section>
-	<div class="makeawishform">
-		<div class="row">
-			<h2>Önska produkter</h2>
-			<%= render 'form', comment: @request %>
-		</div>
-	</div>
 	<div class="row">
-		<h3>Önskade produkter</h3>
-		<div class="makeawishtable">
-			<table class="purchases">
+		<h5>Önska en produkt</h5>
+		<%= render 'form', comment: @request %>
+	</div>
+</section>
+
+<section>
+	<div class="row">
+		<h5>Önskade produkter</h5>
+					<table class="purchases">
 				<thead>
 					<tr>
 						<th>Produkt</th>
@@ -44,7 +48,5 @@
 					<% end %>
 				</tbody>
 			</table>
-		</div>
 	</div>
 </section>
-

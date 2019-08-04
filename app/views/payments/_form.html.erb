@@ -1,4 +1,4 @@
-<%= bootstrap_form_for(payment) do |f| %>
+<%= bootstrap_form_for(@payment) do |f| %>
   <%= collection_select(:payment, :user_id, User.where('teams && ARRAY[?]::varchar[]', [SessionsController.helpers.current_team.id]).sort_by(&:name), :id, :name, {selected: current_user.id}) %>
   <%= f.number_field :amount, class: 'form-control', label: "Summa" %>
   <%= f.submit "Betala", class: "btn btn-primary" %>
