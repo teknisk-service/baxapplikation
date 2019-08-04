@@ -1,18 +1,27 @@
-<table class="purchases">
-  <thead>
-    <tr>
-      <th>Drifveri</th>
-      <th>Aktivt</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+<div class="row">
+  <h2 class="title">Drifverier</h2>
+</div>
 
-  <tbody>
-    <% @teams.each do |t| %>
-      <tr>
-        <td><%= link_to t.year, t %></td>
-        <td><%= t.active ? 'Ja' : 'Nej' %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<section class="purchases">
+  <div class="row">
+    <table class="purchases">
+      <thead>
+        <tr>
+          <th>Drifveri</th>
+          <th>Aktivt</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @teams.each do |t| %>
+        <tr>
+          <td><%= link_to t.year, t %></td>
+          <td><%= t.active ? 'Ja' : 'Nej' %></td>
+          <td><%= link_to "Statistik", stats_team_url(t) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>

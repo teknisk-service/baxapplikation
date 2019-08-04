@@ -1,18 +1,13 @@
-<div>
-  <h1>
-    Drifveriet anno <%= @team.year %>
-  </h1>
-  <h2>
-    Aktivt: <%= @team.active ? 'Ja' : 'Nej' %>
-  </h2>
-  <table class="purchases">
-  <thead>
-    <tr>
-      <th>Drifvare</th>
-      <th colspan="1"></th>
-    </tr>
-  </thead>
+<div class="row">
+  <h2 class="title">Drifveriet anno <%= @team.year %></h2>
+  <h5 class="center">Aktivt: <%= @team.active ? 'Ja' : 'Nej' %></h5>
+  <%= button_to "Statistik", stats_team_url(@team), method: :get, class: "btn btn-primary" %>
+</div>
 
+<section>
+  <div class="row">
+    <h5>Drifvare</h5>
+    <table class="purchases">
   <tbody>
     <% @team.drifters.each do |d| %>
       <tr>
@@ -21,15 +16,18 @@
     <% end %>
   </tbody>
 </table>
+  </div>
+</section>
+
 <% if @team.active? %>
   <%= simple_form_for(@team) do |f| %>
     <%= f.hidden_field :active, value: false %>
-    <%= f.submit 'Gör inaktivt' %>
+    <%= f.submit 'Gör inaktivt', class: "btn btn-primary"%>
   <% end %>
 <% else %>
   <%= simple_form_for(@team) do |f| %>
     <%= f.hidden_field :active, value: true %>
-    <%= f.submit 'Gör aktivt' %>
+    <%= f.submit 'Gör aktivt', class: "btn btn-primary" %>
   <% end %>
 <% end %>
 </div>

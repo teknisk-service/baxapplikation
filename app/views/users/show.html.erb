@@ -1,42 +1,52 @@
 <section class="profile">
   <%= render @user %>
-  <h4>Drifverier</h4>
-  <table class="purchases">
-  <thead>
-    <tr>
-      <th>Drifverier</th>
-      <th>Aktivt</th>
-      <th colspan="1"></th>
-    </tr>
-  </thead>
+  <section>
+    <div class="row">
+      <h5>Drifverier</h5>
+      <table class="purchases">
+        <thead>
+          <tr>
+            <th>Drifveri</th>
+            <th>Aktivt</th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @user.all_teams.each do |t| %>
-      <tr>
-        <td>Drifveriet anno <%= link_to t.year, t %></td>
-        <td><%= t.active ? 'Ja' : 'Nej'%></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-  <div class="admin">
-    <% if current_user.admin? && !current_user?(@user) %>
-    <%= button_to "Ta bort användare", @user, method: :delete, data: { confirm: "Är du säker?" } %>
-    <% end %>
+        <tbody>
+          <% @user.all_teams.each do |t| %>
+          <tr>
+            <td>Drifveriet anno <%= link_to t.year, t %></td>
+            <td><%= t.active ? 'Ja' : 'Nej'%></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
-    <% if current_user.admin? && !current_user?(@user) %>
-      <% if @user.admin?  %>
-        <%= button_to "Ta bort som admin", remove_user_admin_user_path, :method => :post %>
-      <% else %>
-        <%= button_to "Gör till admin", make_user_admin_user_path, :method => :post %>
+  <section>
+    <div class="row">
+      <% if current_user.admin? && !current_user?(@user) %>
+      <%= button_to "Ta bort användare", @user, method: :delete, data: { confirm: "Är du säker?" }, class: "btn btn-primary" %>
       <% end %>
-    <% end %>
+
+      <% if current_user.admin? && !current_user?(@user) %>
+      <% if @user.admin?  %>
+      <%= button_to "Ta bort som admin", remove_user_admin_user_path, :method => :post, class: "btn btn-primary" %>
+      <% else %>
+      <%= button_to "Gör till admin", make_user_admin_user_path, :method => :post , class: "btn btn-primary" %>
+      <% end %>
+      <% end %>
 
     </div>
-    <% if current_user?(@user) %>
-    <h4><%= link_to 'Visa dina streck', purchases_user_path %></h4>
-    <% end %>
-    <% if current_user.admin? %>
-    <h4> <%= link_to "Ändra", edit_user_path(@user) %> </h4>
-    <% end %>
+  </section>
+
+  <section>
+    <div class="row">
+      <% if current_user?(@user) %>
+      <h5 class="center"><%= link_to 'Visa dina streck', purchases_user_path %></h5>
+      <% end %>
+      <% if current_user.admin? %>
+      <h5 class="center"> <%= link_to "Ändra", edit_user_path(@user) %> </h5>
+      <% end %>
+    </div>
   </section>

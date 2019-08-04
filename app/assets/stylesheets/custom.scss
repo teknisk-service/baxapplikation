@@ -88,6 +88,15 @@ h2.title {
   margin-bottom: 1%;
 }
 
+a.user-link {
+  color: $accent-color;
+}
+
+a.user-link:hover {
+  text-decoration: none;
+  color: $accent-hover;
+}
+
 h3 {
   font-size: 2em;
   font-family: 'Fira Sans', sans-serif;
@@ -107,6 +116,10 @@ h5  {
   font-weight: 400;
   color: $text;
   text-align: left;
+}
+
+h5.center {
+  text-align: center;
 }
 
 h6, label {
@@ -291,8 +304,7 @@ section {
   }
 
   .row {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding: 0 !important;
     width: 100% !important;
   }
   
@@ -325,9 +337,6 @@ section {
 }
 
 @media only screen and (min-width: 750px) {
-  .alert {
-    margin-left: 15%;
-  }
   table {
     tr {
       width: 100% !important; 

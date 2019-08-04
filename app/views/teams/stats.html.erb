@@ -1,44 +1,59 @@
-<h1>Stats</h1>
-<h2>Streck</h2>
-<table class="purchases">
-    <thead>
-      <tr>
-        <th>Produkt</th>
-        <th>Pris</th>
-        <th>Antal</th>
-        <th>Total</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @purchases_grouped.each do |product, purchases| %>
+<div class="row">
+  <h2 class="title">Statistik <%= @team.year %></h2>
+</div>
+
+<section class="purchases">
+  <div class="row">
+    <h5>Streck</h5>
+  </div>
+  <div class="row">
+    <table class="purchases">
+      <thead>
+        <tr>
+          <th>Produkt</th>
+          <th>Pris</th>
+          <th>Antal</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @purchases_grouped.each do |product, purchases| %>
         <tr>
           <td><%= product.name %></td>
           <td><%= product.price %> kr</td>
           <td><%= purchases.size %> st</td>
           <td><%= product.price * purchases.size %> kr</td>
         </tr>
-      <% end %>
-    </tbody>
- </table>
- <p>Totalt streckat för: <%= @total_purchases %> kr</p>
+        <% end %>
+      </tbody>
+    </table>
+    <p><strong>Totalt streckat för: <%= @total_purchases %> kr</strong></p>
+  </div>
+</section>
 
- <h2>Inköp</h2>
- <table class="purchases">
-  <thead>
-    <tr>
-      <th>Produkt</th>
-      <th>Antal</th>
-      <th>Pris</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @order_items.each do |product, order_items| %>
-    <tr>
-      <td><%= product.name %></td>
-      <td><%= product.total_quantity %></td>
-      <td><%= product.price %> kr</td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-<p>Totalt köpt för: <%= @total_orders %> kr</p>
+<section class="purchases">
+  <div class="row">
+    <h5>Inköp</h5>
+  </div>
+  <div class="row">
+    <table class="purchases">
+      <thead>
+        <tr>
+          <th>Produkt</th>
+          <th>Antal</th>
+          <th>Pris</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @order_items.each do |product, order_items| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.total_quantity %></td>
+          <td><%= product.price %> kr</td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <p><strong>Totalt köpt för: <%= @total_orders %> kr</strong></p>
+  </div>
+</section>
