@@ -2,6 +2,12 @@ input[type=checkbox], input[type=radio] {
     vertical-align: -2px;
     margin: 0;
     padding: 0;
+    padding-top: 2%;
+    width: 1em;
+}
+
+.form-check {
+    padding: 0;
 }
 
 input.btn.btn-primary {

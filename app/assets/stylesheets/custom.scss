@@ -83,6 +83,11 @@ h2 {
   text-align: center;
 }
 
+h2.title {
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
 h3 {
   font-size: 2em;
   font-family: 'Fira Sans', sans-serif;
@@ -261,14 +266,15 @@ img {
 section {
   display: block;
   text-align: center;
-  margin-top: 2%;
-  margin-bottom: 2%;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
 }
 
 .row {
   display: block;
   padding-left: 25%;
   padding-right: 25%;
+  margin: 0 !important;
 }
 
 @media only screen and (max-width: 750px) {
