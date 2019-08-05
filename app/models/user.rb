@@ -129,6 +129,10 @@ class User < ApplicationRecord
   end
 
   def most_purchased
-    purchases_grouped.keys.first.name
+    if purchases_grouped.keys.first
+      purchases_grouped.keys.first.name
+    else
+      "Du har inte streckat något"
+    end
   end
 end
