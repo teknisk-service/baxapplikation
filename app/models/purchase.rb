@@ -12,6 +12,12 @@ class Purchase < ApplicationRecord
   	@products = Product.where(team_id: team.id)
   end
 
+  def team_product
+    if team_id
+      Product.where(team_id: team_id).find(product_id)
+    end
+  end
+
   def product
     if product_id
   	 @product = products.find(product_id)

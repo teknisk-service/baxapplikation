@@ -14,7 +14,7 @@ class Team < ApplicationRecord
 	end
 
 	def purchases_grouped
-		purchases.group_by(&:product).to_h
+		purchases.group_by(&:team_product).to_h
 	end
 
 	def total_purchases
