@@ -1,0 +1,5 @@
+<%= bootstrap_form_for(@shared_purchase) do |f| %>
+    <%= f.text_field :name, class: 'form-control', label: "Namn" %>
+    <%= f.number_field :price, class: 'form-control', label: "Pris" %>
+    <%= f.submit "Go!", class: "btn btn-primary" %>
+<% end %>
