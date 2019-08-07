@@ -1,6 +1,10 @@
-<h1>Redigera inbetalning</h1>
+<div class="row">
+  <h2 class="title">Redigera inbetalning</h2>
+</div>
 
-<%= render 'form', payment: @payment %>
+<div class="row">
+  <%= render 'form', payment: @payment %>
+  <%= link_to 'Visa', @payment %> |
+  <%= link_to 'Tillbaka', payments_path %>
+</div>
 
-<%= link_to 'Visa', @payment %> |
-<%= link_to 'Tillbaka', payments_path %>
