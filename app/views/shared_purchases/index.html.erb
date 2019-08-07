@@ -18,7 +18,6 @@
           <th>Produkt</th>
           <th>Pris</th>
           <th>Pris per drifter</th>
-          <th colspan="3"></th>
         </tr>
       </thead>
 
@@ -28,7 +27,8 @@
           <td><%= sp.name %></td>
           <td><%= sp.price %> kr</td>
           <td><%= (sp.price.to_f/9).ceil%> kr</td>
-        </tr>
+          <td><%= link_to 'Ta bort', sp, method: :delete, data: { confirm: 'Är du säker?' } %></td>
+          </tr>
         <% end %>
       </tbody>
     </table>
