@@ -2,9 +2,5 @@
   <h2>Nytt gemensamt köp</h2>
 </div>
 <div class="row">
-    <%= bootstrap_form_for(@shared_purchase) do |f| %>
-    <%= f.text_field :name, class: 'form-control', label: "Namn" %>
-    <%= f.number_field :price, class: 'form-control', label: "Pris" %>
-    <%= f.submit "Go!", class: "btn btn-primary" %>
-    <% end %>
+    <%= render 'form', shared_purchase: @shared_purchase %>
 </div>

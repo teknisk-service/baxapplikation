@@ -18,6 +18,13 @@ class SharedPurchasesController < ApplicationController
 		Payment.create(amount: @shared_purchase.price, user_id: current_user.id)
 	end
 
+	def destroy
+    @shared_purchase = SharedPurchase.find(params[:id])
+    @shared_purchase.destroy
+    flash[:success] = "Gemensamt köp borttagen"
+    redirect_to shared_purchases_url
+  end
+
 	private
 	def shared_purchases_params
 		params.require(:shared_purchase).permit(:name, :price)
