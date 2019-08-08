@@ -1,5 +1,5 @@
 <div class="nested-fields">
-   <%= f.association :product, collection: Product.order(:name), label: "Produkt"%>
+   <%= f.association :product, collection: Product.where(team_id: SessionsController.helpers.current_team.id).sort_by(&:name), label: "Produkt"%>
    <%= label :quantity, "Antal" %>
    <%= f.number_field :quantity %>
    <%= label :price, "Totalt pris" %>

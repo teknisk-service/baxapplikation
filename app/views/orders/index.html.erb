@@ -32,7 +32,34 @@
     <h5>Produkter</h5>
     <%= button_to "Ny produkt", new_product_path, method: :get, class: "btn btn-primary" %>
   </div>
+  <div class="row">
+  <table class="purchases">
+      <thead>
+        <tr>
+          <th>Produkt</th>
+          <th>Pris</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
+      <tbody>
+        <% @products.each do |product| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.price %> kr</td>
+          <td><%= link_to 'Ta bort', product, method: :delete, data: { confirm: 'Är du säker?' } %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<section>
+  <div class="row">
+    <h5>Inköpta produkter</h5>
+  </div>
   <div class="row">
     <table class="purchases">
         <thead>
