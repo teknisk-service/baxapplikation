@@ -5,7 +5,7 @@ before_action :set_payment, only: [:show, :edit, :update, :destroy]
     team = SessionsController.helpers.current_team
     @payments = Payment.where(team_id: team.id)
     @total_in = Payment.where(team_id: team.id).sum(:amount)
-    @total_out = Order.where(team_id: team.id).sum(:total)
+    @total_out = Order.where(team_id: team.id).sum(:total) + SharedPurchase.where(team_id: team.id).sum(:price)
   end
 
   def show
