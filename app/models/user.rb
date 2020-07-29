@@ -130,7 +130,7 @@ class User < ApplicationRecord
 
   def most_purchased
     if purchases_grouped.keys.first
-      purchases_grouped.keys.first.name
+      purchases_grouped.sort_by{ |k,v| v.count }.reverse.to_h.keys.first.name
     else
       "Du har inte streckat något"
     end
