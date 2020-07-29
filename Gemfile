@@ -2,9 +2,9 @@ source 'https://rubygems.org'
 
 ruby File.read(File.expand_path("../.ruby-version", __FILE__)).strip
 
-gem "rails", "~> 5.1.5"
+gem "rails", "~> 6.0.3"
 gem 'bcrypt', '3.1.11'
-gem 'rails-controller-testing'
+# gem 'rails-controller-testing'
 gem 'will_paginate', '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
 
