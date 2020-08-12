@@ -71,11 +71,13 @@
         </thead>
         <tbody>
           <% @order_items_grouped.each do |product, order_items| %>
+          <% if product %>
           <tr>
             <td><%= product.name %></td>
             <td><%= product.total_quantity %></td>
             <td><%= product.price %> kr</td>
           </tr>
+          <% end %>
           <% end %>
         </tbody>
       </table>
