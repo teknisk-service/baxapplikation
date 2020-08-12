@@ -40,12 +40,14 @@
     </thead>
     <tbody>
       <% @order.order_items.each do |oi| %>
+      <% if oi.product %>
       <tr>
         <td><%= oi.product.name%></td>
         <td><%= oi.quantity%></td>
         <td><%= oi.product.price%> kr</td>
         <td><%= oi.quantity * oi.product.price%> kr</td>
       </tr>
+      <% end %>
       <% end %>
     </tbody>
   </table>
