@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: baxapplikation_production
-  username: baxapplikation
-  password: <%= ENV['BAXAPPLIKATION_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: baxapplikation_production
+  # username: baxapplikation
+  # password: <%= ENV['BAXAPPLIKATION_DATABASE_PASSWORD'] %>
