@@ -1,4 +1,4 @@
-class OutlaysController < ApplicationController
+class OutlayController < ApplicationController
 	before_action :set_outlay, only: [:show, :edit, :update, :destroy]
 
 	def index
